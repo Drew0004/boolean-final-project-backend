@@ -7,9 +7,9 @@
         <!-- Name -->
         <div>
             <label for="name">
-                Name
+                Nome
             </label>
-            <input type="text" id="name" name="name">
+            <input type="text" id="name" name="name" required maxlength="255">
         </div>
 
         <!-- Email Address -->
@@ -17,7 +17,7 @@
             <label for="email">
                 Email
             </label>
-            <input type="email" id="email" name="email">
+            <input type="email" id="email" name="email" required maxlength="255">
         </div>
 
         <!-- Password -->
@@ -25,7 +25,7 @@
             <label for="password">
                 Password
             </label>
-            <input type="password" id="password" name="password">
+            <input type="password" id="password" name="password" required>
         </div>
 
         <!-- Confirm Password -->
@@ -33,7 +33,15 @@
             <label for="password_confirmation">
                 Conferma Password
             </label>
-            <input type="password" id="password_confirmation" name="password_confirmation">
+            <input type="password" id="password_confirmation" name="password_confirmation" required>
+        </div>
+
+        <!-- City -->
+        <div class="mt-4">
+            <label for="city">
+                Città
+            </label>
+            <input type="text" id="city" name="city" placeholder="Inserisci una città (es.Milano)..." required maxlength="255">
         </div>
 
         <div>
@@ -42,7 +50,7 @@
             </a>
 
             <button type="submit">
-                Register
+                Registrati
             </button>
         </div>
     </form>
