@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class user_details extends Model
 {
     use HasFactory;
+
+    protected $fillable=[
+        'demo',
+        'picture',
+        'bio',
+        'cellphone',
+        'members',
+    ];
+
+    //Relazioni fra le due tabelle One to one
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
 }
