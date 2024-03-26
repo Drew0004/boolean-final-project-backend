@@ -34,11 +34,13 @@ return new class extends Migration
      */
     public function down(): void
     {
-        if (Schema::hasColumn('user_details', 'user_id')) {
-            $table->dropForeign(['user_id']);
+        Schema::table('user_details', function (Blueprint $table) {
+            if (Schema::hasColumn('user_details', 'user_id')) {
+                $table->dropForeign(['user_id']);
+                $table->dropColumn('user_id');
+            }
+        });
 
-            // $table->dropColumn('user_id');
-        }
         Schema::dropIfExists('user_details');
         
     }
