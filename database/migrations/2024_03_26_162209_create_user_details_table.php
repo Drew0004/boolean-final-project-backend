@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('user_details', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')
+            ->nullable()
+            ->constrained()
+            ->onDelete('set null')
+            ->onUpdate('cascade');
 
             $table->string('demo' ,1024)-> nullable();
             $table->string('picture', 1024)-> nullable();
@@ -29,6 +34,12 @@ return new class extends Migration
      */
     public function down(): void
     {
+        if (Schema::hasColumn('user_details', 'user_id')) {
+            $table->dropForeign(['user_id']);
+
+            // $table->dropColumn('user_id');
+        }
         Schema::dropIfExists('user_details');
+        
     }
 };
