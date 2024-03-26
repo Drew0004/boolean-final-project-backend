@@ -20,6 +20,6 @@ class UserDetails extends Model
     //Relazioni fra le due tabelle One to one
     public function user()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
 }
