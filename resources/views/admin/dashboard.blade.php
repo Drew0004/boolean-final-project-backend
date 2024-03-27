@@ -13,12 +13,31 @@
                     <h3>I tuoi dati:</h3>
                     <ul>
                         <li>{{ $user->city }}</li>
-                        @dd($user->user_details)
-                        @isset($user->user_details)
-                        <li>{{ $user->user_details->bio }}</li>
+                        
+                        @isset($user->userDetails->bio)
+                        <li>{{ $user->userDetails->bio }}</li>
                         @else 
                         <li>-</li>
                         @endisset
+
+                        @isset($user->userDetails->cellphone)
+                        <li>{{ $user->userDetails->cellphone }}</li>
+                        @else 
+                        <li>-</li>
+                        @endisset
+
+                        @isset($user->userDetails->members)
+                        <li>{{ $user->userDetails->members }}</li>
+                        @else 
+                        <li>-</li>
+                        @endisset
+
+                        @isset($user->userDetails->picture)
+                        <li><img src="{{ asset('storage/'.$user->userDetails->picture) }}" alt=""></li>
+                        @else 
+                        <li>-</li>
+                        @endisset
+
                     </ul>
                 </div>
             </div>
