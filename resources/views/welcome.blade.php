@@ -6,10 +6,15 @@
             <div class="card">
                 <div class="card-body">
                     <h1 class="text-center text-primary">
-                        Welcome!
+                        Benvenuto!
                     </h1>
                     <br>
-                    La welcome page è una pagina pubblica (NON protetta)
+                    <button class="btn btn-primary">
+                        <a class="text-decoration-none text-white" href="{{ route('login') }}">Accedi</a>
+                    </button>
+                    <button class="btn btn-success">
+                        <a class="text-decoration-none text-white" href="{{ route('register') }}">Registrati</a>
+                    </button>
                 </div>
             </div>
         </div>
