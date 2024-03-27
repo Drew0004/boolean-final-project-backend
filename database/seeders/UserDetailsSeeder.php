@@ -67,7 +67,8 @@ class UserDetailsSeeder extends Seeder
         $uniqueId = []; 
         
         foreach ($allUserDetails as $singleUserDetail){
-            //prendo un utente random 
+            
+            //prendo un utente random il quale id non è presente nell'array
             $randomUser = User::inRandomOrder()->whereNotIn('id', $uniqueId)->first();
             // verifico se l'utente è valido e non è già stato selezionato in precedenza
             if ($randomUser) {
@@ -76,6 +77,7 @@ class UserDetailsSeeder extends Seeder
                 // aggiungo l'id dell'utente selezionato all'array di quelli unici
                 $uniqueId[] = $userId;
             };
+            
             $userDetails= UserDetails::create([
                 'user_id' => $userId,
                 'demo' => $singleUserDetail['demo'],
