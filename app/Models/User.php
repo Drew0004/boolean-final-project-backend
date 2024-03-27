@@ -44,11 +44,18 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    // Relazione one to one con i dettagli utente
     public function userDetails(){
         return $this->hasOne(UserDetails::class);
     }
 
+    // Relazione many to many con i ruoli
     public function roles(){
         return $this->belongsToMany(Role::class);
+    }
+
+    // Relazione one to many con i messaggi
+    public function messages(){
+        return $this->hasMany(Message::class);
     }
 }
