@@ -21,9 +21,9 @@ return new class extends Migration
 
             $table->string('demo' ,1024)-> nullable();
             $table->string('picture', 1024)-> nullable();
-            $table->string('bio')-> nullable();
+            $table->string('bio', 1024)-> nullable();
             $table->string('cellphone',24)-> nullable();
-            $table->string('members')-> nullable();
+            $table->string('members',1024)-> nullable();
 
             $table->timestamps();
         });
