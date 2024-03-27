@@ -27,6 +27,7 @@ class UserDetailsSeeder extends Seeder
 
         $allUserDetails = [
             [
+                'id' => '1',
                 'demo' => 'demo prova ',
                 'picture' => 'ex mario cilino',
                 'bio' => 'Bio non molto lunga di...',
@@ -34,6 +35,7 @@ class UserDetailsSeeder extends Seeder
                 'members' => 'Breve descrizione dei members'
             ],
             [
+                'id' => '2',
                 'demo' => 'demo prova ',
                 'picture' => 'picture prova',
                 'bio' => 'Bio non molto lunga di...',
@@ -41,6 +43,7 @@ class UserDetailsSeeder extends Seeder
                 'members' => 'Breve descrizione dei members'
             ],
             [
+                'id' => '3',
                 'demo' => 'demo prova ',
                 'picture' => 'Mario_Cilino.jpg',
                 'bio' => 'Bio non molto lunga di...',
@@ -48,6 +51,7 @@ class UserDetailsSeeder extends Seeder
                 'members' => 'Breve descrizione dei members'
             ],
             [
+                'id' => '4',
                 'demo' => 'demo prova ',
                 'picture' => 'picture prova',
                 'bio' => 'Bio non molto lunga di...',
@@ -55,6 +59,7 @@ class UserDetailsSeeder extends Seeder
                 'members' => 'Breve descrizione dei members'
             ],
             [
+                'id' => '5',
                 'demo' => 'demo prova ',
                 'picture' => 'picture prova',
                 'bio' => 'Bio non molto lunga di...',
@@ -64,22 +69,22 @@ class UserDetailsSeeder extends Seeder
         ];
 
         //dichiaro un'array di id unici vuoto
-        $uniqueId = []; 
+        // $uniqueId = []; 
         
         foreach ($allUserDetails as $singleUserDetail){
             
-            //prendo un utente random il quale id non è presente nell'array
-            $randomUser = User::inRandomOrder()->whereNotIn('id', $uniqueId)->first();
-            // verifico se l'utente è valido e non è già stato selezionato in precedenza
-            if ($randomUser) {
-                $userId = $randomUser->id;
+            // //prendo un utente random il quale id non è presente nell'array
+            // $randomUser = User::inRandomOrder()->whereNotIn('id', $uniqueId)->first();
+            // // verifico se l'utente è valido e non è già stato selezionato in precedenza
+            // if ($randomUser) {
+            //     $userId = $randomUser->id;
 
-                // aggiungo l'id dell'utente selezionato all'array di quelli unici
-                $uniqueId[] = $userId;
-            };
+            //     // aggiungo l'id dell'utente selezionato all'array di quelli unici
+            //     $uniqueId[] = $userId;
+            // };
             
             $userDetails= UserDetails::create([
-                'user_id' => $userId,
+                'user_id' => $singleUserDetail['id'],
                 'demo' => $singleUserDetail['demo'],
                 'picture' => $singleUserDetail['picture'],
                 'bio' => $singleUserDetail['bio'],
