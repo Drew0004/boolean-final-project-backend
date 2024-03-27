@@ -28,7 +28,7 @@ class UserDetailsSeeder extends Seeder
         $allUserDetails = [
             [
                 'demo' => 'demo prova ',
-                'picture' => 'picture prova',
+                'picture' => 'ex mario cilino',
                 'bio' => 'Bio non molto lunga di...',
                 'cellphone' => '+39 3385698137',
                 'members' => 'Breve descrizione dei members'
@@ -42,7 +42,7 @@ class UserDetailsSeeder extends Seeder
             ],
             [
                 'demo' => 'demo prova ',
-                'picture' => 'picture prova',
+                'picture' => 'Mario_Cilino.jpg',
                 'bio' => 'Bio non molto lunga di...',
                 'cellphone' => '+39 3385698137',
                 'members' => 'Breve descrizione dei members'
