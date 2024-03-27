@@ -60,4 +60,9 @@ class User extends Authenticatable
     public function messages(){
         return $this->hasMany(Message::class);
     }
+
+    //Relazione many to many con sponsor
+    public function sponsors(){
+        return $this->belongsToMany(Sponsor::class);
+    }
 }
