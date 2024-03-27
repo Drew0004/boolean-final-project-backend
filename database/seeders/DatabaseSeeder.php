@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             VoteSeeder::class,
             UserVoteSeeder::class,
             MessageSeeder::class,
+            ReviewSeeder::class,
         ]);
     }
 }
