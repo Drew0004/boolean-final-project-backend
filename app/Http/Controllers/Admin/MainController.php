@@ -46,7 +46,10 @@ class MainController extends Controller
 
         // $user = Auth::user();
         $user_id = Auth::user()->id;
+        // $user = User::findOrFail($user_id);
         $user = User::where('id',$user_id )->first();
+
+        
 
         $picturePath = $user->userDetails->picture;
         if (isset($userData['picture'])) {
@@ -62,10 +65,14 @@ class MainController extends Controller
             $picturePath = null;
         }
 
-        $userData['picture'] = $picturePath; 
+        $userData['picture'] = $picturePath;
+
+        //Fixato cambio nome
+        $user->name = $userData['username'];
         
         $user->updateOrFail($userData);
         $user->userDetails->updateOrFail($userData);
+        
 
         if (isset($userData['roles'])) {
             // $user->roles->sync($userData['roles']);
