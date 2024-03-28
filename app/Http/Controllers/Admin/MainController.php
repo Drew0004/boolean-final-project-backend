@@ -26,4 +26,10 @@ class MainController extends Controller
         return view('admin.dashboard', compact('user'));
     }
 
+    public function edit(User $user)
+    {
+        // $user = Auth::user();
+        return view('admin.users.edit', compact('user'));
+    } 
+
 }
