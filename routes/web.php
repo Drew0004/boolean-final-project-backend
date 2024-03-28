@@ -38,7 +38,7 @@ Route::prefix('admin')
 
     // Rotte dell'utente
     Route::get('/users/edit', [AdminMainController::class, 'edit'])->name('edit');
-    Route::get('/users/update', [AdminMainController::class, 'update'])->name('update');
+    Route::put('/users/update', [AdminMainController::class, 'update'])->name('update');
     Route::get('/users/destroy', [AdminMainController::class, 'destroy'])->name('destroy');
     Route::get('/reviews', [AdminReviewController::class, 'index'])->name('reviews.index');
     Route::get('/reviews/{review}', [AdminReviewController::class, 'show'])->name('reviews.show');

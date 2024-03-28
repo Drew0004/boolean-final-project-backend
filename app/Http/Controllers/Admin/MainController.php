@@ -41,7 +41,9 @@ class MainController extends Controller
     public function update(UpdateUserRequest $request)
     {
         $userData = $request->validated();
-        $user = Auth::user();
+        // $user = Auth::user();
+        $user_id = Auth::user()->id;
+        $user = User::where('id',$user_id )->first();
 
         $picturePath = $user->userDetails->picture;
         if (isset($userData['picture'])) {
@@ -57,12 +59,12 @@ class MainController extends Controller
             $picturePath = null;
         }
 
-
         $userData['picture'] = $picturePath; 
         $user->update($userData);
 
         if (isset($userData['roles'])) {
-            $user->roles->sync($userData['roles']);
+            // $user->roles->sync($userData['roles']);
+            $user->roles()->sync($userData['roles']);
         }
         else {
             $user->roles->detach();
