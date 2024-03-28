@@ -32,12 +32,14 @@ Route::prefix('admin')
     Route::get('/dashboard', [AdminMainController::class, 'dashboard'])->name('dashboard');
     
     Route::resource('reviews', ReviewController::class);
-
-    Route::get('/users/edit', [AdminMainController::class, 'edit'])->name('edit');
-
-    Route::get('/app', [AdminMainController::class, 'app'])->name('app');
-
     Route::resource('messages', AdminMessageController::class);
+
+    // Rotte dell'utente
+    Route::get('/users/edit', [AdminMainController::class, 'edit'])->name('edit');
+    Route::get('/users/update', [AdminMainController::class, 'update'])->name('update');
+    Route::get('/users/destroy', [AdminMainController::class, 'destroy'])->name('destroy');
+
+
 
     
 
