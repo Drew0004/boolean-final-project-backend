@@ -30,7 +30,7 @@
                                 <a class="nav-link" href="#nogo">I miei messaggi</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#nogo">Le mie recensioni</a>
+                                <a class="nav-link" href="{{ route('admin.reviews.index') }}">Le mie recensioni</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#nogo">Le mie statistiche</a>
