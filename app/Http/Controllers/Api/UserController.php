@@ -12,6 +12,7 @@ class UserController extends Controller
 {
     public function index()
     {
+        // Da aggiungere i ruoli
         $users = User::with('userDetails')->paginate(4);
         // $users = User::paginate(4);
 
