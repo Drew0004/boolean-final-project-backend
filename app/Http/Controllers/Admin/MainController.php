@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UpdateUserRequest;
 use Illuminate\Http\Request;
 
 //models
@@ -13,6 +14,9 @@ use App\Models\UserDetails;
 
 // Facades
 use Illuminate\Support\Facades\Auth;
+
+// Helpers
+use Illuminate\Support\Facades\Storage;
 
 class MainController extends Controller
 {
@@ -34,9 +38,37 @@ class MainController extends Controller
         return view('admin.users.edit', compact('user', 'roles'));
     }
 
-    public function update()
+    public function update(UpdateUserRequest $request)
     {
+        $userData = $request->validated();
+        $user = Auth::user();
 
+        $picturePath = $user->userDetails->picture;
+        if (isset($userData['picture'])) {
+            if ($picturePath != null) {
+                Storage::disk('public')->delete($picturePath);
+            }
+
+            $picturePath = Storage::disk('public')->put('images', $userData['picture']);
+        }
+        else if (isset($userData['delete_picture'])) {
+            Storage::disk('public')->delete($picturePath);
+
+            $picturePath = null;
+        }
+
+
+        $userData['picture'] = $picturePath; 
+        $user->update($userData);
+
+        if (isset($userData['roles'])) {
+            $user->roles->sync($userData['roles']);
+        }
+        else {
+            $user->roles->detach();
+        }
+
+        return redirect()->route('admin.dashboard');   
     }
 
 
