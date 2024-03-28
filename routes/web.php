@@ -32,17 +32,19 @@ Route::prefix('admin')
 
     Route::get('/dashboard', [AdminMainController::class, 'dashboard'])->name('dashboard');
     
-    Route::resource('reviews', ReviewController::class);
+    /* Route::resource('reviews', ReviewController::class); */
     Route::resource('messages', AdminMessageController::class);
 
     // Rotte dell'utente
     Route::get('/users/edit', [AdminMainController::class, 'edit'])->name('edit');
     Route::get('/users/update', [AdminMainController::class, 'update'])->name('update');
     Route::get('/users/destroy', [AdminMainController::class, 'destroy'])->name('destroy');
-
+    Route::get('/reviews', [AdminReviewController::class, 'index'])->name('reviews.index');
+    Route::get('/reviews/{review}', [AdminReviewController::class, 'show'])->name('reviews.show');
 
 
 });
-
+/* Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
+Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store'); */
 
 require __DIR__.'/auth.php';
