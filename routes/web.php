@@ -41,6 +41,8 @@ Route::prefix('admin')
         'user' => 'user'
     ]);
 
+    Route::resource('messages', AdminMessageController::class);
+
     
 
 });

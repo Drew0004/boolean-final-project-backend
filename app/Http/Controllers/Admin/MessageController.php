@@ -24,7 +24,7 @@ class MessageController extends Controller
         // Recupera tutti i messaggi associati all'ID dell'utente corrente
         $receivedMessages = Message::where('user_id', $userId)->get();
         //Passo $receivedMessages alla vista Blade per visualizzarli
-        return view('admin.message.index', compact('receivedMessages'));
+        return view('admin.messages.index', compact('receivedMessages'));
 
     }
 
