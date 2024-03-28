@@ -3,18 +3,26 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Review;
+use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+
     public function index()
     {
-        $reviews = Review::all();
+        // Ottieni l'ID dell'utente attualmente loggato
+        $userId = auth()->id();
+
+        // Filtra le recensioni per l'ID dell'utente loggato
+        $reviews = Review::where('user_id', $userId)->get();
+
+        // Restituisci la vista con le recensioni filtrate
         return view('admin.reviews.index', compact('reviews'));
     }
-
+    
     /**
      * Show the form for creating a new resource.
      */
