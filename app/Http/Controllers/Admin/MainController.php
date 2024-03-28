@@ -40,13 +40,12 @@ class MainController extends Controller
 
     public function update(UpdateUserRequest $request)
     {
-        //Da fixare cambio nome e cambio della demo audio
+        //Da fixare cambio della demo audio
         
         $userData = $request->validated();
 
-        // $user = Auth::user();
         $user_id = Auth::user()->id;
-        // $user = User::findOrFail($user_id);
+        
         $user = User::where('id',$user_id )->first();
 
         
