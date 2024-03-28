@@ -27,9 +27,9 @@
                                 <td>{{ $message->created_at }}</td>
                                 <td>{{ $message->message }}</td>
                                 <td>
-                                    {{-- <a href="{{ route('admin.receivedMessage.show', ['message' => $message->id]) }}" class="btn btn-xs btn-primary">
+                                    <a href="{{ route('admin.messages.show', ['message' => $message->id]) }}" class="btn btn-xs btn-primary">
                                         Show
-                                    </a> --}}
+                                    </a>
                                 </td>
 
                                 <td>
@@ -49,12 +49,12 @@
                                     </div>
                                     <div class="offcanvas-body">
                                         <p>Vuoi davvero eliminare <h5 class=" d-inline-block ">{{ $message->firstname }} {{ $message->lastname }}</h5> ?</p>
-                                        {{-- <form class="mt-5" id="deleteForm{{ $message->id }}"
-                                            action="{{ route('admin.contacts.destroy', ['message' => $message->id]) }}" method="POST">
+                                        <form class="mt-5" id="deleteForm{{ $message->id }}"
+                                            action="{{ route('admin.messages.destroy', ['message' => $message->id]) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger">Conferma eliminazione</button>
-                                        </form> --}}
+                                        </form>
                                     </div>
                                 </div>
                                 </td>

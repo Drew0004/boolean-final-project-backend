@@ -50,6 +50,7 @@ class MessageController extends Controller
     public function show(Message $message)
     {
         //show del singolo messaggio 
+        return view('admin.messages.show', compact('message'));
     }
 
     /**
@@ -75,5 +76,8 @@ class MessageController extends Controller
     {
         //l'ur puo cancellare il messaggio ricevuto sia da messaggio singolo
         //che da tabella messaggi ricevuti nell'index(messaggi totali)
+        $message->delete();
+        return redirect()->route('admin.messages.index')->with('success', 'Messaggio cancellato con successso');
+    
     }
 }
