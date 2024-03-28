@@ -31,6 +31,7 @@ Route::prefix('admin')
     Route::get('/dashboard', [AdminMainController::class, 'dashboard'])->name('dashboard');
     Route::resource('reviews', ReviewController::class);
 
+    // Rotte user
     Route::resource('users', AdminMainController::class)->only([
         'edit',
         'update',
