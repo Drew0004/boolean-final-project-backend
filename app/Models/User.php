@@ -51,7 +51,7 @@ class User extends Authenticatable
 
     // Relazione many to many con i ruoli
     public function roles(){
-        return $this->belongsToMany(Role::class);
+        return $this->belongsToMany(Role::class, 'user_role');
     }
     public function votes(){
         return $this->belongsToMany(Vote::class);
