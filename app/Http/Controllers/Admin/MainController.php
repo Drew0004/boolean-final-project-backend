@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 //models
 use App\Models\User;
+use App\Models\Role;
 use App\Models\UserDetails;
 
 
@@ -29,7 +30,13 @@ class MainController extends Controller
     public function edit()
     {
         $user = Auth::user();
-        return view('admin.users.edit', compact('user'));
+        $roles = Role::all();
+        return view('admin.users.edit', compact('user', 'roles'));
+    }
+
+    public function update()
+    {
+
     }
 
 

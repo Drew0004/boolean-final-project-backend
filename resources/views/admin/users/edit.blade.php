@@ -102,6 +102,36 @@
                 <label for="members" class="form-label text-white">Se sei in una band, inserisci i membri</label>
                 <input value="{{ $user->userDetails->members }}" type="text" class="form-control @error('members') is-invalid @enderror" id="members" name="members" placeholder="Inserisci i membri..." maxlength="1024">
             </div>
+
+            {{-- Input dei ruoli --}}
+            <div class="mb-3">
+                <label class="form-label">Ruoli</label>
+
+                <div>
+                    
+                    @foreach ($roles as $role)
+                        <div class="form-check form-check-inline">
+                            <input
+                                {{-- Se c'è l'old, vuol dire che c'è stato un errore --}}
+                                @if ($errors->any())
+                                    {{-- Faccio le verifiche sull'old --}}
+                                    {{ in_array($role->id, old('role', [])) ? 'checked' : '' }}
+                                @else
+                                    {{-- Faccio le verifiche sulla collezione --}}
+                                    {{-- {{ $user->role ? ($user->roles->contains($role->id) ? 'checked' : '') : '' }} --}}
+                                    {{ $user->roles->contains($role->id) ? 'checked' : '' }}
+                                @endif
+                                class="form-check-input"
+                                type="checkbox"
+                                id="role-{{ $role->id }}"
+                                name="roles[]"
+                                value="{{ $role->id }}">
+                            <label class="form-check-label" for="role-{{ $role->id }}">{{ $role->title }}</label>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
             <button class="btn btn-primary" type="submit">
                 Modifica +
             </button>

@@ -40,9 +40,6 @@ Route::prefix('admin')
     Route::get('/users/destroy', [AdminMainController::class, 'destroy'])->name('destroy');
 
 
-
-    
-
 });
 
 require __DIR__.'/auth.php';
