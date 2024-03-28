@@ -41,6 +41,7 @@ class MainController extends Controller
     public function update(UpdateUserRequest $request)
     {
         $userData = $request->validated();
+
         // $user = Auth::user();
         $user_id = Auth::user()->id;
         $user = User::where('id',$user_id )->first();
@@ -60,7 +61,9 @@ class MainController extends Controller
         }
 
         $userData['picture'] = $picturePath; 
-        $user->update($userData);
+        
+        $user->updateOrFail($userData);
+        $user->userDetails->updateOrFail($userData);
 
         if (isset($userData['roles'])) {
             // $user->roles->sync($userData['roles']);
