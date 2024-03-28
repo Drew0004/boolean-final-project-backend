@@ -30,16 +30,12 @@ Route::prefix('admin')
     ->group(function () {
 
     Route::get('/dashboard', [AdminMainController::class, 'dashboard'])->name('dashboard');
+    
     Route::resource('reviews', ReviewController::class);
 
-    // Rotte user
-    Route::resource('users', AdminMainController::class)->only([
-        'edit',
-        'update',
-        'destroy'
-    ])->parameters([
-        'user' => 'user'
-    ]);
+    Route::get('/users/edit', [AdminMainController::class, 'edit'])->name('edit');
+
+    Route::get('/app', [AdminMainController::class, 'app'])->name('app');
 
     Route::resource('messages', AdminMessageController::class);
 

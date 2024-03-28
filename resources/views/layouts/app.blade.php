@@ -24,7 +24,7 @@
                                 <a class="nav-link" href="{{ route('admin.dashboard') }}">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.users.edit', ['user' => $user->id]) }}">Modifica il profilo</a>
+                                <a class="nav-link" href="{{ route('admin.edit') }}">Modifica il profilo</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.messages.index') }}">I miei messaggi</a>
