@@ -24,14 +24,14 @@
                                 <a class="nav-link" href="{{ route('admin.dashboard') }}">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#nogo">Modifica il profilo</a>
+                                <a class="nav-link" href="{{ route('admin.users.edit', ['user' => $user->id]) }}">Modifica il profilo</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.message.index') }}">I miei messaggi</a>
                                 {{-- {{ route('admin.message.index') }} --}}
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#nogo">Le mie recensioni</a>
+                                <a class="nav-link" href="{{ route('admin.reviews.index') }}">Le mie recensioni</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#nogo">Le mie statistiche</a>
