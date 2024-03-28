@@ -27,7 +27,8 @@
                                 <a class="nav-link" href="{{ route('admin.users.edit', ['user' => $user->id]) }}">Modifica il profilo</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#nogo">I miei messaggi</a>
+                                <a class="nav-link" href="{{ route('admin.message.index') }}">I miei messaggi</a>
+                                {{-- {{ route('admin.message.index') }} --}}
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.reviews.index') }}">Le mie recensioni</a>
