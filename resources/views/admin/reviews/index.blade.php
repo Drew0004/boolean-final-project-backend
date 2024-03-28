@@ -4,7 +4,7 @@
 
 @section('main-content')
 <h1>Reviews</h1>
-<a href="{{ route('admin.reviews.create') }}" class="btn btn-primary mb-3">Create Review</a>
+
 <table class="table">
     <thead>
         <tr>
@@ -23,13 +23,10 @@
                 <td>{{ $review->lastname }}</td>
                 <td>{{ $review->description }}</td>
                 <td>
-                    <a href="{{ route('admin.reviews.show', $review) }}" class="btn btn-success btn-sm">View</a>
-                    <a href="{{ route('admin.reviews.edit', $review) }}" class="btn btn-primary btn-sm">Edit</a>
-                    <form action="{{ route('admin.reviews.destroy', $review) }}" method="POST" style="display: inline-block;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                    </form>
+                    {{-- <a href="{{ route('admin.reviews.show', $review) }}" class="btn btn-success btn-sm">View</a> --}}
+                    <a href="{{ route('admin.reviews.show', $review) }}">View</a>
+                    
+                    
                 </td>
             </tr>
         @endforeach
