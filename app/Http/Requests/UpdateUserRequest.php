@@ -24,7 +24,7 @@ class UpdateUserRequest extends FormRequest
         return [
             'username' => 'required|string|max:255',
             'city' => 'required|string|max:255',
-            'demo' => 'nullable|mimes:mp3,wav|max:2048',
+            'demo' => 'nullable|mimes:mp3,wav',  //Da aggiungere forse dimensione max
             'delete_demo' => 'nullable|boolean',
             'picture' => 'nullable|image',
             'delete_picture' => 'nullable|boolean',

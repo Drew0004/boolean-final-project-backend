@@ -49,7 +49,7 @@ class MainController extends Controller
         $user = User::where('id',$user_id )->first();
 
         
-
+        // Gestione immagine
         $picturePath = $user->userDetails->picture;
         if (isset($userData['picture'])) {
             if ($picturePath != null) {
@@ -65,6 +65,23 @@ class MainController extends Controller
         }
 
         $userData['picture'] = $picturePath;
+
+        // Gestione demo
+        $demoPath = $user->userDetails->demo;
+        if (isset($userData['demo'])) {
+            if ($demoPath != null) {
+                Storage::disk('public')->delete($demoPath);
+            }
+
+            $demoPath = Storage::disk('public')->put('audio', $userData['demo']);
+        }
+        else if (isset($userData['delete_demo'])) {
+            Storage::disk('public')->delete($demoPath);
+
+            $demoPath = null;
+        }
+
+        $userData['demo'] = $demoPath;
 
         //Fixato cambio nome
         $user->name = $userData['username'];

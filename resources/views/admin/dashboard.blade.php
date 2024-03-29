@@ -38,6 +38,17 @@
                         <li>-</li>
                         @endisset
 
+                        @isset($user->userDetails->demo)
+                        <li>
+                            <audio controls>
+                                <source src="{{ asset('storage/'.$user->userDetails->demo) }}" type="audio/mpeg">
+                                Il tuo browser non supporta l'elemento audio.
+                            </audio>
+                        </li>
+                        @else 
+                        <li>-</li>
+                        @endisset
+
                     </ul>
                 </div>
             </div>
