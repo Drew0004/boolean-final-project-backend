@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 //Controllers
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\RoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,10 @@ Route::name('api.')->group(function() {
     Route::resource('users', UserController::class)->only([
         'index',
         'show'
+    ]);
+
+    Route::resource('roles', RoleController::class)->only([
+        'index',
     ]);
 
 });
