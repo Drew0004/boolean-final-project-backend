@@ -21,7 +21,7 @@ class UserRoleSeeder extends Seeder
     public function run(): void
     {
                 
-        for ($i = 0; $i < 10; $i++) { 
+        for ($i = 0; $i < 30; $i++) { 
             $randomUser = User::inRandomOrder()->first();
             $randomRole = Role::inRandomOrder()->first();
         

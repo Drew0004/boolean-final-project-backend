@@ -20,7 +20,7 @@ class UserVoteSeeder extends Seeder
      */
     public function run(): void
     {
-        for ($i = 1; $i <= 15; $i++) { 
+        for ($i = 1; $i <= 30; $i++) { 
             $randomUser = User::inRandomOrder()->first();
             $randomVote = Vote::inRandomOrder()->first();
         
