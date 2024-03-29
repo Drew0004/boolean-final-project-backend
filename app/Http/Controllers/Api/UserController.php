@@ -12,8 +12,8 @@ class UserController extends Controller
 {
     public function index()
     {
-        // Da aggiungere i ruoli
-        $users = User::with('userDetails', 'roles')->paginate(5);
+        // Da aggiungere le sponsor
+        $users = User::with('userDetails', 'roles', 'votes', 'messages')->paginate(5);
         // $users = User::paginate(4);
 
         return response()->json([
@@ -24,7 +24,7 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-        $user = User::with('userDetails', 'roles')->firstOrFail();
+        $user = User::with('userDetails', 'roles', 'votes', 'messages')->firstOrFail();
 
         return response()->json([
             'success' => true,
