@@ -11,7 +11,7 @@
                         Bentornanto, {{ $user->name }}
                     </h1>
                     <h3>I tuoi dati:</h3>
-                    <ul>
+                    <ul class="list-unstyled">
                         <li>{{ $user->city }}</li>
                         
                         @isset($user->userDetails->bio)
@@ -33,7 +33,7 @@
                         @endisset
 
                         @isset($user->userDetails->picture)
-                        <li><img src="{{ asset('storage/'.$user->userDetails->picture) }}" alt=""></li>
+                        <li><img style="width: 100px" src="{{ asset('storage/'.$user->userDetails->picture) }}" alt=""></li>
                         @else 
                         <li>-</li>
                         @endisset
@@ -42,7 +42,7 @@
                         <li>
                             <audio controls>
                                 <source src="{{ asset('storage/'.$user->userDetails->demo) }}" type="audio/mpeg">
-                                Il tuo browser non supporta l'elemento audio.
+
                             </audio>
                         </li>
                         @else 

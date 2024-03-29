@@ -40,8 +40,12 @@
                     <h4 class="text-white">
                         Demo Attuale:
                     </h4>
-                    {{-- <img src="/storage/{{ $project->cover_img }}" style="max-width: 200px;"> --}}
-                    Demo da inserire
+                    <div>
+                        <audio controls>
+                            <source src="{{ asset('storage/'.$user->userDetails->demo) }}" type="audio/mpeg">
+    
+                        </audio>
+                    </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="1" id="delete_demo" name="delete_demo">
                         <label class="form-check-label" for="delete_demo">
@@ -49,7 +53,7 @@
                         </label>
                     </div>
                 </div>
-            @endif
+                @endif
             </div>
             @error('demo')
                 <div class="alert alert-danger">
