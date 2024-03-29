@@ -30,6 +30,36 @@
                 </td>
             </tr>
         @endforeach
+        
+    
+        
+    </tbody>
+</table>
+
+@dd($receivedVotes);
+<table class="table">
+    <thead>
+        <tr>
+            <th>label</th>
+            <th>vote</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($receivedVotes as $vote)
+            <tr>
+                <td>{{ $vote->label }}</td>
+                <td>{{ $vote->vote }}</td>
+                <td>
+                    {{-- <a href="{{ route('admin.reviews.show', $review) }}" class="btn btn-success btn-sm">View</a> --}}
+                    {{-- <a href="{{ route('admin.reviews.show', $review) }}">View</a> --}}
+                    
+                    
+                </td>
+            </tr>
+        @endforeach
+        
+    
+        
     </tbody>
 </table>
 @endsection

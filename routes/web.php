@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\MainController as AdminMainController;
 use App\Http\Controllers\Admin\MessageController as AdminMessageController;
 use App\Http\Controllers\Admin\ReviewController as AdminReviewController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\VoteController as AdminVoteController;
+
 
 
 
@@ -35,6 +37,7 @@ Route::prefix('admin')
 
     Route::resource('reviews', ReviewController::class);
     Route::resource('messages', AdminMessageController::class);
+    Route::resource('votes', AdminVoteController::class);
 
     // Rotte dell'utente
     Route::get('/users/edit', [AdminMainController::class, 'edit'])->name('edit');
