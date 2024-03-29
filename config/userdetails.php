@@ -53,11 +53,12 @@
             'cellphone' => '+39 3327698186',
             'members' => 'Suoniamo dal giorno in cui ci siamo conosciuti ad Amsterdam e giriamo per lo stivale'
         ],
+        //--- 5
         [
             'id' => '6',
             'demo' => 'demo performance',
             'picture' => 'Rolling_Rocks.jpg',
-            'bio' => 'Siamo i Rolling Rocks, una band che si ispira allo spirito ribelle e travolgente delle Pietre Rotolanti. Con riff taglienti e performance adrenaliniche, portiamo l\'energia del rock sul palco in ogni concerto che facciamo. I nostri membri sono musicisti appassionati che condividono una passione comune per il rock \'n\' roll. Suoniamo insieme da anni, portando il nostro sound potente e coinvolgente in ogni luogo in cui ci esibiamo.',
+            'bio' => 'Siamo le pietre rotolanti, una band che si ispira allo spirito ribelle e travolgente delle Pietre Rotolanti. Con riff taglienti e performance adrenaliniche, portiamo l\'energia del rock sul palco in ogni concerto che facciamo. I nostri membri sono musicisti appassionati che condividono una passione comune per il rock \'n\' roll. Suoniamo insieme da anni, portando il nostro sound potente e coinvolgente in ogni luogo in cui ci esibiamo.',
             'cellphone' => '+39 3374562398',
             'members' => 'La nostra band è composta da talentuosi musicisti che portano una vasta esperienza sul palco e una passione travolgente per la musica rock. Ogni membro contribuisce con il proprio stile unico, creando un sound coeso e coinvolgente.'
         ],
@@ -85,6 +86,7 @@
             'cellphone' => '+39 3409876231',
             'members' => 'La nostra band è composta da talentuosi musicisti che portano una vasta esperienza nel mondo del funk. Ogni membro contribuisce con il proprio talento e creatività, creando un sound coinvolgente e travolgente.'
         ],
+        //--- 5
         [
             'id' => '10',
             'demo' => 'demo classico',
@@ -125,6 +127,7 @@
             'cellphone' => '+39 3494567890',
             'members' => ''
         ],
+        //--- 5
         [
             'id' => '15',
             'demo' => 'demo solista',
@@ -153,7 +156,7 @@
             'id' => '18',
             'demo' => 'demo solista',
             'picture' => 'Solo_Performer.jpg',
-            'bio' => "Francesco Ferrari è un musicista solista con una passione travolgente per la creazione e l'interpretazione musicale. Con un background artistico diversificato e una vasta gamma di influenze musicali, porto una fresca e innovativa prospettiva nella scena musicale. Con le mie performance coinvolgenti e autentiche, cerco di connettere profondamente con il pubblico attraverso la mia musica.",
+            'bio' => "Sono Francesco Ferrari, un musicista solista con una passione travolgente per la creazione e l'interpretazione musicale. Con un background artistico diversificato e una vasta gamma di influenze musicali, porto una fresca e innovativa prospettiva nella scena musicale. Con le mie performance coinvolgenti e autentiche, cerco di connettere profondamente con il pubblico attraverso la mia musica.",
             'cellphone' => '+39 3538901234',
             'members' => ''
         ],
@@ -161,7 +164,7 @@
             'id' => '19',
             'demo' => 'demo solista',
             'picture' => 'Solo_Performer.jpg',
-            'bio' => "Anna Romano è una cantante e compositrice appassionata che cattura l'essenza delle emozioni attraverso la musica. Con una voce potente e versatile e testi coinvolgenti, porto il mio pubblico in un viaggio attraverso le esperienze umane. Le mie performance dal vivo sono un mix di energia e sensibilità, creando un'esperienza indimenticabile per chi ascolta.",
+            'bio' => "Sono Anna Romano, una cantante e compositrice appassionata che cattura l'essenza delle emozioni attraverso la musica. Con una voce potente e versatile e testi coinvolgenti, porto il mio pubblico in un viaggio attraverso le esperienze umane. Le mie performance dal vivo sono un mix di energia e sensibilità, creando un'esperienza indimenticabile per chi ascolta.",
             'cellphone' => '+39 3549012345',
             'members' => ''
         ],
@@ -169,7 +172,7 @@
             'id' => '20',
             'demo' => 'demo solista',
             'picture' => 'Solo_Performer.jpg',
-            'bio' => "Roberto Esposito è un cantautore e musicista che porta il suo cuore e la sua anima nella musica che crea. Con uno stile unico e autentico, trasmetto emozioni e storie attraverso le mie canzoni. Con le mie performance dal vivo, cerco di connettere con il pubblico e lasciare un'impronta duratura nel cuore di chi mi ascolta.",
+            'bio' => "Sono Roberto Esposito, un cantautore e musicista che porta il suo cuore e la sua anima nella musica che crea. Con uno stile unico e autentico, trasmetto emozioni e storie attraverso le mie canzoni. Con le mie performance dal vivo, cerco di connettere con il pubblico e lasciare un'impronta duratura nel cuore di chi mi ascolta.",
             'cellphone' => '+39 3550123456',
             'members' => ''
         ]
