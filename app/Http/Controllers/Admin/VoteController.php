@@ -19,10 +19,10 @@ class VoteController extends Controller
      */
     public function index()
     {
-        $userId= auth()->id();
-        $receivedVotes = Vote::where('user_id', $userId)->get();
-        //Passo $receivedVotes alla vista Blade per visualizzarli
-        return view('admin.reviews.index', compact('receivedVotes'));
+        // $userId= auth()->id();
+        // $receivedVotes = Vote::where('user_id', $userId)->get();
+        // //Passo $receivedVotes alla vista Blade per visualizzarli
+        // return view('admin.reviews.index', compact('receivedVotes'));
 
     }
 
@@ -47,8 +47,6 @@ class VoteController extends Controller
      */
     public function show(Vote $vote)
     {
-        //show del singolo messaggio 
-        return view('admin.reviews.show', compact('vote'));
 
     }
 

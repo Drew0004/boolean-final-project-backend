@@ -36,7 +36,6 @@
     </tbody>
 </table>
 
-@dd($receivedVotes);
 <table class="table">
     <thead>
         <tr>
@@ -45,7 +44,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($receivedVotes as $vote)
+        @foreach ($user->votes as $vote)
             <tr>
                 <td>{{ $vote->label }}</td>
                 <td>{{ $vote->vote }}</td>
