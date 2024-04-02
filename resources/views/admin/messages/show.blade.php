@@ -22,7 +22,7 @@
                 <td>{{ $message->email }}</td>
                 <td>{{ $message->message }}</td>
                 <td>{{ $message->created_at }}</td>
-                <td>
+                {{-- <td>
                     <div class="offcanvas-body">
                         <form class="mt-5" id="deleteForm{{ $message->id }}"
                             action="{{ route('admin.messages.destroy', ['message' => $message->id]) }}" method="POST">
@@ -31,6 +31,28 @@
                             <button type="submit" class="btn btn-danger">Conferma eliminazione</button>
                         </form>
                     </div>
+                </td> --}}
+
+                <td>
+                    <div class="offcanvas offcanvas-end d" tabindex="-1"
+                                    id="deleteConfirmation{{ $message->id , $message->email }}">
+                                    <div class="offcanvas-header">
+                                        <h5 class="offcanvas-title" id="deleteConfirmationLabel{{ $message->id , $message->email }}">
+                                            Conferma eliminazione
+                                        </h5>
+                                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <p>Vuoi davvero eliminare il messaggio di <h5 class=" d-inline-block ">{{ $message->firstname }} {{ $message->lastname }}</h5> ?</p>
+                                        <form class="mt-5" id="deleteForm{{ $message->id }}"
+                                            action="{{ route('admin.messages.destroy', ['message' => $message->id]) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">Conferma eliminazione</button>
+                                        </form>
+                                    </div>
+                                </div>
                 </td>
                 
             </tr>
