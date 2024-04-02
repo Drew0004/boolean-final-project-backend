@@ -22,13 +22,14 @@ class UserController extends Controller
         ]);
     }
 
-    public function show(User $user)
+    public function show($userId)
     {
-        $user = User::with('userDetails', 'roles', 'votes', 'messages')->firstOrFail();
+        // Trova l'utente con i dettagli, i ruoli, i voti e i messaggi
+        $user = User::with('userDetails', 'roles', 'votes', 'messages')->findOrFail($userId);
 
         return response()->json([
             'success' => true,
-            'results' => $user,
+            'result' => $user,
         ]);
     }
 }
