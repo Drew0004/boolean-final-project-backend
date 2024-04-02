@@ -129,4 +129,14 @@
         'lastname' => 'Riva',
         'description' => "Una delusione totale. L'artista era fuori forma e il suono era pessimo. L'organizzazione era confusa e l'atmosfera era deprimente. Non consiglierei a nessuno di partecipare a simili eventi."
     ],
+    [
+        'firstname' => 'Gabriele',
+        'lastname' => 'Costa',
+        'description' => "Una serata straordinaria! L'artista ha dato una performance eccezionale e il suono era perfetto. L'organizzazione era impeccabile e l'atmosfera era vibrante. Consiglio vivamente a tutti di partecipare a questo tipo di eventi!"
+    ],
+    [
+        'firstname' => 'Elena',
+        'lastname' => 'Ricci',
+        'description' => "Un concerto deludente. L'artista sembrava poco coinvolto e il suono era scadente. L'organizzazione era confusa e l'atmosfera era piatta. Spero che il prossimo evento sia migliore di questo."
+    ],
    ];
