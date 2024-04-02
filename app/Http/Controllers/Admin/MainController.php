@@ -95,7 +95,8 @@ class MainController extends Controller
             $user->roles()->sync($userData['roles']);
         }
         else {
-            $user->roles->detach();
+            // $user->roles->detach();
+            $user->roles()->detach();
         }
 
         return redirect()->route('admin.dashboard');   
