@@ -130,7 +130,8 @@
                                 type="checkbox"
                                 id="role-{{ $role->id }}"
                                 name="roles[]"
-                                value="{{ $role->id }}">
+                                value="{{ $role->id }}"
+                                required>
                             <label class="form-check-label" for="role-{{ $role->id }}">{{ $role->title }}</label>
                         </div>
                     @endforeach
