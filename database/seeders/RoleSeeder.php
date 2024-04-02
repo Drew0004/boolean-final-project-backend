@@ -25,43 +25,43 @@ class RoleSeeder extends Seeder
         $allRoles = [
             [
                 'title' => 'Cantante',
-                'icon' => 'microphone.png',
+                'icon' => '/images/microphone.png',
             ],
             [
                 'title' => 'Chitarrista',
-                'icon' => 'electric-guitar.png',
+                'icon' => '/images/electric-guitar.png',
             ],
             [
                 'title' => 'Bassista',
-                'icon' => 'bass-guitar.png',
+                'icon' => '/images/bass-guitar.png',
             ],
             [
                 'title' => 'Batterista',
-                'icon' => 'drum.png',
+                'icon' => '/images/drum.png',
             ],
             [
                 'title' => 'Testierista',
-                'icon' => 'music.png',
+                'icon' => '/images/music.png',
             ],
             [
                 'title' => 'Pianista',
-                'icon' => 'grand-piano.png',
+                'icon' => '/images/grand-piano.png',
             ],
             [
                 'title' => 'Violinista',
-                'icon' => 'violin.png',
+                'icon' => '/images/violin.png',
             ],
             [
                 'title' => 'Trombettista',
-                'icon' => 'trumpet.png',
+                'icon' => '/images/trumpet.png',
             ],
             [
                 'title' => 'Sassofonista',
-                'icon' => 'saxophone.png',
+                'icon' => '/images/saxophone.png',
             ],
             [
                 'title' => 'Band Musicale',
-                'icon' => 'music-band.png',
+                'icon' => '/images/music-band.png',
             ],
         ];
 
