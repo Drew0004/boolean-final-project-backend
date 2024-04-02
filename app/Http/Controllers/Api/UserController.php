@@ -13,7 +13,7 @@ class UserController extends Controller
     public function index()
     {
         // Da aggiungere le sponsor
-        $users = User::with('userDetails', 'roles', 'votes', 'messages')->paginate(5);
+        $users = User::with('userDetails', 'roles', 'votes', 'messages')->paginate(20);
         // $users = User::paginate(4);
 
         return response()->json([
@@ -32,4 +32,5 @@ class UserController extends Controller
             'result' => $user,
         ]);
     }
+
 }
