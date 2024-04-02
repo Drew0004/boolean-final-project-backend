@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
+// Models
+use App\Models\Role;
+
+
 class RegisteredUserController extends Controller
 {
     /**
@@ -20,7 +24,8 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('auth.register');
+        $roles = Role::all();
+        return view('auth.register', compact('roles'));
     }
 
     /**
@@ -35,14 +40,19 @@ class RegisteredUserController extends Controller
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'city' => ['required', 'string', 'max:255'],
+            'roles' => ['required', 'array', 'exists:roles,id'],
         ]);
 
+        // Creo l'utente
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'city' => $request->city,
         ]);
+
+        // Ci aggancio i ruoli
+        $user->roles()->sync($request->roles);
 
         event(new Registered($user));
 
