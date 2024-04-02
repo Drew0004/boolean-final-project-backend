@@ -26,15 +26,14 @@ Route::name('api.')->group(function() {
 
     Route::resource('users', UserController::class)->only([
         'index',
-        'show'
+        'show',
     ]);
 
     Route::resource('roles', RoleController::class)->only([
         'index',
     ]);
 
-    Route::get('/users/search/{name}', [UserController::class, 'search']);
-
+    Route::get('users/search/{name}', [UserController::class, 'search']);
 
 });
 

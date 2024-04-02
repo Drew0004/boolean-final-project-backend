@@ -36,19 +36,20 @@ class UserController extends Controller
 
     public function search(Request $request)
     {
+
         $name = $request->input('name');
         //PROVA DI UNA QUERY http://127.0.0.1:8000/api/users/search/Cilino
         // Trova l'utente con i dettagli, i ruoli, i voti e i messaggi
         $user = User::where('name', 'like', '%'.$name.'%')->get();
 
-
+        dd($user);
 
         return response()->json([
             'success' => true,
             'result' => $user,
         ]);
 
-
     }
+
 
 }
