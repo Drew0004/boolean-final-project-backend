@@ -32,8 +32,6 @@
 
             {{-- Input della demo --}}
             <div class="my-3">
-                <label for="demo" class="form-label text-white">Carica una demo!</label>
-                <input class="form-control @error('demo') is-invalid @enderror" type="file" id="demo" name="demo">
 
                 @if ($user->userDetails->demo != null)
                 <div class="mt-2">
@@ -53,6 +51,9 @@
                         </label>
                     </div>
                 </div>
+                @else
+                <label for="demo" class="form-label text-white">Carica una demo!</label>
+                <input class="form-control @error('demo') is-invalid @enderror" type="file" id="demo" name="demo">
                 @endif
             </div>
             @error('demo')
