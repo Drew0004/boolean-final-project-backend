@@ -33,6 +33,9 @@ Route::name('api.')->group(function() {
         'index',
     ]);
 
+    Route::get('/users/search/{name}', [UserController::class, 'search']);
+
+
 });
 
 
