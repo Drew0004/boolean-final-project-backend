@@ -15,46 +15,47 @@
 
         <!-- Name -->
         <div>
-            <label for="name">
-                Nome
+            <label class="form-label" for="name">
+                Nome*
             </label>
-            <input type="text" id="name" name="name" required maxlength="255">
+            <input class="form-control @error('name') is-invalid @enderror" type="text" id="name" name="name" required maxlength="255">
         </div>
 
         <!-- Email Address -->
         <div class="mt-4">
-            <label for="email">
-                Email
+            <label class="form-label" for="email">
+                Email*
             </label>
-            <input type="email" id="email" name="email" required maxlength="255">
+            <input class="form-control @error('email') is-invalid @enderror" type="email" id="email" name="email" required maxlength="255">
         </div>
 
         <!-- Password -->
         <div class="mt-4">
-            <label for="password">
-                Password
+            <label class="form-label" for="password">
+                Password*
             </label>
-            <input type="password" id="password" name="password" required>
+            <input class="form-control @error('password') is-invalid @enderror" type="password" id="password" name="password" required>
         </div>
 
         <!-- Confirm Password -->
         <div class="mt-4">
-            <label for="password_confirmation">
-                Conferma Password
+            <label class="form-label" for="password_confirmation">
+                Conferma Password*
             </label>
-            <input type="password" id="password_confirmation" name="password_confirmation" required>
+            <input class="form-control @error('password_confirmation') is-invalid @enderror" type="password" id="password_confirmation" name="password_confirmation" required>
         </div>
 
         <!-- City -->
         <div class="mt-4">
-            <label for="city">
-                Città
+            <label class="form-label" for="city">
+                Città*
             </label>
-            <input type="text" id="city" name="city" placeholder="Inserisci una città (es.Milano)..." required maxlength="255">
+            <input class="form-control @error('city') is-invalid @enderror" type="text" id="city" name="city" placeholder="Inserisci una città (es.Milano)..." required maxlength="255">
         </div>
 
         <div>
                     
+            <div class="form-label">Ruoli*</div>
             @foreach ($roles as $role)
                 <div class="form-check form-check-inline">
                     <input
@@ -70,11 +71,11 @@
         </div>
 
         <div>
-            <a href="{{ route('login') }}">
+            <a class="text-decoration-none" href="{{ route('login') }}">
                 {{ __('Already registered?') }}
             </a>
 
-            <button type="submit">
+            <button class="ms-2 btn btn-primary" type="submit">
                 Registrati
             </button>
         </div>

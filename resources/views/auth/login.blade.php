@@ -15,24 +15,24 @@
 
         <!-- Email Address -->
         <div>
-            <label for="email">
+            <label class="form-label" for="email">
                 Email
             </label>
-            <input type="email" id="email" name="email">
+            <input class="form-control @error('email') is-invalid @enderror" type="email" id="email" name="email">
         </div>
 
         <!-- Password -->
         <div class="mt-4">
-            <label for="password">
+            <label class="form-label" for="password">
                 Password
             </label>
-            <input type="password" id="password" name="password">
+            <input class="form-control @error('password') is-invalid @enderror" type="password" id="password" name="password">
         </div>
 
         <!-- Remember Me -->
         <div class="mt-4">
             <label for="remember_me">
-                <input id="remember_me" type="checkbox" name="remember">
+                <input class="form-check-input" id="remember_me" type="checkbox" name="remember">
                 <span>Remember me</span>
             </label>
         </div>
@@ -44,7 +44,7 @@
                 </a>
             @endif
 
-            <button type="submit">
+            <button class="btn btn-primary" type="submit">
                 Log in
             </button>
         </div>
