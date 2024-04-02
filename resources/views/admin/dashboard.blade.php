@@ -12,22 +12,22 @@
                     </h1>
                     <h3>I tuoi dati:</h3>
                     <ul class="list-unstyled">
-                        <li>{{ $user->city }}</li>
+                        <li>Città: {{ $user->city }}</li>
                         
                         @isset($user->userDetails->bio)
-                        <li>{{ $user->userDetails->bio }}</li>
+                        <li>Bio: {{ $user->userDetails->bio }}</li>
                         @else 
                         <li>-</li>
                         @endisset
 
                         @isset($user->userDetails->cellphone)
-                        <li>{{ $user->userDetails->cellphone }}</li>
+                        <li>Cellulare: {{ $user->userDetails->cellphone }}</li>
                         @else 
                         <li>-</li>
                         @endisset
 
                         @isset($user->userDetails->members)
-                        <li>{{ $user->userDetails->members }}</li>
+                        <li>Membri: {{ $user->userDetails->members }}</li>
                         @else 
                         <li>-</li>
                         @endisset
@@ -40,13 +40,22 @@
 
                         @isset($user->userDetails->demo)
                         <li>
+                            Demo:
                             <audio controls>
                                 <source src="{{ asset('storage/'.$user->userDetails->demo) }}" type="audio/mpeg">
 
                             </audio>
                         </li>
                         @else 
-                        <li>-</li>
+                        <li>Demo non presente</li>
+                        @endisset
+
+                        @isset($user->roles)
+                            @foreach($user->roles as $singleRole)
+                                <li>{{ $singleRole->title }}</li>
+                            @endforeach
+                        @else 
+                            <li>Nessun ruolo assegnato</li>
                         @endisset
 
                     </ul>
