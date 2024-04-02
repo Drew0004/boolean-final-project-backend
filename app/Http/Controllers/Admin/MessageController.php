@@ -11,6 +11,9 @@ use App\Models\Message;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+// Facades
+use Illuminate\Support\Facades\Auth;
+
 class MessageController extends Controller
 {
     /**
@@ -49,8 +52,15 @@ class MessageController extends Controller
      */
     public function show(Message $message)
     {
-        //show del singolo messaggio 
+        // Verifico se l'utente è autorizzato a visualizzare il messaggio
+        if (Auth::id() !== $message->user_id) {
+            // Se l'utente non è autorizzato, ritorna un errore 403 (Forbidden)
+            abort(403, 'Unauthorized');
+        }
+
+        // Se l'utente è autorizzato, mostra il messaggio
         return view('admin.messages.show', compact('message'));
+
     }
 
     /**

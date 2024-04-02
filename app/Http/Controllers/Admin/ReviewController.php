@@ -31,6 +31,10 @@ class ReviewController extends Controller
      */
     public function show(Review $review)
     {
+        if (Auth::id() !== $review->user_id) {
+            // Se l'utente non è autorizzato, ritorna un errore 403 (Forbidden)
+            abort(403, 'Unauthorized');
+        }
         // Mostra i dettagli della recensione
         return view('admin.reviews.show', compact('review'));
     }
