@@ -26,8 +26,10 @@ class MessageController extends Controller
         $userId = auth()->id();
         // Recupera tutti i messaggi associati all'ID dell'utente corrente
         $receivedMessages = Message::where('user_id', $userId)->get();
+
+        $softDeletedMessages = Message::onlyTrashed()->get();
         //Passo $receivedMessages alla vista Blade per visualizzarli
-        return view('admin.messages.index', compact('receivedMessages'));
+        return view('admin.messages.index', compact('receivedMessages', 'softDeletedMessages'));
 
     }
 
@@ -89,5 +91,26 @@ class MessageController extends Controller
         $message->delete();
         return redirect()->route('admin.messages.index')->with('success', 'Messaggio cancellato con successso');
     
+    }
+
+    public function restore($id){
+        $message = Message::withTrashed()->find($id);
+
+        if (!$message) {
+            abort(404, 'Not Found');
+        }
+        $message->restore();
+        return redirect()->route('admin.messages.index')->with('success', 'Messaggio cancellato con successso');
+    }
+
+    public function forcedelete($id)
+    {
+        $message = Message::withTrashed()->find($id);
+
+        if (!$message) {
+            abort(404, 'Not Found');
+        }
+        $message->forceDelete();
+        return redirect()->route('admin.messages.index')->with('success', 'Messaggio cancellato con successso');
     }
 }

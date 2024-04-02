@@ -39,6 +39,10 @@ Route::prefix('admin')
     Route::resource('messages', AdminMessageController::class);
     Route::resource('votes', AdminVoteController::class);
 
+    Route::delete('/messages/{message}/restore', [AdminMessageController::class, 'restore'])->name('messages.restore');
+
+    Route::delete('/messages/{message}/forcedelete', [AdminMessageController::class, 'forcedelete'])->name('messages.forcedelete');
+
     // Rotte dell'utente
     Route::get('/users/edit', [AdminMainController::class, 'edit'])->name('edit');
     Route::put('/users/update', [AdminMainController::class, 'update'])->name('update');
