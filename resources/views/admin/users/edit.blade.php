@@ -41,7 +41,7 @@
                     <div>
                         <audio controls>
                             <source src="{{ asset('storage/'.$user->userDetails->demo) }}" type="audio/mpeg">
-    
+                                <source src="{{ asset('storage/'.$user->userDetails->demo) }}" type="audio/mpeg">
                         </audio>
                     </div>
                     <div class="form-check">

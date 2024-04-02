@@ -43,7 +43,6 @@
                             Demo:
                             <audio controls>
                                 <source src="{{ asset('storage/'.$user->userDetails->demo) }}" type="audio/mpeg">
-
                             </audio>
                         </li>
                         @else 
