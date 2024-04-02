@@ -51,6 +51,11 @@ class RegisteredUserController extends Controller
             'city' => $request->city,
         ]);
 
+        // Inserisco l'id dell'utente nella tabella user details
+        $user->userDetails()->create([
+            'user_id' => $user->id,
+        ]);
+
         // Ci aggancio i ruoli
         $user->roles()->sync($request->roles);
 
