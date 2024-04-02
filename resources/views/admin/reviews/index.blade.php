@@ -23,11 +23,12 @@
                 <td>{{ $review->lastname }}</td>
                 <td>{{ $review->description }}</td>
                 <td>
+                    <button class="btn btn-primary">
+                        <a class="text-decoration-none text-white" href="{{ route('admin.reviews.show', $review) }}">Show</a>
+                    </button>
                     {{-- <a href="{{ route('admin.reviews.show', $review) }}" class="btn btn-success btn-sm">View</a> --}}
-                    <a href="{{ route('admin.reviews.show', $review) }}">View</a>
-                    
-                    
                 </td>
+
             </tr>
         @endforeach
         
