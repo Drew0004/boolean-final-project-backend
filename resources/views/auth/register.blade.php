@@ -63,7 +63,7 @@
                         id="role-{{ $role->id }}"
                         name="roles[]"
                         value="{{ $role->id }}"
-                        required>
+                        minlength="1">
                     <label class="form-check-label" for="role-{{ $role->id }}">{{ $role->title }}</label>
                 </div>
             @endforeach

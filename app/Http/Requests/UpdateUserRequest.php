@@ -31,7 +31,7 @@ class UpdateUserRequest extends FormRequest
             'bio' => 'nullable|string|max:1024',
             'cellphone' => 'nullable|string|max:24',
             'members' => 'nullable|string|max:1024',
-            'roles' => 'required|array|exists:roles,id',
+            'roles' => 'required|array|min:1|exists:roles,id',
 
         ];
     }
