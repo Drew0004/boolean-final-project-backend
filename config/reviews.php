@@ -11,7 +11,7 @@
     ],
     [
         'firstname'=>'Federico',
-        'lastname'=>'Aliquò',
+        'lastname'=>'Benevento',
         'description'=> 'Questo concerto ha creato delle atmosfere magiche che mi hanno rapito fin dal primo momento.
         Il perfomer ha saputo coinvolgere il pubblico con la sua presenza carismatica e
         le sue performance straordinarie. La musica ha trasportato tutti in un viaggio
@@ -35,13 +35,98 @@
         sempre. Non vedo l'ora di rivivere un'esperienza simile in futuro!",
     ],
     [
-        'firstname'=>'Leonardo',
-        'lastname'=>'Parisi',
+        'firstname'=>'Tommaso',
+        'lastname'=>'Verdi',
         'description'=> "Purtroppo, questo concerto è stato un completo
         fallimento. L'organizzazione è stata disastrosa e l'artista
         sembrava completamente fuori forma. Il suono era terribile e
         l'atmosfera era cupa e deprimente. È stato un vero spreco di
         tempo e denaro. Consiglio vivamente di evitare questo tipo di
         eventi in futuro.",
+    ],
+    [
+        'firstname' => 'Giulia',
+        'lastname' => 'Bianchi',
+        'description' => "Sono rimasta delusa da questo spettacolo. Nonostante le aspettative, l'evento è stato un fiasco totale. L'organizzazione era pessima e l'artista sembrava non essere in forma. Il suono era disturbato e l'atmosfera era piatta. Non consiglierei a nessuno di partecipare a simili eventi."
+    ],
+    [
+        'firstname' => 'Marco',
+        'lastname' => 'Rossi',
+        'description' => "È stato un concerto incredibile! L'artista ha dato il meglio di sé, coinvolgendo il pubblico con le sue performance emozionanti. L'organizzazione era impeccabile e il suono era perfetto. Un'esperienza indimenticabile che consiglio vivamente a tutti gli amanti della musica."
+    ],
+    [
+        'firstname' => 'Sara',
+        'lastname' => 'Ferrari',
+        'description' => "Questo evento è stato una delusione totale. L'organizzazione lasciava molto a desiderare e l'artista non ha dato il meglio di sé. Il suono era scadente e l'atmosfera era deprimente. Non consiglierei a nessuno di partecipare a simili eventi."
+    ],
+    [
+        'firstname' => 'Luca',
+        'lastname' => 'Romano',
+        'description' => "Che serata fantastica! Il concerto è stato spettacolare e l'atmosfera era elettrizzante. L'artista ha dato una performance straordinaria e il suono era cristallino. Non vedo l'ora di assistere al prossimo concerto!"
+    ],
+    [
+        'firstname' => 'Alessia',
+        'lastname' => 'Rizzo',
+        'description' => "Ho trovato questo evento estremamente deludente. L'organizzazione era confusa e l'artista sembrava non essere preparato. Il suono era pessimo e l'atmosfera era triste. Non rifarei mai l'esperienza."
+    ],
+    [
+        'firstname' => 'Giovanni',
+        'lastname' => 'Martini',
+        'description' => "Sono rimasto molto deluso da questo spettacolo. L'organizzazione era scarsa e l'artista non ha soddisfatto le aspettative. Il suono era mediocre e l'atmosfera era noiosa. Non lo consiglierei a nessuno."
+    ],
+    [
+        'firstname' => 'Chiara',
+        'lastname' => 'Conti',
+        'description' => "Incredibile! Questo concerto ha superato ogni aspettativa. L'artista ha dimostrato un talento straordinario e il suono era perfetto. Un'esperienza che ricorderò per sempre. Consiglio vivamente a tutti di partecipare a eventi di questo genere."
+    ],
+    [
+        'firstname' => 'Francesco',
+        'lastname' => 'Galli',
+        'description' => "Sono rimasto molto deluso da questo concerto. L'organizzazione era caotica e l'artista non ha soddisfatto le aspettative. Il suono era pessimo e l'atmosfera era triste. Non valeva assolutamente il prezzo del biglietto."
+    ],
+    [
+        'firstname' => 'Elisa',
+        'lastname' => 'Leoni',
+        'description' => "Questo evento è stato una completa delusione. L'organizzazione era un disastro e l'artista sembrava non essere nel suo miglior stato di forma. Il suono era terribile e l'atmosfera era deprimente. Non lo consiglierei a nessuno."
+    ],
+    [
+        'firstname' => 'Matteo',
+        'lastname' => 'Conte',
+        'description' => "Uno dei migliori concerti a cui abbia mai assistito! L'energia dell'artista e la qualità del suono erano eccezionali. L'organizzazione era perfetta e l'atmosfera era vibrante. Non vedo l'ora di rivivere un'esperienza simile!"
+    ],
+    [
+        'firstname' => 'Anna',
+        'lastname' => 'Moretti',
+        'description' => "Una serata davvero deludente. L'artista sembrava poco motivato e il suono era pessimo. L'organizzazione era confusa e l'atmosfera era noiosa. Spero che il prossimo evento sia migliore di questo."
+    ],
+    [
+        'firstname' => 'Andrea',
+        'lastname' => 'Colombo',
+        'description' => "Che emozione! Il concerto è stato straordinario e l'artista ha fatto un lavoro incredibile. Il suono era perfetto e l'atmosfera era magica. Consiglio vivamente a tutti di vivere questa esperienza!"
+    ],
+    [
+        'firstname' => 'Martina',
+        'lastname' => 'Fabbri',
+        'description' => "Una serata indimenticabile! L'artista ha dato una performance eccezionale e il suono era perfetto. L'organizzazione era impeccabile e l'atmosfera era elettrizzante. Non vedo l'ora di tornare ad un altro concerto!"
+    ],
+    [
+        'firstname' => 'Riccardo',
+        'lastname' => 'Marini',
+        'description' => "Sono rimasto deluso da questo concerto. L'artista sembrava poco coinvolto e il suono era scadente. L'organizzazione era confusionaria e l'atmosfera era piatta. Non lo consiglierei a nessuno."
+    ],
+    [
+        'firstname' => 'Silvia',
+        'lastname' => 'Galli',
+        'description' => "Un'esperienza davvero deludente. L'artista era fuori forma e il suono era pessimo. L'organizzazione era confusa e l'atmosfera era deprimente. Spero che il prossimo evento sia migliore di questo."
+    ],
+    [
+        'firstname' => 'Paolo',
+        'lastname' => 'De Luca',
+        'description' => "Che concerto incredibile! L'artista ha dato il massimo e il suono era perfetto. L'organizzazione era impeccabile e l'atmosfera era elettrizzante. Non vedo l'ora di rivivere questa esperienza!"
+    ],
+    [
+        'firstname' => 'Valentina',
+        'lastname' => 'Riva',
+        'description' => "Una delusione totale. L'artista era fuori forma e il suono era pessimo. L'organizzazione era confusa e l'atmosfera era deprimente. Non consiglierei a nessuno di partecipare a simili eventi."
     ],
    ];
