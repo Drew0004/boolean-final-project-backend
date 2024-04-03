@@ -34,6 +34,7 @@ Route::prefix('admin')
     ->group(function () {
 
     Route::get('/dashboard', [AdminMainController::class, 'dashboard'])->name('dashboard');
+    Route::get('/users/statistics', [AdminMainController::class, 'statistics'])->name('statistics');
 
     Route::resource('reviews', ReviewController::class);
     Route::resource('messages', AdminMessageController::class);

@@ -34,7 +34,7 @@
                                 <a class="nav-link" href="{{ route('admin.reviews.index') }}">Le mie recensioni</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#nogo">Le mie statistiche</a>
+                                <a class="nav-link" href="{{ route('admin.statistics') }}">Le mie statistiche</a>
                             </li>
                         </ul>
                         <form method="POST" action="{{ route('logout') }}">

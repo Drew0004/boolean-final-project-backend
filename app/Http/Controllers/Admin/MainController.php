@@ -102,5 +102,19 @@ class MainController extends Controller
         return redirect()->route('admin.dashboard');   
     }
 
+    public function statistics()
+    {
+        // Ottieni l'utente autenticato
+        $user = Auth::user();
+
+        // Otteni la somma dei voti per l'utente autenticato
+        $totalVotes = $user->votes()->count();
+        $totalReviews = $user->reviews()->count();
+        $totalMessages = $user->messages()->count();
+
+
+        return view('admin.users.statistics', compact('user', 'totalVotes', 'totalReviews', 'totalMessages'));
+    }
+
 
 }

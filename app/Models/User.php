@@ -61,6 +61,11 @@ class User extends Authenticatable
         return $this->hasMany(Message::class);
     }
 
+    // Relazione one to many con le reviews
+    public function reviews(){
+        return $this->hasMany(Review::class);
+    }
+
     //Relazione many to many con sponsor
     public function sponsors(){
         return $this->belongsToMany(Sponsor::class);
