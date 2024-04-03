@@ -34,7 +34,7 @@ class UserController extends Controller
         ]);
     }
 
-    public function search(Request $request)
+    /* public function search(Request $request)
     {
 
         $name = $request->input('name');
@@ -42,13 +42,23 @@ class UserController extends Controller
         // Trova l'utente con i dettagli, i ruoli, i voti e i messaggi
         $user = User::where('name', 'like', '%'.$name.'%')->get();
 
-        dd($user);
+        
 
         return response()->json([
             'success' => true,
             'result' => $user,
         ]);
 
+    } */
+    public function search(Request $request)
+    {
+        $name = $request->query('name');
+        if (!empty($name)) {
+            $users = User::where('name', 'like', '%'.$name.'%')->get();
+            // Resto del codice rimane invariato
+        } else {
+            // Restituisci un errore o un messaggio appropriato
+        }
     }
 
 
