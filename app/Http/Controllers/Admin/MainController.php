@@ -107,13 +107,19 @@ class MainController extends Controller
         // Ottieni l'utente autenticato
         $user = Auth::user();
 
-        // Otteni la somma dei voti per l'utente autenticato
+        // Otteni la somma dei voti, messaggi e recensioni per l'utente autenticato
         $totalVotes = $user->votes()->count();
         $totalReviews = $user->reviews()->count();
         $totalMessages = $user->messages()->count();
 
+        // Ottieni la somma dei voti per ciascuna etichetta per l'utente autenticato
+        $voteCounts = $user->votes()
+        ->select('label', \DB::raw('COUNT(*) as total_votes'))
+        ->groupBy('label')
+        ->pluck('total_votes', 'label');
 
-        return view('admin.users.statistics', compact('user', 'totalVotes', 'totalReviews', 'totalMessages'));
+
+        return view('admin.users.statistics', compact('user', 'totalVotes', 'totalReviews', 'totalMessages', 'voteCounts'));
     }
 
 

@@ -28,8 +28,6 @@
 
                         @isset($user->userDetails->members)
                         <li>Membri: {{ $user->userDetails->members }}</li>
-                        @else 
-                        <li>-</li>
                         @endisset
 
                         @isset($user->userDetails->picture)
