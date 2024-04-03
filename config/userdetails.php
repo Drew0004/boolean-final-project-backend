@@ -131,7 +131,7 @@
         [
             'id' => '15',
             'demo' => '/audio/DemoHouse.mp3',
-            'picture' => '/user-images/MarioRicci.jpg',
+            'picture' => '/user-images/MarcoRicci.jpg',
             'bio' => 'Sono Marco Ricci, un musicista solista con una passione travolgente per la musica. Con il mio talento e la mia creatività, porto la magia della musica su ogni palco che calcio. Ho una vasta esperienza nel mondo della musica e sono pronto a emozionare il pubblico con le mie performance coinvolgenti.',
             'cellphone' => '+39 3505678901',
             'members' => null
