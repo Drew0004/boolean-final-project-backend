@@ -55,6 +55,14 @@
                             <li>Nessun ruolo assegnato</li>
                         @endisset
 
+                        @isset($user->roles)
+                            @foreach($user->roles as $singleRole)
+                            <li><img style="width: 30px" src="{{ asset('storage/'.$singleRole->icon) }}" alt=""></li>
+                            @endforeach
+                        @else 
+                        <li>Nessun ruolo assegnato</li>
+                        @endisset
+
                     </ul>
                 </div>
             </div>
