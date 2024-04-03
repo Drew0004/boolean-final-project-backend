@@ -19,22 +19,33 @@ class UserSponsorSeeder extends Seeder
      */
     public function run(): void
     {
-        for ($i = 0; $i < 10; $i++) { 
-            $randomUser = User::inRandomOrder()->first();
-            $randomSponsor = Sponsor::inRandomOrder()->first();
+        $sponsorships = config('sponsorships');
+
+        // Generazione random
+        // for ($i = 0; $i < 10; $i++) { 
+        //     $randomUser = User::inRandomOrder()->first();
+        //     $randomSponsor = Sponsor::inRandomOrder()->first();
         
-            // Verifico se la coppia esiste già nella tabella
-            $existigData = DB::table('user_sponsor')
-                ->where('user_id', $randomUser->id)
-                ->where('sponsor_id', $randomSponsor->id)
-                ->exists();
+        //     // Verifico se la coppia esiste già nella tabella
+        //     $existigData = DB::table('user_sponsor')
+        //         ->where('user_id', $randomUser->id)
+        //         ->where('sponsor_id', $randomSponsor->id)
+        //         ->exists();
         
-            // Se la coppia non esiste, inserisco il nuovo dato
-            if (!$existigData) {
-                DB::table('user_sponsor')->insert([
-                    ['user_id' => $randomUser->id, 'sponsor_id' => $randomSponsor->id]
-                ]);
-            }
+        //     // Se la coppia non esiste, inserisco il nuovo dato
+        //     if (!$existigData) {
+        //         DB::table('user_sponsor')->insert([
+        //             ['user_id' => $randomUser->id, 'sponsor_id' => $randomSponsor->id]
+        //         ]);
+        //     }
+        // }
+
+        //Generazione stabilita da noi
+
+        foreach($sponsorships as $singleSponsor){
+            DB::table('user_sponsor')->insert([
+                ['user_id' => $singleSponsor['user_id'], 'sponsor_id' => $singleSponsor['sponsor_id']]
+            ]);
         }
     }
 }
