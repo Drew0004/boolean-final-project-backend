@@ -43,8 +43,30 @@ class UserSponsorSeeder extends Seeder
         //Generazione stabilita da noi
 
         foreach($sponsorships as $singleSponsor){
+            $hoursToAdd = 0; // Default
+            switch ($singleSponsor['sponsor_id']) {
+                case '1': //Piano bronze
+                    $hoursToAdd = 24;
+                    break;
+                case '2': //Piano Silver
+                    $hoursToAdd = 48;
+                    break;
+                case '3': //Piano gold
+                    $hoursToAdd = 144;
+                    break;
+            }
+
+            // Aggiungo le ore al timestamp corrente
+            $expiredAt = now()->addHours($hoursToAdd);
+            
             DB::table('user_sponsor')->insert([
-                ['user_id' => $singleSponsor['user_id'], 'sponsor_id' => $singleSponsor['sponsor_id']]
+                [
+                    'user_id' => $singleSponsor['user_id'], 
+                    'sponsor_id' => $singleSponsor['sponsor_id'],
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                    'expired_at' => $expiredAt,
+                ]
             ]);
         }
     }
