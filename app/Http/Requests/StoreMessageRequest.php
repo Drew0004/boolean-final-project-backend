@@ -22,6 +22,7 @@ class StoreMessageRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'user_id' => 'required|exists:users,id',
             'firstname'=> 'required|max:74',
             'lastname'=> 'required|max:74',
             'email'=> 'required|email|max:255',
