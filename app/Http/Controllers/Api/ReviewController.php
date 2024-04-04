@@ -17,7 +17,7 @@ class ReviewController extends Controller
     public function store(ReviewStoreRequest $request){
 
         $reviewData = $request->validated();
-        $message = Review::create([
+        $review = Review::create([
             'user_id' => $reviewData['user_id'],
             'firstname' => $reviewData['firstname'],
             'lastname' => $reviewData['lastname'],
