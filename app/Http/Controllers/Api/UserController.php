@@ -13,7 +13,7 @@ class UserController extends Controller
     public function index()
     {
         // Da aggiungere le sponsor
-        $users = User::with('userDetails', 'roles', 'votes', 'messages')->paginate(20);
+        $users = User::with('userDetails', 'roles', 'votes', 'messages', 'reviews')->paginate(20);
         // $users = User::paginate(4);
         
 

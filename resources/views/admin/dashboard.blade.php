@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-body">
                     <h1 class="text-center text-success">
-                        Bentornanto, {{ $user->name }}
+                        Bentornato, {{ $user->name }}
                     </h1>
                     <h3>I tuoi dati:</h3>
                     <ul class="list-unstyled">
