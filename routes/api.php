@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 //Controllers
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\RoleController;
+use App\Http\Controllers\Api\MessageController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +37,9 @@ Route::name('api.')->group(function() {
 
     /* Route::get('users/search/{name}', [UserController::class, 'search']); */
     Route::get('users/search', [UserController::class, 'search']);
+
+    // Rotta store messaggi
+    Route::post('/messages',[MessageController::class, 'store'])->name('messages.store');
 
 });
 

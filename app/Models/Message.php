@@ -11,6 +11,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Message extends Model
 {
     use HasFactory;
+    
+    protected $fillable= [
+        'firstname',
+        'lastname',
+        'email',
+        'message',
+    ];
 
     public function user(){
         return $this->belongsTo(User::class);
