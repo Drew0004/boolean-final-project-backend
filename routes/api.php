@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\RoleController;
 use App\Http\Controllers\Api\MessageController;
+use App\Http\Controllers\Api\ReviewController;
+use App\Http\Controllers\Api\VoteController;
+
+
 
 
 /*
@@ -40,6 +44,10 @@ Route::name('api.')->group(function() {
 
     // Rotta store messaggi
     Route::post('/messages',[MessageController::class, 'store'])->name('messages.store');
+    // Rotta store reviews
+    Route::post('/reviews',[ReviewController::class, 'store'])->name('reviews.store');
+    // Rotta store votes
+    Route::post('/votes',[VoteController::class, 'store'])->name('votes.store');
 
 });
 

@@ -11,7 +11,7 @@ class StoreVoteRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class StoreVoteRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'user_id' => 'required|exists:users,id',
+            'label'=> 'required|max:74',
+            'vote'=> 'required|max:74',
+            // eventuale accettazione dei termini
+            // 'accepted'=>'required|boolean|accepted'
         ];
     }
 }
