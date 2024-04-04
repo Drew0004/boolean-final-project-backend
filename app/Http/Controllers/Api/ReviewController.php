@@ -21,7 +21,7 @@ class ReviewController extends Controller
             'user_id' => $reviewData['user_id'],
             'firstname' => $reviewData['firstname'],
             'lastname' => $reviewData['lastname'],
-            'message' => $reviewData['description'],
+            'description' => $reviewData['description'],
         ]);
 
 
