@@ -23,10 +23,11 @@ class UserController extends Controller
         ]);
     }
 
-    public function show($userId)
+    public function show(string $name)
     {
         // Trova l'utente con i dettagli, i ruoli, i voti e i messaggi
-        $user = User::with('userDetails', 'roles', 'votes', 'messages')->findOrFail($userId);
+        // $user = User::with('userDetails', 'roles', 'votes', 'messages')->findOrFail($name);
+        $user = User::where('name', $name)->with('userDetails', 'roles', 'votes', 'messages')->firstOrFail();
 
         return response()->json([
             'success' => true,
