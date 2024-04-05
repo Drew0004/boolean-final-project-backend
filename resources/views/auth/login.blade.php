@@ -21,7 +21,7 @@
             <input class="form-control @error('email') is-invalid @enderror" type="email" id="email" name="email">
             @error('email')
                 <div class="alert alert-danger">
-                    Inserisci l'email
+                    {{ $message }}
                 </div>
             @enderror
         </div>
@@ -34,7 +34,7 @@
             <input class="form-control @error('password') is-invalid @enderror" type="password" id="password" name="password">
             @error('password')
                 <div class="alert alert-danger">
-                    Inserisci una password
+                    {{ $message }}
                 </div>
             @enderror
         </div>

@@ -21,7 +21,7 @@
             <input class="form-control @error('name') is-invalid @enderror" type="text" id="name" name="name" required maxlength="255">
             @error('name')
                 <div class="alert alert-danger">
-                    Inserisci il tuo nome o quello della tua band
+                    {{ $message }}
                 </div>
             @enderror
         </div>
@@ -34,7 +34,7 @@
             <input class="form-control @error('email') is-invalid @enderror" type="email" id="email" name="email" required maxlength="255">
             @error('email')
                 <div class="alert alert-danger">
-                    Inserisci una email valida
+                    {{ $message }}
                 </div>
             @enderror
         </div>
@@ -47,7 +47,7 @@
             <input class="form-control @error('password') is-invalid @enderror" type="password" id="password" name="password" required>
             @error('password')
                 <div class="alert alert-danger">
-                    Inserisci una password
+                    {{ $message }}
                 </div>
             @enderror
         </div>
@@ -60,7 +60,7 @@
             <input class="form-control @error('password_confirmation') is-invalid @enderror" type="password" id="password_confirmation" name="password_confirmation" required>
             @error('password_confirmation')
                 <div class="alert alert-danger">
-                    Inserisci la conferma password
+                    {{ $message }}
                 </div>
             @enderror
         </div>
@@ -73,7 +73,7 @@
             <input class="form-control @error('city') is-invalid @enderror" type="text" id="city" name="city" placeholder="Inserisci una città (es.Milano)..." required maxlength="255">
             @error('city')
                 <div class="alert alert-danger">
-                    Inserisci una città
+                    {{ $message }}
                 </div>
             @enderror
         </div>
@@ -95,7 +95,7 @@
             @endforeach
             @error('roles')
                 <div class="alert alert-danger">
-                    Inserisci uno o più ruoli
+                    {{ $message }}
                 </div>
             @enderror
         </div>
@@ -104,10 +104,11 @@
             <a class="text-decoration-none" href="{{ route('login') }}">
                 {{ __('Already registered?') }}
             </a>
-
+        
             <button class="ms-2 btn btn-primary" type="submit">
                 Registrati
             </button>
+            
         </div>
     </form>
 @endsection

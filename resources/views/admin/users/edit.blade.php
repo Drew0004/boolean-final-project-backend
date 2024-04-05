@@ -25,7 +25,7 @@
                 <input value="{{ $user->name }}" type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" placeholder="Inserisci il Nome..." maxlength="255" required>
                 @error('username')
                     <div class="alert alert-danger">
-                        Inserisci lo username
+                        {{ $message }}
                     </div>
                 @enderror
             </div>
@@ -36,7 +36,7 @@
                 <input value="{{ $user->city }}" type="text" class="form-control @error('city') is-invalid @enderror" id="city" name="city" placeholder="Inserisci la città..." maxlength="255" required>
                 @error('city')
                     <div class="alert alert-danger">
-                        Inserisci la città
+                        {{ $message }}
                     </div>
                 @enderror
             </div>
@@ -67,7 +67,7 @@
                 <input class="form-control @error('demo') is-invalid @enderror" type="file" id="demo" name="demo">
                 @error('demo')
                     <div class="alert alert-danger">
-                        Demo invalida
+                        {{ $message }}
                     </div>
                 @enderror
                 @endif
@@ -155,6 +155,11 @@
                     @endforeach
                 </div>
             </div>
+            @error('roles[]')
+            <div class="alert alert-danger">
+                {{ $message }}
+            </div>
+            @enderror
             <div class="row justify-content-between">
                 <div class="col-auto">
                     <button class="btn btn-secondary" type="button">
