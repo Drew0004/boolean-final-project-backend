@@ -1,5 +1,28 @@
 #dashboard{
     h1{
-        line-height: 3.5rem;
+        line-height: 4rem;
+        font-size: 3rem;
+    }
+
+    h2{
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: #21252B;
+    }
+
+    .bio-role-section{
+        background-color: #21252B;
+
+        p{
+            line-height: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .role-icon{
+            max-width: 80px;
+        }
+        .single-icon{
+            filter: invert(100%);
+        }
     }
 }

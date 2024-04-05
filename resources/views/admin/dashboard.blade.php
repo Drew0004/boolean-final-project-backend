@@ -6,12 +6,14 @@
 <style>
     #dashboard .hero-section {
         background-image: url('{{ asset("storage/".$user->userDetails->picture) }}');
-        min-height: 300px;
+        min-height: 400px;
         background-size: cover;
         background-position: center; 
     }
   </style>
 <section id="dashboard">
+    
+    {{-- Sezione Hero Profilo --}}
     <div class="hero-section d-flex align-items-center">
         <div class="container">
             <h1 class="text-white fw-bold mb-0">
@@ -20,6 +22,79 @@
             </h1>
         </div>
     </div>
+
+    {{-- Sezione Dati --}}
+    <div class="container">
+        <h2 class="py-5">
+            I tuoi dati:
+        </h2>
+    </div>
+    
+    {{-- Sezione ruoli e bio --}}
+    <section class="bio-role-section">
+        <div class="container">
+            <div class="row justify-content-between py-5">
+                <div class="col-8">
+                    <h2 class="text-white">
+                        Bio
+                    </h2>
+                    @isset($user->userDetails->bio)
+                    <p class="text-white pt-4">{{ $user->userDetails->bio }}</p>
+                    @else 
+                    <span class="badge text-bg-danger">Bio mancante! Aggiorna le tue informazioni</span>
+                    @endisset
+                </div>
+                <div class="col-auto">
+                    <h2 class="text-white">
+                        Competenze
+                    </h2>
+                    @isset($user->roles)
+                    <div class="row justify-content-around">
+                        @foreach($user->roles as $singleRole)
+                            <div class="role-icon pt-4">
+                                <img class="w-100 single-icon" src="{{ asset('storage/'.$singleRole->icon) }}" alt="Icona ruolo">
+                            </div>
+                        @endforeach
+                    </div>
+                    @else 
+                    <span class="badge text-bg-danger">Nessun ruolo assegnato</span>
+                    @endisset
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="demo-contact-section">
+        <div class="container">
+            <h2 class="py-5">
+                Demo
+            </h2>
+            @isset($user->userDetails->demo)
+                <audio class="w-100" controls>
+                    <source src="{{ asset('storage/'.$user->userDetails->demo) }}" type="audio/mpeg">
+                </audio>
+            @else 
+            <span class="badge text-bg-danger">Demo non presente</span>
+            @endisset
+            <h2 class="py-5">
+                Info di contatto
+            </h2>
+            <div class="fs-5 pb-3">
+                <i class="fa-solid fa-envelope me-3 my-blue"></i>
+                <span class="fw-bold">Mail: </span><span class="fw-semibold">{{ $user->email }}</span>
+            </div>
+            @isset($user->userDetails->cellphone)
+            <div class="fs-5 pb-5">
+                <i class="fa-solid fa-phone me-3"></i>
+                <span class="fw-bold">Cell: </span><span class="fw-semibold">{{ $user->userDetails->cellphone }}</span> 
+            </div>
+            @else
+            <span class="badge text-bg-danger">Cellulare mancante! Aggiorna le tue informazioni</span>
+            @endisset
+            
+        </div>
+    </section>
+
 </section>
 @endsection
 
