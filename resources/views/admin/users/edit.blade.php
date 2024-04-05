@@ -4,6 +4,7 @@
 
 @section('main-content')
   <div>
+    <h2 class="text-center py-3 fw-bold">Modifica il profilo</h2>
         {{-- verifico se ci sono errori --}}
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -139,10 +140,18 @@
                     @endforeach
                 </div>
             </div>
-
-            <button class="btn btn-primary" type="submit">
-                Modifica +
-            </button>
+            <div class="row justify-content-between">
+                <div class="col-auto">
+                    <button class="btn btn-secondary" type="button">
+                        <a class="text-white text-decoration-none" href="{{ route('admin.dashboard') }}">Annulla</a>
+                    </button>
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-primary" type="submit">
+                        Modifica +
+                    </button>
+                </div>
+            </div>
         </form>
     </div>
 @endsection
