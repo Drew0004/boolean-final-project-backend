@@ -155,7 +155,7 @@
                     @endforeach
                 </div>
             </div>
-            @error('roles[]')
+            @error('roles')
             <div class="alert alert-danger">
                 {{ $message }}
             </div>
