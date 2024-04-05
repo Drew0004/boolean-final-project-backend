@@ -49,10 +49,8 @@
             </nav>
         </header>
 
-        <main class="py-4">
-            <div class="container">
-                @yield('main-content')
-            </div>
+        <main>
+            @yield('main-content')
         </main>
     </body>
 </html>
