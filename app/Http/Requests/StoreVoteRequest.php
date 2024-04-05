@@ -23,10 +23,8 @@ class StoreVoteRequest extends FormRequest
     {
         return [
             'user_id' => 'required|exists:users,id',
-            'label'=> 'required|max:74',
-            'vote'=> 'required|max:74',
-            // eventuale accettazione dei termini
-            // 'accepted'=>'required|boolean|accepted'
+            /* 'label' => 'required|max:255', // Imposta la lunghezza massima appropriata */
+            'vote' => 'required|numeric|min:1|max:5', // Assicurati che il voto sia un numero compreso tra 1 e 5
         ];
     }
 }
