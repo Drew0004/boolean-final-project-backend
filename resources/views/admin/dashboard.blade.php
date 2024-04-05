@@ -17,13 +17,13 @@
                         @isset($user->userDetails->bio)
                         <li>Bio: {{ $user->userDetails->bio }}</li>
                         @else 
-                        <li>-</li>
+                        <li class="badge text-bg-danger">Bio mancante! Aggiorna le tue informazioni</li>
                         @endisset
 
                         @isset($user->userDetails->cellphone)
                         <li>Cellulare: {{ $user->userDetails->cellphone }}</li>
                         @else 
-                        <li>-</li>
+                        <li class="badge text-bg-danger">Cellulare mancante! Aggiorna le tue informazioni</li>
                         @endisset
 
                         @isset($user->userDetails->members)
@@ -33,7 +33,7 @@
                         @isset($user->userDetails->picture)
                         <li><img style="width: 100px" src="{{ asset('storage/'.$user->userDetails->picture) }}" alt=""></li>
                         @else 
-                        <li>-</li>
+                        <li class="badge text-bg-danger">Immagine mancante! Aggiorna le tue informazioni</li>
                         @endisset
 
                         @isset($user->userDetails->demo)
@@ -44,7 +44,7 @@
                             </audio>
                         </li>
                         @else 
-                        <li>Demo non presente</li>
+                        <li class="badge text-bg-danger">Demo non presente</li>
                         @endisset
 
                         @isset($user->roles)
@@ -52,7 +52,7 @@
                                 <li>{{ $singleRole->title }}</li>
                             @endforeach
                         @else 
-                            <li>Nessun ruolo assegnato</li>
+                            <li class="badge text-bg-danger">Nessun ruolo assegnato</li>
                         @endisset
 
                         @isset($user->roles)
@@ -60,10 +60,25 @@
                             <li><img style="width: 30px" src="{{ asset('storage/'.$singleRole->icon) }}" alt=""></li>
                             @endforeach
                         @else 
-                        <li>Nessun ruolo assegnato</li>
+                        <li class="badge text-bg-danger">Nessun ruolo assegnato</li>
                         @endisset
 
+                        
                     </ul>
+                        @if(
+                        $user->userDetails->bio == null
+                        ||
+                        $user->userDetails->picture == null
+                        ||
+                        $user->userDetails->cellphone == null
+                        ||
+                        $user->userDetails->demo == null
+                        )
+                            <button class="btn btn-primary">
+                                <a class="text-decoration-none text-white" href="{{ route('admin.edit') }}">Modifica il profilo</a>
+                            </button>
+                        
+                        @endif
                 </div>
             </div>
         </div>
