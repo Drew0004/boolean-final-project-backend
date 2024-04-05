@@ -13,35 +13,37 @@
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <nav class="navbar navbar-expand-lg my-blue-bg py-4">
                 <div class="container">
-                    <a class="navbar-brand" href="http://localhost:5173/">BMusic</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                    <div class="logo-container">
+                        <a class="header-logo d-inline-block" href="http://localhost:5174/"></a>
+                    </div>
                     <div class="collapse navbar-collapse" id="navbarText">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                                <a class="nav-link my-cyan" href="{{ route('admin.dashboard') }}">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.edit') }}">Modifica il profilo</a>
+                                <a class="nav-link my-cyan" href="{{ route('admin.edit') }}">Modifica il profilo</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.messages.index') }}">I miei messaggi</a>
+                                <a class="nav-link my-cyan" href="{{ route('admin.messages.index') }}">I miei messaggi</a>
                                 {{-- {{ route('admin.message.index') }} --}}
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.reviews.index') }}">Le mie recensioni</a>
+                                <a class="nav-link my-cyan" href="{{ route('admin.reviews.index') }}">Le mie recensioni</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.statistics') }}">Le mie statistiche</a>
+                                <a class="nav-link my-cyan" href="{{ route('admin.statistics') }}">Le mie statistiche</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link my-cyan" href="#nogo">Sponsorizzazioni</a>
                             </li>
                         </ul>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
-                            <button type="submit" class="btn btn-outline-danger">
+                            <button type="submit" class="btn my-logout-btn">
                                 Log Out
                             </button>
                         </form>
