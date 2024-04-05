@@ -14,6 +14,7 @@
 <section id="dashboard">
     
     {{-- Sezione Hero Profilo --}}
+    @isset($user->userDetails->picture)
     <div class="hero-section d-flex align-items-center">
         <div class="container">
             <h1 class="text-white fw-bold mb-0">
@@ -22,6 +23,15 @@
             </h1>
         </div>
     </div>
+    @else
+    <div class="img-not-found d-flex align-items-center">
+        <div class="container">
+            <h1 class="text-white fw-bold mb-0">
+                Immagine da inserire...
+            </h1>
+        </div>
+    </div>
+    @endisset
 
     {{-- Sezione Dati --}}
     <div class="container">
@@ -91,6 +101,21 @@
             @else
             <span class="badge text-bg-danger">Cellulare mancante! Aggiorna le tue informazioni</span>
             @endisset
+            <div class="text-center py-5">
+                @if(
+                    $user->userDetails->bio == null
+                    ||
+                    $user->userDetails->picture == null
+                    ||
+                    $user->userDetails->cellphone == null
+                    ||
+                    $user->userDetails->demo == null
+                    )
+                    <button class="btn edit-btn">
+                        <a class="text-decoration-none text-white" href="{{ route('admin.edit') }}">Modifica il profilo</a>
+                    </button>
+                @endif
+            </div>
             
         </div>
     </section>

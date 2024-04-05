@@ -25,4 +25,17 @@
             filter: invert(100%);
         }
     }
+    .img-not-found{
+        background-image: url('/storage/images/Not-Found.jpg');
+        min-height: 400px;
+        background-size: cover;
+        background-position: center; 
+    }
+    .edit-btn{
+        background-color: #21252B;
+        padding: 10px 30px;
+        color: white;
+        font-weight: bold;
+        border-radius: 30px;
+    }
 }
