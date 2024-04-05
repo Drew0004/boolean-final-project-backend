@@ -23,12 +23,22 @@
             <div class="my-3">
                 <label for="username" class="form-label text-white">Nome*</label>
                 <input value="{{ $user->name }}" type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" placeholder="Inserisci il Nome..." maxlength="255" required>
+                @error('username')
+                    <div class="alert alert-danger">
+                        Inserisci lo username
+                    </div>
+                @enderror
             </div>
 
             {{-- Input della città --}}
             <div class="my-3">
                 <label for="city" class="form-label text-white">Città*</label>
                 <input value="{{ $user->city }}" type="text" class="form-control @error('city') is-invalid @enderror" id="city" name="city" placeholder="Inserisci la città..." maxlength="255" required>
+                @error('city')
+                    <div class="alert alert-danger">
+                        Inserisci la città
+                    </div>
+                @enderror
             </div>
 
             {{-- Input della demo --}}
@@ -55,6 +65,11 @@
                 @else
                 <label for="demo" class="form-label text-white">Carica una demo!</label>
                 <input class="form-control @error('demo') is-invalid @enderror" type="file" id="demo" name="demo">
+                @error('demo')
+                    <div class="alert alert-danger">
+                        Demo invalida
+                    </div>
+                @enderror
                 @endif
             </div>
             @error('demo')

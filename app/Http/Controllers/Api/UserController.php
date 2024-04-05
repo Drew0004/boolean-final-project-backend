@@ -27,7 +27,7 @@ class UserController extends Controller
     {
         // Trova l'utente con i dettagli, i ruoli, i voti e i messaggi
         // $user = User::with('userDetails', 'roles', 'votes', 'messages')->findOrFail($name);
-        $user = User::where('name', $name)->with('userDetails', 'roles', 'votes', 'messages')->firstOrFail();
+        $user = User::where('name', $name)->with('userDetails', 'roles', 'votes', 'messages','reviews')->firstOrFail();
 
         return response()->json([
             'success' => true,

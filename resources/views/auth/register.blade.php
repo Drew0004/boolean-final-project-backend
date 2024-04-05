@@ -19,6 +19,11 @@
                 Nome*
             </label>
             <input class="form-control @error('name') is-invalid @enderror" type="text" id="name" name="name" required maxlength="255">
+            @error('name')
+                <div class="alert alert-danger">
+                    Inserisci il tuo nome o quello della tua band
+                </div>
+            @enderror
         </div>
 
         <!-- Email Address -->
@@ -27,6 +32,11 @@
                 Email*
             </label>
             <input class="form-control @error('email') is-invalid @enderror" type="email" id="email" name="email" required maxlength="255">
+            @error('email')
+                <div class="alert alert-danger">
+                    Inserisci una email valida
+                </div>
+            @enderror
         </div>
 
         <!-- Password -->
@@ -35,6 +45,11 @@
                 Password*
             </label>
             <input class="form-control @error('password') is-invalid @enderror" type="password" id="password" name="password" required>
+            @error('password')
+                <div class="alert alert-danger">
+                    Inserisci una password
+                </div>
+            @enderror
         </div>
 
         <!-- Confirm Password -->
@@ -43,6 +58,11 @@
                 Conferma Password*
             </label>
             <input class="form-control @error('password_confirmation') is-invalid @enderror" type="password" id="password_confirmation" name="password_confirmation" required>
+            @error('password_confirmation')
+                <div class="alert alert-danger">
+                    Inserisci la conferma password
+                </div>
+            @enderror
         </div>
 
         <!-- City -->
@@ -51,6 +71,11 @@
                 Città*
             </label>
             <input class="form-control @error('city') is-invalid @enderror" type="text" id="city" name="city" placeholder="Inserisci una città (es.Milano)..." required maxlength="255">
+            @error('city')
+                <div class="alert alert-danger">
+                    Inserisci una città
+                </div>
+            @enderror
         </div>
 
         <div>
@@ -59,7 +84,7 @@
             @foreach ($roles as $role)
                 <div class="form-check form-check-inline">
                     <input
-                        class="form-check-input"
+                        class="form-check-input @error('roles') is-invalid @enderror"
                         type="checkbox"
                         id="role-{{ $role->id }}"
                         name="roles[]"
@@ -68,6 +93,11 @@
                     <label class="form-check-label" for="role-{{ $role->id }}">{{ $role->title }}</label>
                 </div>
             @endforeach
+            @error('roles')
+                <div class="alert alert-danger">
+                    Inserisci uno o più ruoli
+                </div>
+            @enderror
         </div>
 
         <div>
