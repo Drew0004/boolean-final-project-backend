@@ -19,6 +19,11 @@
                 Email
             </label>
             <input class="form-control @error('email') is-invalid @enderror" type="email" id="email" name="email">
+            @error('email')
+                <div class="alert alert-danger">
+                    Inserisci l'email
+                </div>
+            @enderror
         </div>
 
         <!-- Password -->
@@ -27,6 +32,11 @@
                 Password
             </label>
             <input class="form-control @error('password') is-invalid @enderror" type="password" id="password" name="password">
+            @error('password')
+                <div class="alert alert-danger">
+                    Inserisci una password
+                </div>
+            @enderror
         </div>
 
         <!-- Remember Me -->
