@@ -103,10 +103,12 @@
             </div>
             
             {{-- Input dei membri --}}
+            @if($user->roles->contains('id', 10))
             <div class="my-3">
-                <label for="members" class="form-label text-white">Se sei in una band, inserisci i membri</label>
+                <label for="members" class="form-label text-white">Inserisci i membri della tua band</label>
                 <input value="{{ $user->userDetails->members }}" type="text" class="form-control @error('members') is-invalid @enderror" id="members" name="members" placeholder="Inserisci i membri..." maxlength="1024">
             </div>
+            @endif
 
             {{-- Input dei ruoli --}}
             <div class="mb-3">
