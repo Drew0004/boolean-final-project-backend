@@ -19,3 +19,15 @@
         color: white !important;
     }
 }
+.role-checkbox{
+    background-color: #21252B;
+    border-radius: 10px;
+}
+.role-checkbox {
+    background-color: #FFF;
+}
+
+/* Checkbox selezionata */
+.role-checkbox:checked {
+    background-color: #21252B ;
+}
