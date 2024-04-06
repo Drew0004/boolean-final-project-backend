@@ -8,7 +8,7 @@
         background-image: url('{{ asset("storage/".$user->userDetails->picture) }}');
         min-height: 400px;
         background-size: cover;
-        background-position: center; 
+        background-position: 0 40%; 
     }
   </style>
   <section id="messages">
