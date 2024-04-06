@@ -55,6 +55,7 @@ class MessageController extends Controller
      */
     public function show(Message $message)
     {
+        $user = Auth::user();
         // Verifico se l'utente è autorizzato a visualizzare il messaggio
         if (Auth::id() !== $message->user_id) {
             // Se l'utente non è autorizzato, ritorna un errore 403 (Forbidden)
@@ -62,7 +63,7 @@ class MessageController extends Controller
         }
 
         // Se l'utente è autorizzato, mostra il messaggio
-        return view('admin.messages.show', compact('message'));
+        return view('admin.messages.show', compact('message', 'user'));
 
     }
 

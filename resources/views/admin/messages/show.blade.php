@@ -3,60 +3,59 @@
 @section('page-title', 'Tutti i messaggi')
 
 @section('main-content')
-<div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Nome</th>
-                <th scope="col">Cognome</th>
-                <th scope="col">email</th>
-                <th scope="col">Data di invio</th>
-                <th scope="col">messaggio ricevuto</th>
-                <th scope="col" colspan="3">Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{ $message->firstname }}</td>
-                <td>{{ $message->lastname }}</td>
-                <td>{{ $message->email }}</td>
-                <td>{{ $message->message }}</td>
-                <td>{{ $message->created_at }}</td>
-                {{-- <td>
-                    <div class="offcanvas-body">
-                        <form class="mt-5" id="deleteForm{{ $message->id }}"
-                            action="{{ route('admin.messages.destroy', ['message' => $message->id]) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Conferma eliminazione</button>
-                        </form>
-                    </div>
-                </td> --}}
+<style>
+    #messages .hero-section {
+        background-image: url('{{ asset("storage/".$user->userDetails->picture) }}');
+        min-height: 400px;
+        background-size: cover;
+        background-position: center; 
+    }
+  </style>
+  <section id="messages-show">
+        {{-- Sezione Hero Profilo --}}
+        @isset($user->userDetails->picture)
+        <div class="hero-section d-flex align-items-center">
+        </div>
+        @else
+        <div class="img-not-found d-flex align-items-center">
+            <div class="container">
+                <h1 class="text-white fw-bold mb-0">
+                    Immagine da inserire...
+                </h1>
+            </div>
+        </div>
+        @endisset
 
-                <td>
-                    <div class="offcanvas offcanvas-end d" tabindex="-1"
-                                    id="deleteConfirmation{{ $message->id , $message->email }}">
-                                    <div class="offcanvas-header">
-                                        <h5 class="offcanvas-title" id="deleteConfirmationLabel{{ $message->id , $message->email }}">
-                                            Conferma eliminazione
-                                        </h5>
-                                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="offcanvas-body">
-                                        <p>Vuoi davvero eliminare il messaggio di <h5 class=" d-inline-block ">{{ $message->firstname }} {{ $message->lastname }}</h5> ?</p>
-                                        <form class="mt-5" id="deleteForm{{ $message->id }}"
-                                            action="{{ route('admin.messages.destroy', ['message' => $message->id]) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">Conferma eliminazione</button>
-                                        </form>
-                                    </div>
-                                </div>
-                </td>
-                
-            </tr>
-        </tbody>
-    </table>
-</div>
+        {{-- Sezione Dati --}}
+        <div class="container">
+            <h2 class="pt-5">
+                Dettaglio messaggio
+            </h2>
+        </div>
+        <div class="my-message-card py-5 my-5">
+            <div class="container">
+                <div class="message-upper-card">
+                    {{-- Info utente --}}
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex align-items-center">
+                            <i class="fa-solid fa-envelope text-white me-2"></i>
+                            <h4 class="text-white m-0">{{ $message->firstname }} {{ $message->lastname }}</h4>
+                        </div>
+                        <h4 class="text-white m-0">{{ $message->email }}</h4>
+                        <h5 class="text-white m-0">{{ $message->created_at }}</h5>
+                    </div>
+                </div>
+    
+                <div class="message-middle-card">
+                    {{-- Contenuto messaggio --}}
+                    <p class="text-white fs-4 my-5">{{ $message->message }}</p>
+                </div>
+                <div class="message-lower-card d-flex justify-content-end">
+                    <a href="{{ route('admin.messages.index')}}" class="text-decoration-none">
+                        <i class="fa-solid fa-arrow-left text-white fs-3"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+  </section>
 @endsection
