@@ -20,12 +20,6 @@
                     <div class="collapse navbar-collapse" id="navbarText">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             @auth
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Link 2</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Link 3</a>
-                                </li>
                             @else
                                 <li class="nav-item my-cyan">
                                     <a class="nav-link my-cyan" href="{{ route('login') }}">Login</a>
@@ -40,7 +34,7 @@
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
 
-                                <button type="submit" class="btn btn-outline-danger">
+                                <button type="submit" class="btn my-logout-btn">
                                     Log Out
                                 </button>
                             </form>
