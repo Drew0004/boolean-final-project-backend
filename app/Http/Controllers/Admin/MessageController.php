@@ -21,6 +21,7 @@ class MessageController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
         //tutti i messaggi che l'ur ha ricevuto associati all'id
         // Recupero l'ID dell'utente corrente
         $userId = auth()->id();
@@ -29,7 +30,7 @@ class MessageController extends Controller
 
         $softDeletedMessages = Message::onlyTrashed()->get();
         //Passo $receivedMessages alla vista Blade per visualizzarli
-        return view('admin.messages.index', compact('receivedMessages', 'softDeletedMessages'));
+        return view('admin.messages.index', compact('receivedMessages', 'softDeletedMessages', 'user'));
 
     }
 

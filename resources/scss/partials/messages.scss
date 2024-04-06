@@ -1,0 +1,51 @@
+#messages{
+    h2{
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: #21252B;
+    }
+    .my-message-card{
+        background-color: #21252B;
+        border-radius: 20px;
+        .message-upper-card{
+            h4{
+                font-size: 1rem;
+            }
+            h5{
+                font-size: 0.8rem;
+            }
+        }
+        .message-middle-card{
+            p{
+                font-weight: lighter;
+                line-height: 1.7rem;
+            }
+        }
+    }
+    .invisible-btn{
+        background-color: transparent;
+        border: none;
+        padding: 0;
+    }
+    .modal-btn{
+        background-color: #21252B;
+        padding: 10px 30px;
+        font-weight: bold;
+        border-radius: 30px;
+        &:hover{
+            border: 1px solid #21252B;
+            background-color: white;
+            span{
+                color: #21252B !important
+            }
+        }
+        span{
+            color: white !important;
+        }
+    }
+    .modal-card{
+        background-color: #21252B;
+        border-radius: 20px;
+        padding: 10px;
+    }
+}
