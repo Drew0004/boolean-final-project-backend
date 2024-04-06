@@ -12,12 +12,11 @@
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <nav class="navbar navbar-expand-lg my-blue-bg py-4">
                 <div class="container">
-                    <a class="navbar-brand" href="http://localhost:5174/">BMusic</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                    <div class="logo-container">
+                        <a class="header-logo d-inline-block" href="http://localhost:5174/"></a>
+                    </div>
                     <div class="collapse navbar-collapse" id="navbarText">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             @auth
@@ -28,11 +27,11 @@
                                     <a class="nav-link" href="#">Link 3</a>
                                 </li>
                             @else
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">Login</a>
+                                <li class="nav-item my-cyan">
+                                    <a class="nav-link my-cyan" href="{{ route('login') }}">Login</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">Register</a>
+                                    <a class="nav-link my-cyan" href="{{ route('register') }}">Register</a>
                                 </li>
                             @endauth
                         </ul>
@@ -56,5 +55,9 @@
                 @yield('main-content')
             </div>
         </main>
+
+        <footer class="my-blue-bg">
+            <h2 class="text-white py-5 text-center m-0">Footer</h2>
+        </footer>
     </body>
 </html>

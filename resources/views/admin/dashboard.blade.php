@@ -112,7 +112,7 @@
                     $user->userDetails->demo == null
                     )
                     <button class="btn edit-btn">
-                        <a class="text-decoration-none text-white" href="{{ route('admin.edit') }}">Modifica il profilo</a>
+                        <a class="text-decoration-none" href="{{ route('admin.edit') }}">Modifica il profilo</a>
                     </button>
                 @endif
             </div>

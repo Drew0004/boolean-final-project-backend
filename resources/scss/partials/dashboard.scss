@@ -34,8 +34,16 @@
     .edit-btn{
         background-color: #21252B;
         padding: 10px 30px;
-        color: white;
         font-weight: bold;
         border-radius: 30px;
+        &:hover{
+            border: 1px solid #21252B;
+            a{
+                color: #21252B !important
+            }
+        }
+        a{
+            color: white !important;
+        }
     }
 }

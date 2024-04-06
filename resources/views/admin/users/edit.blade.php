@@ -171,7 +171,7 @@
                     </div>
                     <div class="col-auto">
                         <button class="btn edit-btn" type="submit">
-                            Modifica +
+                            <span>Modifica +</span>
                         </button>
                     </div>
                 </div>
