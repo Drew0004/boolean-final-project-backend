@@ -1,33 +1,35 @@
-.my-label{
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: #21252B;
-}
-.login-btn{
-    background-color: #21252B;
-    padding: 10px 30px;
-    font-weight: bold;
-    border-radius: 30px;
-    &:hover{
-        background-color: white;
-        border: 1px solid #21252B;
+#forms{
+    .my-label{
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: #21252B;
+    }
+    .login-btn{
+        background-color: #21252B;
+        padding: 10px 30px;
+        font-weight: bold;
+        border-radius: 30px;
+        &:hover{
+            background-color: white;
+            border: 1px solid #21252B;
+            span{
+                color: #21252B !important;
+            }
+        }
         span{
-            color: #21252B !important;
+            color: white !important;
         }
     }
-    span{
-        color: white !important;
+    .role-checkbox{
+        background-color: #21252B;
+        border-radius: 10px;
     }
-}
-.role-checkbox{
-    background-color: #21252B;
-    border-radius: 10px;
-}
-.role-checkbox {
-    background-color: #FFF;
-}
-
-/* Checkbox selezionata */
-.role-checkbox:checked {
-    background-color: #21252B ;
+    .role-checkbox {
+        background-color: #FFF;
+    }
+    
+    /* Checkbox selezionata */
+    .role-checkbox:checked {
+        background-color: #21252B ;
+    }
 }
