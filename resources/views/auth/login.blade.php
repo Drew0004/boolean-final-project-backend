@@ -14,11 +14,11 @@
         @csrf
 
         <!-- Email Address -->
-        <div>
-            <label class="form-label" for="email">
+        <div class="my-4">
+            <label class="form-label my-label my-4" for="email">
                 Email
             </label>
-            <input class="form-control @error('email') is-invalid @enderror" type="email" id="email" name="email">
+            <input class="rounded-5 ps-4 form-control @error('email') is-invalid @enderror" type="email" id="email" name="email" placeholder="Inserici la mail..." required>
             @error('email')
                 <div class="alert alert-danger">
                     {{ $message }}
@@ -27,11 +27,11 @@
         </div>
 
         <!-- Password -->
-        <div class="mt-4">
-            <label class="form-label" for="password">
+        <div class="my-4">
+            <label class="form-label my-4 my-label" for="password">
                 Password
             </label>
-            <input class="form-control @error('password') is-invalid @enderror" type="password" id="password" name="password">
+            <input class="rounded-5 ps-4 form-control @error('password') is-invalid @enderror" type="password" id="password" name="password" placeholder="Inserisci la password..." required>
             @error('password')
                 <div class="alert alert-danger">
                     {{ $message }}
@@ -40,22 +40,21 @@
         </div>
 
         <!-- Remember Me -->
-        <div class="mt-4">
+        <div class="my-4">
             <label for="remember_me">
                 <input class="form-check-input" id="remember_me" type="checkbox" name="remember">
-                <span>Remember me</span>
+                <span class="fw-bold my-blue">Remember me</span>
             </label>
         </div>
 
-        <div class="mt-4">
+        <div class="my-4">
             @if (Route::has('password.request'))
-                <a href="{{ route('password.request') }}">
+                <a class="my-blue" href="{{ route('password.request') }}">
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
-
-            <button class="btn btn-primary" type="submit">
-                Log in
+            <button class="ms-5 btn login-btn" type="submit">
+                <span>Log in</span> 
             </button>
         </div>
     </form>

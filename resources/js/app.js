@@ -1,6 +1,7 @@
 import './bootstrap';
 
 import '~resources/scss/app.scss';
+import '~resources/scss/forms.scss';
 
 import * as bootstrap from 'bootstrap';
 
