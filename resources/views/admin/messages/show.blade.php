@@ -4,7 +4,7 @@
 
 @section('main-content')
 <style>
-    #messages .hero-section {
+    #messages-show .hero-section {
         background-image: url('{{ asset("storage/".$user->userDetails->picture) }}');
         min-height: 400px;
         background-size: cover;
