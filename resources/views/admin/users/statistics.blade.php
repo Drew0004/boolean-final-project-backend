@@ -3,19 +3,22 @@
 @section('page-title', 'Dashboard')
 
 @section('main-content')
-<div id="chartData"
-    data-total-votes="{{ $totalVotes }}"
-    data-total-reviews="{{ $totalReviews }}"
-    data-total-messages="{{ $totalMessages }}"
-></div>
-  <div class="row">
-    <div class="col-6">
-      <canvas id="myChart"></canvas>
+<div class="container">
+
+    <div id="chartData"
+        data-total-votes="{{ $totalVotes }}"
+        data-total-reviews="{{ $totalReviews }}"
+        data-total-messages="{{ $totalMessages }}"
+    ></div>
+    <div class="row">
+      <div class="col-6">
+        <canvas id="myChart"></canvas>
+      </div>
+      <div class="col-6">
+        <canvas id="myChart2"></canvas>
+      </div>
     </div>
-    <div class="col-6">
-      <canvas id="myChart2"></canvas>
-    </div>
-  </div>
+</div>
   
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   
