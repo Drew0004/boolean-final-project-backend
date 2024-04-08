@@ -42,6 +42,8 @@ Route::name('api.')->group(function() {
     /* Route::get('users/search/{name}', [UserController::class, 'search']); */
     Route::get('users/search', [UserController::class, 'search']);
 
+    Route::get('/sponsor', [UserController::class, 'sponsor']);
+
     // Rotta store messaggi
     Route::post('/messages',[MessageController::class, 'store'])->name('messages.store');
     // Rotta store reviews

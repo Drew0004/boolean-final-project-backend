@@ -62,5 +62,15 @@ class UserController extends Controller
         }
     }
 
+    public function sponsor()
+    {
+        // Url chiamata http://127.0.0.1:8000/api/sponsor
+        $users = User::whereHas('sponsors')->get();
+
+        return response()->json([
+            'success' => true,
+            'results' => $users,
+        ]);
+    }
 
 }
