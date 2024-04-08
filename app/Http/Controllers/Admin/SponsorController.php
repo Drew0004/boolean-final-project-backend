@@ -41,9 +41,6 @@ class SponsorController extends Controller
      */
     public function store(StoreSponsorRequest $request)
     {
-        if (!Auth::check()) {
-            abort(403, 'Unauthorized action.');
-        }
         $paymentData = $request->validated();
 
         // Ricevi il nonce del pagamento inviato dal form
@@ -93,6 +90,7 @@ class SponsorController extends Controller
                     'expired_at' => $expiredAt,
                 ]
             ]);
+            return redirect()->route('admin.dashboard');   
         };
     }
 
@@ -117,7 +115,7 @@ class SponsorController extends Controller
             "customerId" => $customerId
         ]);
     
-        return view('admin.users.sponsorship', compact('clientToken', 'sponsors'));
+        return view('admin.users.sponsorship', compact('clientToken', 'sponsors', 'customerId'));
     }
 
     /**

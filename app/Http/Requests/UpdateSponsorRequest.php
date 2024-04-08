@@ -22,7 +22,7 @@ class UpdateSponsorRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'sponsor' => 'nullable|exists:sponsors,id'
+
         ];
     }
 }
