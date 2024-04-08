@@ -3,7 +3,7 @@
 @section('page-title', 'Dashboard')
 
 @section('main-content')
-<div class="container">
+<div class="container py-5">
 
     <div id="chartData"
         data-total-votes="{{ $totalVotes }}"

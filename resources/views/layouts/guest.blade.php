@@ -112,7 +112,7 @@
                                 <h4 class="my-cyan">{{$title}}</h4>
                                 @foreach ($elem as $singleElem)
                                     <li class="py-1">
-                                        <a class="text-decoration-none my-cyan" href="#nogo">{{$singleElem}}</a>
+                                        <a class="text-decoration-none my-cyan nav-link" href="#nogo">{{$singleElem}}</a>
                                     </li>
                                 @endforeach
                             </ul>
