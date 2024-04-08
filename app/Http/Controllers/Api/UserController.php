@@ -13,7 +13,7 @@ class UserController extends Controller
     public function index()
     {
         // Da aggiungere le sponsor
-        $users = User::with('userDetails', 'roles', 'votes', 'messages', 'reviews')->paginate(20);
+        $users = User::with('userDetails', 'roles', 'votes', 'messages', 'reviews')->paginate(8);
         // $users = User::paginate(4);
         
 
@@ -62,5 +62,15 @@ class UserController extends Controller
         }
     }
 
+    public function sponsor()
+    {
+        // Url chiamata http://127.0.0.1:8000/api/sponsor
+        $users = User::whereHas('sponsors')->with('userDetails', 'roles', 'votes', 'messages','reviews')->get();
+
+        return response()->json([
+            'success' => true,
+            'results' => $users,
+        ]);
+    }
 
 }

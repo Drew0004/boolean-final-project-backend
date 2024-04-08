@@ -68,6 +68,6 @@ class User extends Authenticatable
 
     //Relazione many to many con sponsor
     public function sponsors(){
-        return $this->belongsToMany(Sponsor::class);
+        return $this->belongsToMany(Sponsor::class, 'user_sponsor');
     }
 }
