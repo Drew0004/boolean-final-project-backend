@@ -12,7 +12,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('sponsors:delete-expired')->daily();
     }
 
     /**
@@ -25,3 +25,5 @@ class Kernel extends ConsoleKernel
         require base_path('routes/console.php');
     }
 }
+
+//codice da eseguire su terminale per cancellazione manuale delle sponsorizzazioni php artisan sponsors:delete-expired
