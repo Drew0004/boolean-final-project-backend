@@ -8,6 +8,13 @@ use App\Http\Requests\UpdateSponsorRequest;
 use App\Models\Sponsor;
 use Illuminate\Support\Facades\DB;
 
+//models
+use App\Models\User;
+// Facades
+use Illuminate\Support\Facades\Auth;
+
+use Braintree\Gateway as BraintreeGateway;
+
 // Carbon
 use Carbon\Carbon;
 
@@ -34,7 +41,59 @@ class SponsorController extends Controller
      */
     public function store(StoreSponsorRequest $request)
     {
-        //
+        if (!Auth::check()) {
+            abort(403, 'Unauthorized action.');
+        }
+        $paymentData = $request->validated();
+
+        // Ricevi il nonce del pagamento inviato dal form
+        $nonce = $request->payment_method_nonce;
+
+        // Elaborazione del pagamento con Braintree
+        $gateway = new BraintreeGateway([
+            'environment' => 'sandbox',
+            'merchantId' => 'mdbffrwrgt96dybh',
+            'publicKey' => 'v5tspz7wrhshk62y',
+            'privateKey' => 'ebb299d16269eb2697c5cba54b6f373b'
+        ]);
+
+        $result = $gateway->transaction()->sale([
+            'amount' => '10.00', // Importo del pagamento
+            'paymentMethodNonce' => $nonce,
+            'options' => [
+                'submitForSettlement' => true
+            ]
+        ]);
+
+        $user = Auth::user()->id;
+
+        if ($result->success) {
+            
+            $hoursToAdd = 0; // Default
+            switch ($paymentData['sponsor']) {
+                case '1': //Piano bronze
+                    $hoursToAdd = 24;
+                    break;
+                case '2': //Piano Silver
+                    $hoursToAdd = 48;
+                    break;
+                case '3': //Piano gold
+                    $hoursToAdd = 144;
+                    break;
+            }
+
+            $expiredAt = now()->addHours($hoursToAdd);
+            
+            DB::table('user_sponsor')->insert([
+                [
+                    'user_id' => $user, 
+                    'sponsor_id' => $paymentData['sponsor'],
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                    'expired_at' => $expiredAt,
+                ]
+            ]);
+        };
     }
 
     /**
@@ -42,7 +101,23 @@ class SponsorController extends Controller
      */
     public function show(Sponsor $sponsor)
     {
-        //
+        $sponsors = Sponsor::All();
+        $gateway = new BraintreeGateway([
+            'environment' => 'sandbox',
+            'merchantId' => 'mdbffrwrgt96dybh',
+            'publicKey' => 'v5tspz7wrhshk62y',
+            'privateKey' => 'ebb299d16269eb2697c5cba54b6f373b'
+        ]);
+    
+        // Assicurati che Auth::user() restituisca l'utente autenticato e che il suo braintree_customer_id sia valido
+        $customerId = Auth::user()->braintree_customer_id;
+    
+        // Genera il token del cliente
+        $clientToken = $gateway->clientToken()->generate([
+            "customerId" => $customerId
+        ]);
+    
+        return view('admin.users.sponsorship', compact('clientToken', 'sponsors'));
     }
 
     /**

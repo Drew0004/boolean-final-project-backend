@@ -37,6 +37,9 @@ Route::prefix('admin')
     Route::get('/dashboard', [AdminMainController::class, 'dashboard'])->name('dashboard');
     Route::get('/users/statistics', [AdminMainController::class, 'statistics'])->name('statistics');
 
+    Route::get('/sponsorship', [AdminSponsorController::class, 'show'])->name('sponsorship');
+    Route::post('/sponsorship/store', [AdminSponsorController::class, 'store'])->name('sponsorship.store');
+
     Route::resource('reviews', ReviewController::class);
     Route::resource('messages', AdminMessageController::class);
     Route::resource('votes', AdminVoteController::class);

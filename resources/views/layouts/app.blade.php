@@ -8,6 +8,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>@yield('page-title') | {{ config('app.name', 'Laravel') }}</title>
 
+        {{-- Braintree --}}
+        <script src="https://js.braintreegateway.com/web/dropin/1.42.0/js/dropin.min.js"></script>
         <!-- Scripts -->
         @vite('resources/js/app.js')
     </head>
@@ -37,7 +39,7 @@
                                 <a class="nav-link my-cyan" href="{{ route('admin.statistics') }}">Le mie statistiche</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link my-cyan" href="#nogo">Sponsorizzazioni</a>
+                                <a class="nav-link my-cyan" href="{{ route('admin.sponsorship') }}">Sponsorizzazioni</a>
                             </li>
                         </ul>
                         <form method="POST" action="{{ route('logout') }}">
