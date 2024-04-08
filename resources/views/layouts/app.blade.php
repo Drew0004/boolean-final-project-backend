@@ -55,9 +55,79 @@
         <main>
             @yield('main-content')
         </main>
-
+@php
+        $footerLink =[
+            'Community'=>[
+                'Blog',
+                'Community',
+                'Ideas',
+                
+            ],
+            'Company'=>[
+                'About us',
+                'Team',
+                'Affiliati',
+                'Contatti',
+                'Jobs',
+            ],
+            'Link Utili'=>[
+                'Garanzia',
+                'Dichiarazione di prodotto',
+                'Privacy Policy',
+                'Cookie Policy',
+                'Impostazione Cookie'
+            ],    
+    ];
+@endphp
         <footer class="my-blue-bg">
-            <h2 class="text-white py-5 text-center m-0">Footer</h2>
+            <div class="py-4">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="logo-container">
+                            <a class="footer-logo d-inline-block" href="http://localhost:5174/"></a>
+                        </div>
+                        <div class="px-5">
+                            <p class="my-cyan">
+                                Seguici su
+                            </p>
+                        </div>
+                        <ul class="d-flex py-3">
+                            <li class="px-2">
+                                <a href="#nogo"><i class="fa-brands fa-facebook-f my-cyan"></i></a>
+                            </li>
+                            <li class="px-2">
+                                <a href="#nogo"><i class="fa-brands fa-instagram my-cyan"></i></a>
+                            </li>
+                            <li class="px-2">
+                                <a href="#nogo"><i class="fa-brands fa-twitter my-cyan"></i></a>
+                            </li>
+                            <li class="px-2">
+                                <a href="#nogo"><i class="fa-brands fa-youtube my-cyan"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-6 d-flex flex-wrap align-items-start">
+                        @foreach($footerLink as $title => $elem)
+                        <div class="col-4">
+                            <ul>
+                                <h4 class="my-cyan">{{$title}}</h4>
+                                @foreach ($elem as $singleElem)
+                                    <li>
+                                        <a class="text-decoration-none my-cyan" href="#nogo">{{$singleElem}}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+                <div>
+                    <p class="footer-claim text-center">
+                        BMusic asserts its exclusive rights over all content featured on this website. Unauthorized use, reproduction, distribution, display, or transmission of any content is strictly prohibited without prior authorization from BMusic. All rights reserved.
+                    </p>
+                </div>
+
+            </div>
         </footer>
     </body>
 </html>
