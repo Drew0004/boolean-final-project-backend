@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 // Models
 use App\Models\User;
 
+// Carbon
+use Carbon\Carbon;
+
 class UserController extends Controller
 {
     public function index()
@@ -64,8 +67,13 @@ class UserController extends Controller
 
     public function sponsor()
     {
+        $now = Carbon::now();
         // Url chiamata http://127.0.0.1:8000/api/sponsor
-        $users = User::whereHas('sponsors')->with('userDetails', 'roles', 'votes', 'messages','reviews')->get();
+        $users = User::whereHas('sponsors', function ($query) use ($now) {
+            $query->where('expired_at', '>', $now);
+        })
+        ->with('userDetails', 'roles', 'votes', 'messages', 'reviews')
+        ->get();
 
         return response()->json([
             'success' => true,
