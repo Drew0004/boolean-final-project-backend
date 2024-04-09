@@ -31,7 +31,7 @@ return new class extends Migration
 
             $table->timestamps();
             $table->timestamp('expired_at')->nullable();
-            $table->primary(['user_id', 'sponsor_id']);
+            // $table->primary(['user_id', 'sponsor_id']);
         });
     }
 

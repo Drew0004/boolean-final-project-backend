@@ -62,7 +62,7 @@ class SponsorController extends Controller
             ]
         ]);
 
-        $user = Auth::user()->id;
+        $user = Auth::user();
 
         if ($result->success) {
             
@@ -81,14 +81,12 @@ class SponsorController extends Controller
 
             $expiredAt = now()->addHours($hoursToAdd);
 
-            $existingUser = DB::table('user_sponsor')
-            ->where('user_id', $user)
-            ->exists();
+            $now = Carbon::now();
 
-            if(!$existingUser){
+            if(!$user->sponsors()->where('expired_at', '>', $now)->exists()){
                 DB::table('user_sponsor')->insert([
                     [
-                        'user_id' => $user, 
+                        'user_id' => $user->id, 
                         'sponsor_id' => $paymentData['sponsor'],
                         'created_at' => now(),
                         'updated_at' => now(),
@@ -98,8 +96,19 @@ class SponsorController extends Controller
                 return redirect()->route('admin.dashboard');   
             }
             else{
-                abort(403, 'Non autorizzato');
+                abort(403, 'Non puoi');
             }
+
+            // $existingUser = DB::table('user_sponsor')
+            // ->where('user_id', $user)
+            // ->exists();
+
+            // if(!$existingUser){
+
+            // }
+            // else{
+            //     abort(403, 'Non autorizzato');
+            // }
 
         };
     }
