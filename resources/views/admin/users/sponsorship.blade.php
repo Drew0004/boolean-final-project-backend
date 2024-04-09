@@ -2,19 +2,24 @@
 @section('page-title', 'Dashboard')
 
 @section('main-content')
-<div class="container py-5">
-    <form id="payment-form" action="{{ route('admin.sponsorship.store') }}" method="post">
-        @csrf
-        <select class="form-select" aria-label="Default select example " id="sponsor" name="sponsor" required>
-        @foreach ($sponsors as $singleSponsor)
-            <option value="{{ $singleSponsor->id }}">{{ $singleSponsor->type }}</option>
-        @endforeach
-        </select>
-        <div id="dropin-container"></div>
-        <input type="submit" value="Submit Payment" />
-        <input type="hidden" id="nonce" name="payment_method_nonce" />
-    </form>
-</div>
+<section id="forms">
+    <div class="container py-5">
+        <form id="payment-form" action="{{ route('admin.sponsorship.store') }}" method="post">
+            @csrf
+            <label class="my-label mb-3" for="sponsor">Scegli il tuo piano di sponsorizzazione</label>
+            <select class="form-select" aria-label="Default select example " id="sponsor" name="sponsor" required>
+            @foreach ($sponsors as $singleSponsor)
+                <option value="{{ $singleSponsor->id }}">{{ $singleSponsor->type }}</option>
+            @endforeach
+            </select>
+            <h3 class="my-label mt-4">Inserisci i dati della carta:</h3>
+            <div id="dropin-container"></div>
+            <input class="btn btn-primary" type="submit" value="Submit Payment" />
+            <input type="hidden" id="nonce" name="payment_method_nonce" />
+        </form>
+    </div>
+</section>
+
 
 <script src="https://js.braintreegateway.com/web/dropin/1.30.0/js/dropin.min.js"></script>
 <script>
