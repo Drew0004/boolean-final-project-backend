@@ -60,4 +60,65 @@
             </div>
         </form>
     </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector('form');
+    
+            form.addEventListener('submit', function (event) {
+                // Prevenie il submit del form
+                event.preventDefault();
+    
+                // Perform validation
+                const emailInput = document.getElementById('email');
+                const passwordInput = document.getElementById('password');
+                let isValid = true;
+    
+                // Validazione email
+                if (!isValidEmail(emailInput.value)) {
+                    isValid = false;
+                    displayError(emailInput, 'Indirizzo email non valido');
+                } else {
+                    removeError(emailInput);
+                }
+    
+                // Validazione PSW
+                if (passwordInput.value.length < 9) {
+                    isValid = false;
+                    displayError(passwordInput, 'La password deve contenere almeno 9 caratteri');
+                } else {
+                    removeError(passwordInput);
+                }
+    
+                // Se è valida -> submitta il form
+                if (isValid) {
+                    form.submit();
+                }
+            });
+    
+            function isValidEmail(email) {
+                // Controllo-Validazione della email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+    
+            function displayError(inputElement, errorMessage) {
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'alert alert-danger';
+                errorDiv.textContent = errorMessage;
+    
+                // Remove existing error message if any
+                removeError(inputElement);
+    
+                // Inserisci il nuovo messaggio di errore
+                inputElement.parentNode.appendChild(errorDiv);
+            }
+    
+            function removeError(inputElement) {
+                const errorDiv = inputElement.parentNode.querySelector('.alert.alert-danger');
+                if (errorDiv) {
+                    errorDiv.remove();
+                }
+            }
+        });
+    </script>  
 @endsection

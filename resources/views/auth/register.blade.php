@@ -113,4 +113,119 @@
             </div>
         </form>
     </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector('form');
+    
+            form.addEventListener('submit', function (event) {
+                // Prevenie il submit del form
+                event.preventDefault();
+    
+                // Perform validation
+                const nameInput = document.getElementById('name');
+                const emailInput = document.getElementById('email');
+                const passwordInput = document.getElementById('password');
+                const confirmPasswordInput = document.getElementById('password_confirmation');
+                const cityInput = document.getElementById('city');
+                const roleCheckboxes = document.querySelectorAll('.role-checkbox');
+                let isValid = true;
+    
+                // Validazione del name
+                if (nameInput.value.trim() === '') {
+                    isValid = false;
+                    displayError(nameInput, 'Inserisci il tuo nome o il nome della tua band');
+                } else {
+                    removeError(nameInput);
+                }
+    
+                // Validazione email
+                if (!isValidEmail(emailInput.value)) {
+                    isValid = false;
+                    displayError(emailInput, 'Indirizzo email non valido');
+                } else {
+                    removeError(emailInput);
+                }
+    
+                // Validazione password
+                if (passwordInput.value.length < 9) {
+                    isValid = false;
+                    displayError(passwordInput, 'La password deve contenere almeno 9 caratteri');
+                } else {
+                    removeError(passwordInput);
+                }
+    
+                // Validazione confirm password
+                if (passwordInput.value !== confirmPasswordInput.value) {
+                    isValid = false;
+                    displayError(confirmPasswordInput, 'La password non corrisponde');
+                } else {
+                    removeError(confirmPasswordInput);
+                }
+    
+                // Validazione city
+                if (cityInput.value.trim() === '') {
+                    isValid = false;
+                    displayError(cityInput, 'Inserisci la tua città');
+                } else {
+                    removeError(cityInput);
+                }
+    
+                // Validazione Almeno un ruolo deve essere selezionato
+                let rolesChecked = false;
+                roleCheckboxes.forEach(function (checkbox) {
+                    if (checkbox.checked) {
+                        rolesChecked = true;
+                    }
+                });
+                if (!rolesChecked) {
+                    isValid = false;
+                    const rolesErrorDiv = document.querySelector('.roles-error');
+                    if (rolesErrorDiv) {
+                        rolesErrorDiv.remove();
+                    }
+                    const rolesErrorMessage = document.createElement('div');
+                    rolesErrorMessage.className = 'alert alert-danger roles-error';
+                    rolesErrorMessage.textContent = 'Seleziona almeno un ruolo';
+                    document.querySelector('.mb-4').appendChild(rolesErrorMessage);
+                } else {
+                    const rolesErrorDiv = document.querySelector('.roles-error');
+                    if (rolesErrorDiv) {
+                        rolesErrorDiv.remove();
+                    }
+                }
+    
+                // Se è valida -> submitta il form
+                if (isValid) {
+                    form.submit();
+                }
+            });
+    
+            function isValidEmail(email) {
+                // Basic email validation using regular expression
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+    
+            function displayError(inputElement, errorMessage) {
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'alert alert-danger';
+                errorDiv.textContent = errorMessage;
+    
+                // Remove existing error message if any
+                removeError(inputElement);
+    
+                // Inserisci il nuovo messaggio di errore
+                inputElement.parentNode.appendChild(errorDiv);
+            }
+    
+            function removeError(inputElement) {
+                const errorDiv = inputElement.parentNode.querySelector('.alert.alert-danger');
+                if (errorDiv) {
+                    errorDiv.remove();
+                }
+            }
+        });
+    </script>
+    
 @endsection

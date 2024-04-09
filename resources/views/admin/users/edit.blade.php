@@ -178,4 +178,139 @@
             </form>
     </div>
 </section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector('form');
+
+        form.addEventListener('submit', function (event) {
+            // Prevenire il comportamento predefinito di inviare il modulo
+            event.preventDefault();
+
+            // Perform validation
+            const usernameInput = document.getElementById('username');
+            const cityInput = document.getElementById('city');
+            const demoInput = document.getElementById('demo');
+            const pictureInput = document.getElementById('picture');
+            const bioInput = document.getElementById('bio');
+            const cellphoneInput = document.getElementById('cellphone');
+            const membersInput = document.getElementById('members');
+            const roleCheckboxes = document.querySelectorAll('.role-checkbox');
+            let isValid = true;
+
+            // Validazione del name
+            if (usernameInput.value.trim() === '') {
+                isValid = false;
+                displayError(usernameInput, 'Inserisci il tuo nome o il nome della tua band');
+            } else {
+                removeError(usernameInput);
+            }
+
+            // Validazione city
+            if (cityInput.value.trim() === '') {
+                isValid = false;
+                displayError(cityInput, 'Inserisci la tua città');
+            } else {
+                removeError(cityInput);
+            }
+
+            // Validazione demo file se fornito
+            if (demoInput.value && !isValidDemoFile(demoInput)) {
+                isValid = false;
+                displayError(demoInput, 'Carica un file Mp3');
+            } else {
+                removeError(demoInput);
+            }
+
+            // Validazione immagine profilo se fornita
+            if (pictureInput.value && !isValidPictureFile(pictureInput)) {
+                isValid = false;
+                displayError(pictureInput, 'Carica un file immagine valido');
+            } else {
+                removeError(pictureInput);
+            }
+
+            // Validazione lunghezza bio
+            if (bioInput.value.length > 1024) {
+                isValid = false;
+                displayError(bioInput, 'La biografia deve contenere meno di 1024 caratteri');
+            } else {
+                removeError(bioInput);
+            }
+
+            // Validazione telefono
+            if (cellphoneInput.value.trim() !== '' && !isValidCellphone(cellphoneInput.value)) {
+                isValid = false;
+                displayError(cellphoneInput, 'Inserisci un numero di cellulare valido');
+            } else {
+                removeError(cellphoneInput);
+            }
+
+            // Validazione membri se forniti
+            if (membersInput.value.trim() !== '' && membersInput.value.length > 1024) {
+                isValid = false;
+                displayError(membersInput, 'La sezione deve contenere meno di 1024 caratteri');
+            } else {
+                removeError(membersInput);
+            }
+
+            // Validazione ruoli inseriti (almeno uno inserito)
+            let rolesChecked = false;
+            roleCheckboxes.forEach(function (checkbox) {
+                if (checkbox.checked) {
+                    rolesChecked = true;
+                }
+            });
+            if (!rolesChecked) {
+                isValid = false;
+                displayError(roleCheckboxes[0], 'Seleziona almeno un ruolo');
+            }
+
+            // Se è valida -> submitta il form
+            if (isValid === true) {
+                form.submit();
+            }
+        });
+    });
+
+    function isValidDemoFile(demoInput) {
+        // Validazione formato demo
+        const acceptedExtensions = ['mp3'];
+        const fileExtension = demoInput.value.split('.').pop().toLowerCase();
+        return acceptedExtensions.includes(fileExtension);
+    }
+
+    function isValidPictureFile(pictureInput) {
+        // Validazione formato immagine
+        const acceptedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+        const fileExtension = pictureInput.value.split('.').pop().toLowerCase();
+        return acceptedExtensions.includes(fileExtension);
+    }
+
+    function isValidCellphone(cellphone) {
+        // Validazione numero di telefono
+        const cellphoneRegex = /^[0-9]{10}$/;
+        return cellphoneRegex.test(cellphone);
+    }
+
+    function displayError(inputElement, errorMessage) {
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'alert alert-danger';
+        errorDiv.textContent = errorMessage;
+
+        // Remove existing error message if any
+        removeError(inputElement);
+
+        // Inserisci il nuovo messaggio di errore
+        inputElement.parentNode.appendChild(errorDiv);
+    }
+
+    function removeError(inputElement) {
+        const errorDiv = inputElement.parentNode.querySelector('.alert.alert-danger');
+        if (errorDiv) {
+            errorDiv.remove();
+        }
+    }
+</script>
+
 @endsection
