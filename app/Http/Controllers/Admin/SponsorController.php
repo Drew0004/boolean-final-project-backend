@@ -118,6 +118,15 @@ class SponsorController extends Controller
      */
     public function show(Sponsor $sponsor)
     {
+        $usersWithoutSponsorship = User::whereDoesntHave('sponsors')->get();
+
+        $now = Carbon::now();
+
+        $user = Auth::user();
+
+        // $usersWithoutSponsorship = $user->whereDoesntHave('sponsors')->get();
+
+        $sponsoredUser = $user->sponsors()->where('expired_at', '>', $now)->get();
         $sponsors = Sponsor::All();
         $gateway = new BraintreeGateway([
             'environment' => 'sandbox',
@@ -134,7 +143,7 @@ class SponsorController extends Controller
             "customerId" => $customerId
         ]);
     
-        return view('admin.users.sponsorship', compact('clientToken', 'sponsors', 'customerId'));
+        return view('admin.users.sponsorship', compact('clientToken', 'sponsors', 'customerId', 'sponsoredUser', 'usersWithoutSponsorship', 'user'));
     }
 
     /**

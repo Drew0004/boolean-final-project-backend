@@ -2,6 +2,7 @@
 @section('page-title', 'Dashboard')
 
 @section('main-content')
+@if($usersWithoutSponsorship->contains($user) || !$sponsoredUser->isNotEmpty())
 <section id="forms">
     <div class="container py-5">
         <form id="payment-form" action="{{ route('admin.sponsorship.store') }}" method="post">
@@ -19,6 +20,12 @@
         </form>
     </div>
 </section>
+@else
+<div class="text-center">
+    <h2 class="badge text-bg-danger my-5 fs-4">Sembra che tu abbia già una sponsorizzazione attiva, potrai crearne una nuova appena quest'ultima sarà scaduta</h2>
+</div>
+
+@endif
 
 
 <script src="https://js.braintreegateway.com/web/dropin/1.30.0/js/dropin.min.js"></script>
