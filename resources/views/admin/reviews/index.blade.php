@@ -36,7 +36,7 @@
         <div class="container">
             {{-- Sezione reviews --}}
             <div class="row justify-content-between">
-
+                @if(!$reviews->isEmpty())
                 @foreach($reviews as $review)
                 <div class="col-5 my-5 my-review-card p-4">
                     <div class="review-upper-card">
@@ -65,6 +65,12 @@
                     </div>
                 </div>
                 @endforeach
+                
+                @else
+                <div class="text-center">
+                    <h2 class="badge text-bg-danger fs-4 mb-5">Ops! Sembra che tu non abbia ancora ricevuto Recensioni!</h2>
+                </div>
+                @endif
 
             </div>
             
@@ -74,6 +80,7 @@
 
             {{-- Sezione Voti --}}
             <div class="row justify-content-between pb-5">
+                @if(!$user->votes->isEmpty())
                 @foreach($user->votes as $vote)
                 <div class="col-4 my-4">
                     <div class="vote-card p-4">
@@ -89,6 +96,11 @@
                     </div>
                 </div>
                 @endforeach
+                @else
+                <div class="text-center">
+                    <h2 class="badge text-bg-danger fs-4 mb-5">Ops! Sembra che tu non abbia ancora ricevuto Votazioni!</h2>
+                </div>
+                @endif
             </div>
         </div>
   </section>

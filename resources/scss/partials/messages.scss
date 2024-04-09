@@ -48,6 +48,12 @@
         border-radius: 20px;
         padding: 10px;
     }
+    .img-not-found{
+        background-image: url('/storage/images/Not-Found.jpg');
+        min-height: 400px;
+        background-size: cover;
+        background-position: center; 
+    }
 }
 #messages-show{
     h2{
@@ -73,5 +79,11 @@
                 font-weight: lighter;
             }
         }
+    }
+    .img-not-found{
+        background-image: url('/storage/images/Not-Found.jpg');
+        min-height: 400px;
+        background-size: cover;
+        background-position: center; 
     }
 }

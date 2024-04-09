@@ -5,6 +5,8 @@
 @section('main-content')
 <div class="container py-5">
 
+  @if($totalVotes != null || $totalReviews != null || $totalMessages != null)
+
     <div id="chartData"
         data-total-votes="{{ $totalVotes }}"
         data-total-reviews="{{ $totalReviews }}"
@@ -18,7 +20,14 @@
         <canvas id="myChart2"></canvas>
       </div>
     </div>
-</div>
+    
+    @else
+    <div class="text-center">
+      <h2 class="badge text-bg-danger fs-4">Ops! Sembra che tu non abbia ancora ricevuto Messaggi, Voti, o Recensioni!</h2>
+    </div>
+
+    @endif
+  </div>
   
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   

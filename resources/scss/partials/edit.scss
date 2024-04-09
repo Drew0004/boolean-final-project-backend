@@ -60,4 +60,10 @@
         }
     
     }
+    .img-not-found{
+        background-image: url('/storage/images/Not-Found.jpg');
+        min-height: 400px;
+        background-size: cover;
+        background-position: center; 
+    }
 }

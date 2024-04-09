@@ -35,6 +35,12 @@
             border-radius: 50%;
         }
     }
+    .img-not-found{
+        background-image: url('/storage/images/Not-Found.jpg');
+        min-height: 400px;
+        background-size: cover;
+        background-position: center; 
+    }
 
 }
 #reviews-show{
@@ -61,5 +67,11 @@
                 font-weight: lighter;
             }
         }
+    }
+    .img-not-found{
+        background-image: url('/storage/images/Not-Found.jpg');
+        min-height: 400px;
+        background-size: cover;
+        background-position: center; 
     }
 }

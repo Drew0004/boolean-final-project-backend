@@ -32,11 +32,10 @@
                 I tuoi messaggi:
             </h2>
         </div>
-
         {{-- Sezione messaggi --}}
         <div class="container">
             <div class="row justify-content-between">
-
+                @if(!$receivedMessages->isEmpty())
                 @foreach($receivedMessages as $message)
                 <div class="col-5 my-5 my-message-card p-4">
                     <div class="message-upper-card">
@@ -158,6 +157,11 @@
                 </div>
                 </div>
             </div>
+            @else
+            <div class="text-center">
+                <h2 class="badge text-bg-danger fs-4 mb-5">Ops! Sembra che tu non abbia ancora ricevuto Messaggi!</h2>
+            </div>
+            @endif
         </div>
   </section>
   @endsection
