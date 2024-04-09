@@ -67,14 +67,17 @@ class UserController extends Controller
 
     public function sponsor()
     {
+        // Ottengo la data di oggi
         $now = Carbon::now();
         // Url chiamata http://127.0.0.1:8000/api/sponsor
+        // Creo una query in cui vengono presi solo gli utenti la cui data di scadenza è superiore a quella di oggi
         $users = User::whereHas('sponsors', function ($query) use ($now) {
             $query->where('expired_at', '>', $now);
         })
         ->with('userDetails', 'roles', 'votes', 'messages', 'reviews')
         ->get();
 
+        // Creo la chiamata Api con gli utenti sponsorizzati
         return response()->json([
             'success' => true,
             'results' => $users,
