@@ -80,17 +80,27 @@ class SponsorController extends Controller
             }
 
             $expiredAt = now()->addHours($hoursToAdd);
-            
-            DB::table('user_sponsor')->insert([
-                [
-                    'user_id' => $user, 
-                    'sponsor_id' => $paymentData['sponsor'],
-                    'created_at' => now(),
-                    'updated_at' => now(),
-                    'expired_at' => $expiredAt,
-                ]
-            ]);
-            return redirect()->route('admin.dashboard');   
+
+            $existingUser = DB::table('user_sponsor')
+            ->where('user_id', $user)
+            ->exists();
+
+            if(!$existingUser){
+                DB::table('user_sponsor')->insert([
+                    [
+                        'user_id' => $user, 
+                        'sponsor_id' => $paymentData['sponsor'],
+                        'created_at' => now(),
+                        'updated_at' => now(),
+                        'expired_at' => $expiredAt,
+                    ]
+                ]);
+                return redirect()->route('admin.dashboard');   
+            }
+            else{
+                abort(403, 'Non autorizzato');
+            }
+
         };
     }
 
