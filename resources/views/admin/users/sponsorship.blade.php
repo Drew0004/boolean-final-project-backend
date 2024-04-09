@@ -5,7 +5,7 @@
 <div class="container py-5">
     <form id="payment-form" action="{{ route('admin.sponsorship.store') }}" method="post">
         @csrf
-        <select class="form-select" aria-label="Default select example " id="sponsor" name="sponsor">
+        <select class="form-select" aria-label="Default select example " id="sponsor" name="sponsor" required>
         @foreach ($sponsors as $singleSponsor)
             <option value="{{ $singleSponsor->id }}">{{ $singleSponsor->type }}</option>
         @endforeach

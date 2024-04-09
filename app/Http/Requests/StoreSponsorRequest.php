@@ -22,7 +22,7 @@ class StoreSponsorRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'sponsor' => 'nullable|exists:sponsors,id',
+            'sponsor' => 'required|exists:sponsors,id',
         ];
     }
 }
