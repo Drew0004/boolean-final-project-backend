@@ -12,7 +12,7 @@
         <!-- Scripts -->
         @vite('resources/js/app.js')
     </head>
-    <body>
+    <body class="d-flex flex-column min-vh-100">
         <header>
             <nav class="navbar navbar-expand-lg my-blue-bg py-4">
                 <div class="container">
@@ -49,7 +49,7 @@
             </nav>
         </header>
 
-        <main class="py-4">
+        <main class="py-4 flex-grow-1">
             <div class="container">
                 @yield('main-content')
             </div>

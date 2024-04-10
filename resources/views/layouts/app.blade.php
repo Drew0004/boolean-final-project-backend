@@ -32,7 +32,7 @@
         }
     </style>
 
-    <body>
+    <body class="d-flex flex-column min-vh-100">
         <header>
             <nav class="navbar navbar-expand-lg my-blue-bg py-4">
                 <div class="container">
@@ -114,7 +114,7 @@
             </nav>
         </header>
 
-        <main>
+        <main class="flex-grow-1">
             @yield('main-content')
         </main>
 @php
