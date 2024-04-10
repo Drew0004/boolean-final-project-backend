@@ -126,7 +126,10 @@ class SponsorController extends Controller
 
         // $usersWithoutSponsorship = $user->whereDoesntHave('sponsors')->get();
 
-        $sponsoredUser = $user->sponsors->where('expired_at', '>', $now);
+        $sponsoredUser =  User::whereHas('sponsors', function ($query) use ($now) {
+            $query->where('expired_at', '>', $now);
+        })
+        ->get();
         $sponsors = Sponsor::All();
         $gateway = new BraintreeGateway([
             'environment' => 'sandbox',

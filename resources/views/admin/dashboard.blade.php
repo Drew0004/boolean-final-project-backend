@@ -11,15 +11,8 @@
         background-position: 0 40%; 
     }
   </style>
-<?php
-    use Carbon\Carbon;
-    $nowCarbon = Carbon::now();
-    $nowDef = now();
-    $success = 'Corrispondono';
-    dd($nowDef);
-    // if($nowCarbon->equalTo($nowDef)) {
-    // }
-?>
+
+
 <section id="dashboard">
     
     {{-- Sezione Hero Profilo --}}
@@ -50,7 +43,7 @@
                     I tuoi dati:
                 </h2>
             </div>
-            @if(!$usersWithoutSponsorship->contains($user) || $sponsoredUser->isNotEmpty())
+            @if(!$usersWithoutSponsorship->contains($user) && $sponsoredUser->contains($user))
             <div class="col-auto">
                 <h4 class="badge text-bg-success fs-4 bounce-in-y">
                     Attualmente sei sponsorizzato!

@@ -31,7 +31,10 @@ class MainController extends Controller
 
         $now = Carbon::now();
         
-        $sponsoredUser = $user->sponsors->where('expired_at', '>', $now);
+        $sponsoredUser =  User::whereHas('sponsors', function ($query) use ($now) {
+            $query->where('expired_at', '>', $now);
+        })
+        ->get();
 
         $usersWithoutSponsorship = User::whereDoesntHave('sponsors')->get();
 
