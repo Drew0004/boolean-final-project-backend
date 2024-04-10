@@ -1,254 +1,563 @@
 <?php
    return[
     [
+        'user_id'=> '1',
         'firstname' => 'Gino',
         'lastname' => 'Paoli',
         'email' => 'gino.paoli@gmail.com',
-        'message' => 'Salve, sono interessato 
-        alla vostra musica e vorrei discutere un 
-        possibile ingaggio per un evento. 
-        Potremmo parlare dei dettagli? Grazie.',
+        'message' => 'Salve, sono interessato alla tu musica e vorrei discutere un possibile ingaggio per un evento.Potremmo parlare dei dettagli? Grazie.',
     ],
     [
+        'user_id'=> '1',
         'firstname' => 'Vincenzo',
         'lastname' => 'De Santi',
         'email' => 'vincenzodesanti@hotmail.it',
-        'message' => 'Ciao, mi piacerebbe collaborare 
-        con te per un progetto musicale. 
-        Possiamo discutere le opzioni? 
-        Attendo tue notizie. Grazie.',
+        'message' => 'Ciao Mario! Mi piacerebbe collaborare con te per un progetto musicale. Possiamo discutere le opzioni? Attendo tue notizie. Grazie.',
     ],
     [
+        'user_id'=> '1',
         'firstname' => 'Francesca',
         'lastname' => 'Roberti',
         'email' => 'francesca.roberti87@libero.com',
-        'message' => "Salve, sono interessata alla 
-        vostra musica e vorrei prenotarvi per un'esibizione. 
-        Potremmo discutere disponibilità e tariffe? Grazie.",
+        'message' => "Salve, sono interessata alla tua musica. Ho ascoltato la demo preview ed è molto interessante. Potremmo discutere disponibilità e tariffe per il mio 30esimo? Grazie.",
     ],
     [
+        'user_id'=> '1',
         'firstname' => 'Gianluigi',
         'lastname' => 'Cecco',
         'email' => 'gianluigi.cecco@gmail.com',
-        'message' => "Ciao, vorremmo prenotarvi 
-        per un concerto. Possiamo parlare delle 
-        vostre date disponibili e delle tariffe? 
-        Grazie mille.",
+        'message' => "Ciao, vorremmo prenotarla per un concerto. Possiamo parlare delle sue date disponibili e delle tariffe? Grazie mille.",
     ],
     [
+        'user_id'=> '1',
         'firstname' => 'Roberto',
         'lastname' => 'Marini',
         'email' => 'roberto.marini@outlook.com',
-        'message' => 'Salve, vorrei informazioni riguardo ai vostri servizi musicali per un matrimonio. Potreste inviarmi maggiori dettagli? Grazie.',
+        'message' => 'Salve, vorrei informazioni riguardo ai suoi servizi per un matrimonio. Potrebbe inviarmi maggiori dettagli? Grazie.',
     ],
     [
+        'user_id'=> '2',
         'firstname' => 'Maria',
         'lastname' => 'Conte',
         'email' => 'maria.conte@yahoo.it',
-        'message' => 'Buongiorno, sto cercando un gruppo musicale per un evento aziendale. Potreste fornirmi ulteriori informazioni sul vostro repertorio e disponibilità? Grazie.',
+        'message' => 'Buongiorno Paola, sto cercando una cantante con un repertorio delle piu famose canzoni italiane per un evento aziendale. Potrebbe fornirmi ulteriori informazioni sul suo repertorio e disponibilità? Grazie.',
     ],
     [
+        'user_id'=> '2',
         'firstname' => 'Andrea',
         'lastname' => 'Galli',
         'email' => 'andrea.galli@live.com',
         'message' => 'Ciao, sono un pianista e mi piacerebbe collaborare con voi per delle esibizioni. Siete interessati? Grazie.',
     ],
     [
+        'user_id'=> '2',
         'firstname' => 'Laura',
         'lastname' => 'Russo',
         'email' => 'laura.russo@tin.it',
         'message' => "Salve, vorrei sapere se siete disponibili per suonare al mio locale il prossimo fine settimana. Potremmo concordare i dettagli? Grazie.",
     ],
     [
+        'user_id'=> '2',
         'firstname' => 'Luigi',
         'lastname' => 'Ferrari',
         'email' => 'luigi.ferrari@fastweb.it',
         'message' => 'Ciao, vorrei organizzare una serata musicale e vorrei sapere se siete disponibili per suonare. Possiamo discutere dei dettagli? Grazie.',
     ],
     [
+        'user_id'=> '2',
         'firstname' => 'Chiara',
         'lastname' => 'Ricci',
         'email' => 'chiara.ricci@virgilio.it',
-        'message' => 'Buongiorno, vorrei prenotare la vostra band per il mio compleanno. Potremmo parlare delle opzioni disponibili? Grazie.',
+        'message' => 'Buongiorno, volevo sapere se fosse disposnibile per il mio compleanno (26/09). Potremmo parlare delle opzioni disponibili? Grazie.',
     ],
     [
+        'user_id'=> '2',
         'firstname' => 'Marco',
         'lastname' => 'Martini',
         'email' => 'marco.martini@alice.it',
-        'message' => 'Salve, vorrei chiedervi informazioni su un possibile concerto per una festa privata. Potete darmi maggiori dettagli? Grazie.',
+        'message' => 'Salve, vorrei chiedervi informazioni su un possibile concerto per una festa privata, sarà a tema italia anni 90. Potete darmi maggiori dettagli? Grazie.',
     ],
     [
+        'user_id'=> '2',
         'firstname' => 'Silvia',
         'lastname' => 'Romano',
         'email' => 'silvia.romano@tiscali.it',
-        'message' => 'Ciao, vorrei sapere se siete disponibili per suonare al nostro matrimonio. Possiamo organizzare un incontro per discutere i dettagli? Grazie.',
+        'message' => 'Ciao, vorrei sapere se è disponibile per cantare al mio matrimonio. Possiamo organizzare un incontro per discutere i dettagli? Grazie.',
     ],
     [
+        'user_id'=> '2',
         'firstname' => 'Paolo',
         'lastname' => 'Santini',
         'email' => 'paolo.santini@inwind.it',
-        'message' => 'Buongiorno, vorrei chiedervi informazioni su eventuali concerti in programma. Potreste fornirmi ulteriori dettagli? Grazie.',
+        'message' => 'Buongiorno, vorrei chiedervi informazioni su eventuali concerti che ha in programma. Potreste fornirmi ulteriori dettagli? Io e mia moglie verremmo a vederla molto volentieri.',
     ],
     [
+        'user_id'=> '3',
         'firstname' => 'Elisa',
         'lastname' => 'Rossi',
         'email' => 'elisa.rossi@tim.it',
         'message' => 'Salve, vorrei prenotare la vostra band per una festa di compleanno. Possiamo parlare dei dettagli? Grazie.',
     ],
     [
+        'user_id'=> '3',
         'firstname' => 'Alessio',
         'lastname' => 'Leone',
         'email' => 'alessio.leone@wind.it',
         'message' => 'Ciao, sto cercando una band per un evento di beneficenza. Siete disponibili? Grazie.',
     ],
     [
+        'user_id'=> '3',
         'firstname' => 'Sara',
         'lastname' => 'Marchetti',
         'email' => 'sara.marchetti@iol.it',
         'message' => 'Buongiorno, vorrei chiedervi informazioni su un possibile concerto per la festa della mia azienda. Potreste darmi maggiori dettagli? Grazie.',
     ],
     [
+        'user_id'=> '3',
         'firstname' => 'Mario',
         'lastname' => 'Rossi',
         'email' => 'mario.rossi@iol.it',
         'message' => 'Buonasera, vorrei organizzare un evento e mi piacerebbe avere la vostra band come intrattenimento. Potreste inviarmi maggiori informazioni? Grazie.',
     ],
     [
+        'user_id'=> '3',
         'firstname' => 'Giulia',
         'lastname' => 'Bianchi',
         'email' => 'giulia.bianchi@iol.it',
         'message' => 'Ciao, sto cercando una band per un concerto in occasione di una festa di compleanno. Potreste darmi ulteriori dettagli sui vostri servizi? Grazie mille.',
     ],
     [
+        'user_id'=> '3',
         'firstname' => 'Luca',
         'lastname' => 'Ferrari',
         'email' => 'luca.ferrari@iol.it',
         'message' => 'Salve, vorrei prenotare la vostra band per un evento aziendale. Potremmo discutere le disponibilità e i dettagli? Grazie.',
     ],
     [
+        'user_id'=> '3',
         'firstname' => 'Martina',
         'lastname' => 'Rinaldi',
         'email' => 'martina.rinaldi@iol.it',
         'message' => 'Buongiorno, sono interessata a organizzare un concerto e mi piacerebbe avere la vostra band come protagonista. Possiamo discutere dei dettagli? Grazie.',
     ],
     [
+        'user_id'=> '3',
         'firstname' => 'Anna',
         'lastname' => 'Galli',
         'email' => 'anna.galli@gmail.com',
         'message' => 'Ciao, vorrei avere informazioni riguardo alla vostra disponibilità per suonare al nostro matrimonio. Potete inviarmi maggiori dettagli? Grazie.',
     ],
     [
+        'user_id'=> '3',
         'firstname' => 'Davide',
         'lastname' => 'Barbieri',
         'email' => 'davide.barbieri@gmail.com',
         'message' => 'Salve, mi piacerebbe organizzare una serata musicale nel mio locale e sarei interessato ad avere la vostra band. Possiamo discutere dei dettagli? Grazie.',
     ],
     [
+        'user_id'=> '4',
         'firstname' => 'Elena',
         'lastname' => 'Moretti',
         'email' => 'elena.moretti@gmail.com',
         'message' => 'Buongiorno, vorrei prenotare la vostra band per un evento privato. Potremmo parlare delle opzioni disponibili? Grazie.',
     ],
     [
+        'user_id'=> '4',
         'firstname' => 'Fabio',
         'lastname' => 'Rizzo',
         'email' => 'fabio.rizzo@gmail.com',
         'message' => 'Ciao, sto cercando una band per suonare al mio locale questo weekend. Siete disponibili? Grazie.',
     ],
     [
+        'user_id'=> '4',
         'firstname' => 'Giorgio',
         'lastname' => 'Greco',
         'email' => 'giorgio.greco@gmail.com',
         'message' => 'Salve, vorrei avere informazioni sui vostri servizi per un evento di inaugurazione. Potete inviarmi maggiori dettagli? Grazie.',
     ],
     [
+        'user_id'=> '5',
         'firstname' => 'Ilaria',
         'lastname' => 'Bianco',
         'email' => 'ilaria.bianco@gmail.com',
         'message' => 'Ciao, vorrei organizzare una festa e mi piacerebbe avere la vostra band come intrattenimento. Potreste darmi ulteriori informazioni? Grazie.',
     ],
     [
+        'user_id'=> '5',
         'firstname' => 'Jacopo',
         'lastname' => 'Lombardi',
         'email' => 'jacopo.lombardi@gmail.com',
         'message' => 'Buonasera, vorrei chiedervi informazioni su un possibile concerto per un evento sportivo. Potreste fornirmi maggiori dettagli? Grazie.',
     ],
     [
+        'user_id'=> '6',
         'firstname' => 'Lorenzo',
         'lastname' => 'Greco',
         'email' => 'lorenzo.greco@gmail.com',
         'message' => 'Salve, vorrei prenotare la vostra band per una festa di compleanno. Possiamo discutere dei dettagli? Grazie.',
     ],
     [
+        'user_id'=> '6',
         'firstname' => 'Marta',
         'lastname' => 'Ferraro',
         'email' => 'marta.ferraro@gmail.com',
         'message' => 'Buongiorno, sto cercando una band per suonare al mio matrimonio. Potreste darmi ulteriori informazioni sui vostri servizi? Grazie.',
     ],
     [
+        'user_id'=> '7',
         'firstname' => 'Nicola',
         'lastname' => 'Lombardo',
         'email' => 'nicola.lombardo@gmail.com',
         'message' => 'Ciao, vorrei organizzare un evento aziendale e mi piacerebbe avere la vostra band come intrattenimento. Possiamo discutere dei dettagli? Grazie.',
     ],
     [
+        'user_id'=> '7',
         'firstname' => 'Ottavia',
         'lastname' => 'Conti',
         'email' => 'ottavia.conti@gmail.com',
         'message' => 'Salve, vorrei avere informazioni riguardo ai vostri servizi per un evento di gala. Potreste inviarmi maggiori dettagli? Grazie.',
     ],
     [
+        'user_id'=> '8',
         'firstname' => 'Pietro',
         'lastname' => 'Marini',
         'email' => 'pietro.marini@gmail.com',
         'message' => 'Buongiorno, vorrei chiedervi informazioni riguardo alla vostra disponibilità per un concerto in occasione di una festa privata. Potreste fornirmi ulteriori dettagli? Grazie.',
     ],
     [
+        'user_id'=> '8',
         'firstname' => 'Riccardo',
         'lastname' => 'Costa',
         'email' => 'riccardo.costa@gmail.com',
         'message' => 'Ciao, sto cercando una band per un evento benefico. Siete disponibili? Grazie.',
     ],
     [
+        'user_id'=> '9',
         'firstname' => 'Sonia',
         'lastname' => 'Rizzo',
         'email' => 'sonia.rizzo@gmail.com',
         'message' => 'Salve, vorrei prenotare la vostra band per un evento privato. Possiamo parlare dei dettagli? Grazie.',
     ],
     [
+        'user_id'=> '9',
         'firstname' => 'Tommaso',
         'lastname' => 'Ferrara',
         'email' => 'tommaso.ferrara@gmail.com',
         'message' => 'Buongiorno, vorrei organizzare un concerto e mi piacerebbe avere la vostra band come ospite. Potremmo discutere dei dettagli? Grazie.',
     ],
     [
+        'user_id'=> '10',
         'firstname' => 'Valentina',
         'lastname' => 'Rinaldi',
         'email' => 'valentina.rinaldi@gmail.com',
         'message' => 'Ciao, vorrei chiedervi informazioni sui vostri servizi per un evento aziendale. Potreste darmi ulteriori dettagli? Grazie.',
     ],
     [
+        'user_id'=> '10',
         'firstname' => 'Walter',
         'lastname' => 'Russo',
         'email' => 'walter.russo@gmail.com',
         'message' => 'Salve, vorrei avere informazioni riguardo alla vostra disponibilità per un concerto in occasione di una festa di laurea. Potreste inviarmi maggiori dettagli? Grazie.',
     ],
     [
+        'user_id'=> '11',
         'firstname' => 'Xavier',
         'lastname' => 'Greco',
         'email' => 'xavier.greco@gmail.com',
         'message' => 'Buongiorno, sto cercando una band per suonare al mio locale. Potete darmi ulteriori informazioni sui vostri servizi? Grazie.',
     ],
     [
+        'user_id'=> '11',
         'firstname' => 'Ylenia',
         'lastname' => 'Riva',
         'email' => 'ylenia.riva@gmail.com',
         'message' => 'Ciao, vorrei organizzare un evento e mi piacerebbe avere la vostra band come intrattenimento. Possiamo discutere dei dettagli? Grazie.',
     ],
     [
+        'user_id'=> '12',
         'firstname' => 'Zoe',
         'lastname' => 'Romano',
         'email' => 'zoe.romano@gmail.com',
         'message' => 'Salve, vorrei prenotare la vostra band per una festa di compleanno. Possiamo parlare dei dettagli? Grazie.',
     ],
+    [
+        'user_id'=> '12',
+        'firstname' => 'Giorgio',
+        'lastname' => 'Moretti',
+        'email' => 'giorgio.moretti@gmail.com',
+        'message' => 'Buongiorno, vorrei organizzare un concerto e mi piacerebbe avere la vostra band come ospite. Potreste fornirmi ulteriori dettagli? Grazie.',
+    ],
+    [
+        'user_id'=> '13',
+        'firstname' => 'Carla',
+        'lastname' => 'Gallo',
+        'email' => 'carla.gallo@gmail.com',
+        'message' => 'Ciao, vorrei prenotare la vostra band per un evento di beneficenza. Possiamo discutere dei dettagli? Grazie.',
+    ],
+    [
+        'user_id'=> '13',
+        'firstname' => 'Emanuele',
+        'lastname' => 'Ferrari',
+        'email' => 'emanuele.ferrari@gmail.com',
+        'message' => 'Salve, vorrei avere informazioni riguardo alla vostra disponibilità per suonare al mio matrimonio. Potreste inviarmi maggiori dettagli? Grazie.',
+    ],
+    [
+        'user_id'=> '14',
+        'firstname' => 'Rosa',
+        'lastname' => 'Rizzo',
+        'email' => 'rosa.rizzo@gmail.com',
+        'message' => 'Buongiorno, sto cercando una band per suonare al mio locale questo fine settimana. Siete disponibili? Grazie.',
+    ],
+    [
+        'user_id'=> '14',
+        'firstname' => 'Federico',
+        'lastname' => 'Russo',
+        'email' => 'federico.russo@gmail.com',
+        'message' => 'Ciao, vorrei chiedervi informazioni sui vostri servizi per un evento aziendale. Potreste darmi ulteriori dettagli? Grazie.',
+    ],
+    [
+        'user_id'=> '15',
+        'firstname' => 'Serena',
+        'lastname' => 'Lombardi',
+        'email' => 'serena.lombardi@gmail.com',
+        'message' => 'Salve, vorrei prenotare la vostra band per una festa privata. Possiamo parlare dei dettagli? Grazie.',
+    ],
+    [
+        'user_id'=> '15',
+        'firstname' => 'Giovanni',
+        'lastname' => 'Conti',
+        'email' => 'giovanni.conti@gmail.com',
+        'message' => 'Buongiorno, vorrei organizzare una serata musicale nel mio locale e sarei interessato ad avere la vostra band. Possiamo discutere dei dettagli? Grazie.',
+    ],
+    [
+        'user_id'=> '16',
+        'firstname' => 'Alessandra',
+        'lastname' => 'Barbieri',
+        'email' => 'alessandra.barbieri@gmail.com',
+        'message' => 'Ciao, vorrei avere informazioni riguardo alla vostra disponibilità per un concerto in occasione di una festa privata. Potreste inviarmi maggiori dettagli? Grazie.',
+    ],
+    [
+        'user_id'=> '16',
+        'firstname' => 'Massimo',
+        'lastname' => 'Marini',
+        'email' => 'massimo.marini@gmail.com',
+        'message' => 'Buongiorno, sto cercando una band per un evento benefico. Siete disponibili? Grazie.',
+    ],
+    [
+        'user_id'=> '17',
+        'firstname' => 'Daniela',
+        'lastname' => 'Ricci',
+        'email' => 'daniela.ricci@gmail.com',
+        'message' => 'Salve, vorrei prenotare la vostra band per un evento aziendale. Potremmo discutere dei dettagli? Grazie.',
+    ],
+    [
+        'user_id'=> '17',
+        'firstname' => 'Marco',
+        'lastname' => 'Bianchi',
+        'email' => 'marco.bianchi@gmail.com',
+        'message' => 'Ciao, vorrei avere informazioni sui vostri servizi per un evento privato. Potreste darmi ulteriori dettagli? Grazie.',
+    ],
+    [
+        'user_id'=> '18',
+        'firstname' => 'Anna',
+        'lastname' => 'Rinaldi',
+        'email' => 'anna.rinaldi@gmail.com',
+        'message' => 'Salve, sto cercando una band per suonare al mio matrimonio. Siete disponibili? Grazie.',
+    ],
+    [
+        'user_id'=> '18',
+        'firstname' => 'Luca',
+        'lastname' => 'Rossi',
+        'email' => 'luca.rossi@gmail.com',
+        'message' => 'Buongiorno, vorrei organizzare una serata musicale e mi piacerebbe avere la vostra band come intrattenimento. Possiamo discutere dei dettagli? Grazie.',
+    ],
+    [
+        'user_id'=> '19',
+        'firstname' => 'Giulia',
+        'lastname' => 'De Angelis',
+        'email' => 'giulia.deangelis@gmail.com',
+        'message' => 'Ciao, sto cercando una band per un evento aziendale. Potreste fornirmi ulteriori informazioni? Grazie.',
+    ],
+    [
+        'user_id'=> '19',
+        'firstname' => 'Antonio',
+        'lastname' => 'Conte',
+        'email' => 'antonio.conte@gmail.com',
+        'message' => 'Salve, vorrei prenotare la vostra band per una festa di compleanno. Possiamo parlare dei dettagli? Grazie.',
+    ],
+    [
+        'user_id'=> '19',
+        'firstname' => 'Elisabetta',
+        'lastname' => 'Ferri',
+        'email' => 'elisabetta.ferri@gmail.com',
+        'message' => 'Ciao, sto cercando una band per suonare al mio locale il prossimo fine settimana. Siete disponibili? Grazie.',
+    ],
+    [
+        'user_id'=> '5',
+        'firstname' => 'Federica',
+        'lastname' => 'Fontana',
+        'email' => 'federica.fontana@gmail.com',
+        'message' => 'Buongiorno, vorrei organizzare un concerto e mi piacerebbe avere la vostra band come protagonista. Potremmo discutere dei dettagli? Grazie.',
+    ],
+    [
+        'user_id'=> '20',
+        'firstname' => 'Giacomo',
+        'lastname' => 'Ricci',
+        'email' => 'giacomo.ricci@gmail.com',
+        'message' => 'Salve, vorrei prenotare la vostra band per un evento aziendale. Possiamo discutere dei dettagli? Grazie.',
+    ],
+    [
+        'user_id'=> '9',
+        'firstname' => 'Laura',
+        'lastname' => 'Galli',
+        'email' => 'laura.galli@gmail.com',
+        'message' => 'Ciao, sto cercando una band per suonare al mio locale. Potete darmi ulteriori informazioni sui vostri servizi? Grazie.',
+    ],
+    [
+        'user_id' => '18',
+        'firstname' => 'Michele',
+        'lastname' => 'Vitali',
+        'email' => 'michele.vitali@gmail.com',
+        'message' => 'Buongiorno, vorrei avere informazioni riguardo alla vostra disponibilità per un concerto in occasione di una festa privata. Potreste inviarmi maggiori dettagli? Grazie.'
+    ],
+    [
+        'user_id' => '9',
+        'firstname' => 'Nicola',
+        'lastname' => 'Marchetti',
+        'email' => 'nicola.marchetti@gmail.com',
+        'message' => 'Ciao, sto cercando una band per un evento benefico. Siete disponibili? Grazie.'
+    ],
+    [
+        'user_id' => '10',
+        'firstname' => 'Paola',
+        'lastname' => 'Galli',
+        'email' => 'paola.galli@gmail.com',
+        'message' => 'Salve, vorrei prenotare la vostra band per una festa di compleanno. Possiamo parlare dei dettagli? Grazie.'
+    ],
+    [
+        'user_id' => '3',
+        'firstname' => 'Roberto',
+        'lastname' => 'Mariani',
+        'email' => 'roberto.mariani@gmail.com',
+        'message' => 'Buongiorno, vorrei organizzare un concerto e mi piacerebbe avere la vostra band come intrattenimento. Possiamo discutere dei dettagli? Grazie.'
+    ],
+    [
+        'user_id' => '14',
+        'firstname' => 'Sara',
+        'lastname' => 'Santoro',
+        'email' => 'sara.santoro@gmail.com',
+        'message' => 'Ciao, sto cercando una band per suonare al mio locale questo weekend. Siete disponibili? Grazie.'
+    ],
+    [
+        'user_id' => '12',
+        'firstname' => 'Simone',
+        'lastname' => 'Gatti',
+        'email' => 'simone.gatti@gmail.com',
+        'message' => 'Salve, vorrei avere informazioni sui vostri servizi per un evento aziendale. Potreste darmi ulteriori dettagli? Grazie.'
+    ],
+    [
+        'user_id' => '6',
+        'firstname' => 'Teresa',
+        'lastname' => 'Rizzo',
+        'email' => 'teresa.rizzo@gmail.com',
+        'message' => 'Buongiorno, sto cercando una band per suonare al mio matrimonio. Siete disponibili? Grazie.'
+    ],
+    [
+        'user_id' => '11',
+        'firstname' => 'Umberto',
+        'lastname' => 'Ferrara',
+        'email' => 'umberto.ferrara@gmail.com',
+        'message' => 'Ciao, vorrei organizzare una serata musicale e mi piacerebbe avere la vostra band come intrattenimento. Possiamo discutere dei dettagli? Grazie.'
+    ],
+    [
+        'user_id' => '17',
+        'firstname' => 'Vittoria',
+        'lastname' => 'Barone',
+        'email' => 'vittoria.barone@gmail.com',
+        'message' => 'Salve, sto cercando una band per suonare al mio locale. Potete darmi ulteriori informazioni sui vostri servizi? Grazie.'
+    ],
+    [
+        'user_id' => '5',
+        'firstname' => 'Daniele',
+        'lastname' => 'Rizzo',
+        'email' => 'daniele.rizzo@gmail.com',
+        'message' => 'Buongiorno, vorrei avere informazioni riguardo alla vostra disponibilità per un concerto in occasione di una festa privata. Potreste inviarmi maggiori dettagli? Grazie.'
+    ],
+    [
+        'user_id' => '7',
+        'firstname' => 'Francesca',
+        'lastname' => 'Ferrari',
+        'email' => 'francesca.ferrari@gmail.com',
+        'message' => 'Ciao, sto cercando una band per un evento benefico. Siete disponibili? Grazie.'
+    ],
+    [
+        'user_id' => '2',
+        'firstname' => 'Giacomo',
+        'lastname' => 'Vitali',
+        'email' => 'giacomo.vitali@gmail.com',
+        'message' => 'Salve, vorrei prenotare la vostra band per una festa di compleanno. Possiamo parlare dei dettagli? Grazie.'
+    ],
+    [
+        'user_id' => '19',
+        'firstname' => 'Laura',
+        'lastname' => 'Gatti',
+        'email' => 'laura.gatti@gmail.com',
+        'message' => 'Buongiorno, vorrei organizzare un concerto e mi piacerebbe avere la vostra band come intrattenimento. Possiamo discutere dei dettagli? Grazie.'
+    ],
+    [
+        'user_id' => '13',
+        'firstname' => 'Matteo',
+        'lastname' => 'Riva',
+        'email' => 'matteo.riva@gmail.com',
+        'message' => 'Ciao, sto cercando una band per suonare al mio locale questo weekend. Siete disponibili? Grazie.'
+    ],
+    [
+        'user_id' => '4',
+        'firstname' => 'Nadia',
+        'lastname' => 'Russo',
+        'email' => 'nadia.russo@gmail.com',
+        'message' => 'Salve, vorrei avere informazioni sui vostri servizi per un evento aziendale. Potreste darmi ulteriori dettagli? Grazie.'
+    ],
+    [
+        'user_id' => '16',
+        'firstname' => 'Paolo',
+        'lastname' => 'Martini',
+        'email' => 'paolo.martini@gmail.com',
+        'message' => 'Buongiorno, sto cercando una band per suonare al mio matrimonio. Siete disponibili? Grazie.'
+    ],
+    [
+        'user_id' => '15',
+        'firstname' => 'Roberta',
+        'lastname' => 'Lombardi',
+        'email' => 'roberta.lombardi@gmail.com',
+        'message' => 'Ciao, vorrei organizzare una serata musicale e mi piacerebbe avere la vostra band come intrattenimento. Possiamo discutere dei dettagli? Grazie.'
+    ],
+    [
+        'user_id' => '20',
+        'firstname' => 'Salvatore',
+        'lastname' => 'Ferri',
+        'email' => 'salvatore.ferri@gmail.com',
+        'message' => 'Salve, sto cercando una band per suonare al mio locale. Potete darmi ulteriori informazioni sui vostri servizi? Grazie.'
+    ],
+    [
+        'user_id' => '1',
+        'firstname' => 'Tiziana',
+        'lastname' => 'Rizzo',
+        'email' => 'tiziana.rizzo@gmail.com',
+        'message' => 'Buongiorno, vorrei avere informazioni riguardo alla vostra disponibilità per un concerto in occasione di una festa privata. Potreste inviarmi maggiori dettagli? Grazie.'
+    ],
+    [
+        'user_id' => '8',
+        'firstname' => 'Valerio',
+        'lastname' => 'Ferrara',
+        'email' => 'valerio.ferrara@gmail.com',
+        'message' => 'Ciao, sto cercando una band per un evento benefico. Siete disponibili? Grazie.'
+    ],
+    [
+        'user_id' => '18',
+        'firstname' => 'Zoe',
+        'lastname' => 'Vitali',
+        'email' => 'zoe.vitali@gmail.com',
+        'message' => 'Salve, vorrei prenotare la vostra band per una festa di compleanno. Possiamo parlare dei dettagli? Grazie.'
+    ]    
    ];

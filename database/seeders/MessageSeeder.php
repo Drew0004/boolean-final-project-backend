@@ -31,7 +31,8 @@ class MessageSeeder extends Seeder
             $userId = $randomUser->id;
             
             $messages = Message::create([
-                'user_id' => $userId,
+
+                'user_id' => $singleMessage['user_id'],
                 'firstname' => $singleMessage['firstname'],
                 'lastname' => $singleMessage['lastname'],
                 'email' => $singleMessage['email'],

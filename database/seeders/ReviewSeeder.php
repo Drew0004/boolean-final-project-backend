@@ -31,7 +31,7 @@ class ReviewSeeder extends Seeder
             $userId = $randomUser->id;
             
             $messages = Review::create([
-                'user_id' => $userId,
+                'user_id' => $singleReview['user_id'],
                 'firstname' => $singleReview['firstname'],
                 'lastname' => $singleReview['lastname'],
                 'description' => $singleReview['description'],

@@ -2,7 +2,7 @@
    return[
         [
             'id' => '1',
-            'demo' => '/audio/DemoJazz.mp3',
+            'demo' => '/audio/DemoIndieRock.mp3',
             'picture' => '/user-images/MarioCilino.jpg',
             'bio' => "Sono Mario Cilino, un musicista italiano con una passione travolgente per
             la creazione musicale. Fin da giovane, ho coltivato il mio talento, imparando a suonare
@@ -12,7 +12,7 @@
         ],
         [
             'id' => '2',
-            'demo' => '/audio/DemoHouse.mp3',
+            'demo' => '/audio/DemoPop.mp3',
             'picture' => '/user-images/PaolaGagliardi.jpg',
             'bio' => "Ciao, sono Paola Gagliardi, una cantante italiana appassionata.
             La mia voce è il mio strumento principale, attraverso il quale trasmetto
@@ -23,7 +23,7 @@
         ],
         [
             'id' => '3',
-            'demo' => '/audio/DemoJazz.mp3',
+            'demo' => '/audio/DemoRock.mp3',
             'picture' => '/user-images/TheRockArmy.jpg',
             'bio' => "Siamo The Rock Army, una band dedicata al rock che trasmette
             energia e potenza attraverso i nostri riff incisivi e i ritmi travolgenti.
