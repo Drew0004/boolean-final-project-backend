@@ -82,7 +82,7 @@
             <div class="row justify-content-between pb-5">
                 @if(!$user->votes->isEmpty())
                 @foreach($user->votes as $vote)
-                <div class="col-4 my-4">
+                <div class="col-3 my-4">
                     <div class="vote-card p-4">
                         <h4 class="text-white pb-3 fw-bold m-0">{{ $vote->label }}</h4>
                         <div class="row g-0">

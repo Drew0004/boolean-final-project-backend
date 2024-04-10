@@ -20,22 +20,22 @@ class UserVoteSeeder extends Seeder
      */
     public function run(): void
     {
-        for ($i = 1; $i <= 30; $i++) { 
+        for ($i = 1; $i <= 200; $i++) { 
             $randomUser = User::inRandomOrder()->first();
             $randomVote = Vote::inRandomOrder()->first();
         
             // Verifico se la coppia esiste già nella tabella
-            $existigData = DB::table('user_vote')
-                ->where('user_id', $randomUser->id)
-                ->where('vote_id', $randomVote->id)
-                ->exists();
+            // $existigData = DB::table('user_vote')
+            //     ->where('user_id', $randomUser->id)
+            //     ->where('vote_id', $randomVote->id)
+            //     ->exists();
         
             // Se la coppia non esiste, inserisco il nuovo dato
-            if (!$existigData) {
+            // if (!$existigData) {
                 DB::table('user_vote')->insert([
                     ['user_id' => $randomUser->id, 'vote_id' => $randomVote->id]
                 ]);
-            }
+            // }
         }
     }
 }

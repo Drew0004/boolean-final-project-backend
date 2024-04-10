@@ -26,7 +26,7 @@ return new class extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 
-                $table->primary(['user_id', 'vote_id']);
+                // $table->primary(['user_id', 'vote_id']);
 
         });
     }
