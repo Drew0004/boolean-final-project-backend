@@ -14,10 +14,10 @@
   <section id="messages-show">
         {{-- Sezione Hero Profilo --}}
         @isset($user->userDetails->picture)
-        <div class="hero-section d-flex align-items-center">
+        <div class="hero-section d-flex align-items-center bounce-in">
         </div>
         @else
-        <div class="img-not-found d-flex align-items-center">
+        <div class="img-not-found d-flex align-items-center bounce-in">
             <div class="container">
                 <h1 class="text-white fw-bold mb-0">
                     Immagine da inserire...

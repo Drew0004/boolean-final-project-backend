@@ -15,18 +15,18 @@
     
     {{-- Sezione Hero Profilo --}}
     @isset($user->userDetails->picture)
-    <div class="hero-section d-flex align-items-center">
+    <div class="hero-section d-flex align-items-center bounce-in">
         <div class="container">
-            <h1 class="text-white fw-bold mb-0">
+            <h1 class="text-white fw-bold mb-0 bounce-in-x">
                 Bentornato, <br>
                 {{ $user->name }}
             </h1>
         </div>
     </div>
     @else
-    <div class="img-not-found d-flex align-items-center">
+    <div class="img-not-found d-flex align-items-center bounce-in">
         <div class="container">
-            <h1 class="text-white fw-bold mb-0">
+            <h1 class="text-white fw-bold mb-0 bounce-in-x">
                 Immagine da inserire...
             </h1>
         </div>
