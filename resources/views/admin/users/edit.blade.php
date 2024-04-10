@@ -114,12 +114,23 @@
                     {{ $user->userDetails->bio }}
                     </textarea>
                 </div>
+                @error('bio')
+                <div class="alert alert-danger">
+                    {{ $message }}
+                </div>
+                @enderror
                 
                 {{-- Input del cellulare --}}
                 <div class="my-4">
                     <label for="cellphone" class="form-label my-label ">Cellulare</label>
                     <input value="{{ $user->userDetails->cellphone }}" type="text" class="rounded-5 my-4 ps-4 form-control @error('cellphone') is-invalid @enderror" id="cellphone" name="cellphone" placeholder="Inserisci il numero di cellulare..." maxlength="24">
                 </div>
+                @error('cellphone')
+                <div class="alert alert-danger">
+                    {{ $message }}
+                </div>
+                @enderror
+                
                 
                 {{-- Input dei membri --}}
                 @if($user->roles->contains('id', 10))
@@ -128,6 +139,11 @@
                     <input value="{{ $user->userDetails->members }}" type="text" class="rounded-5 my-4 ps-4 form-control @error('members') is-invalid @enderror" id="members" name="members" placeholder="Inserisci i membri..." maxlength="1024">
                 </div>
                 @endif
+                @error('members')
+                <div class="alert alert-danger">
+                    {{ $message }}
+                </div>
+                @enderror
     
                 {{-- Input dei ruoli --}}
                 <div class="mb-4">
