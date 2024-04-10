@@ -31,11 +31,14 @@ class MainController extends Controller
 
         $now = Carbon::now();
         
-        $sponsoredUser = $user->sponsors()->where('expired_at', '>', $now)->get();
+        $sponsoredUser = $user->sponsors->where('expired_at', '>', $now);
+
+        $usersWithoutSponsorship = User::whereDoesntHave('sponsors')->get();
+
         // $user = auth()->user();
         // $userDetails = UserDetails::all();
 
-        return view('admin.dashboard', compact('user', 'sponsoredUser'));
+        return view('admin.dashboard', compact('user', 'sponsoredUser', 'usersWithoutSponsorship'));
     }
 
     public function edit()

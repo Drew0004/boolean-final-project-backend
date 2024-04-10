@@ -2,7 +2,7 @@
 @section('page-title', 'Dashboard')
 
 @section('main-content')
-@if($usersWithoutSponsorship->contains($user) || !$sponsoredUser->isNotEmpty())
+@if($usersWithoutSponsorship->contains($user) || $sponsoredUser->isNotEmpty())
 <section id="forms">
     <div class="container py-5">
         <form id="payment-form" action="{{ route('admin.sponsorship.store') }}" method="post">

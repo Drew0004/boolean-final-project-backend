@@ -83,7 +83,7 @@ class SponsorController extends Controller
 
             $now = Carbon::now();
 
-            if(!$user->sponsors()->where('expired_at', '>', $now)->exists()){
+            if($user->sponsors->where('expired_at', '>', $now)->isEmpty()){
                 DB::table('user_sponsor')->insert([
                     [
                         'user_id' => $user->id, 
@@ -126,7 +126,7 @@ class SponsorController extends Controller
 
         // $usersWithoutSponsorship = $user->whereDoesntHave('sponsors')->get();
 
-        $sponsoredUser = $user->sponsors()->where('expired_at', '>', $now)->get();
+        $sponsoredUser = $user->sponsors->where('expired_at', '>', $now);
         $sponsors = Sponsor::All();
         $gateway = new BraintreeGateway([
             'environment' => 'sandbox',
