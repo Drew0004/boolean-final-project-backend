@@ -13,6 +13,25 @@
         <!-- Scripts -->
         @vite('resources/js/app.js')
     </head>
+
+    <?php
+    // Facades
+    use Illuminate\Support\Facades\Auth; 
+    $user = Auth::user();
+    ?>
+
+    <style>
+        .img-pic{
+            background-image: url('{{ asset("storage/".$user->userDetails->picture) }}');
+            width: 60px;
+            height: 60px;
+            overflow: hidden;
+            border-radius: 50%;
+            background-position: center;
+            background-size: 100%;
+        }
+    </style>
+
     <body>
         <header>
             <nav class="navbar navbar-expand-lg my-blue-bg py-4">
@@ -42,13 +61,54 @@
                                 <a class="nav-link my-cyan" href="{{ route('admin.sponsorship') }}">Sponsorizzazioni</a>
                             </li>
                         </ul>
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
+                        @isset($user->userDetails->picture)
+                        <div class="dropdown">
+                            <div class="dropdown-toggle img-pic" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            </div>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a class=" dropdown-item" href="{{ route('admin.edit') }}">Modifica il profilo</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-item" href="{{ route('admin.statistics') }}">Le mie statistiche</a>
+                                </li>
+                              <li class="dropdown-item">
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+        
+                                    <button type="submit" class="btn my-logout-btn-2 dropdown-item">
+                                        <span>Log Out</span>
+                                    </button>
+                                </form>
+                              </li>
 
-                            <button type="submit" class="btn my-logout-btn">
-                                Log Out
-                            </button>
-                        </form>
+                            </ul>
+                        </div>
+                        @else
+                        <div class="dropdown">
+                            <div class="dropdown-toggle img-pic-not-found" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            </div>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a class=" dropdown-item" href="{{ route('admin.edit') }}">Modifica il profilo</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-item" href="{{ route('admin.statistics') }}">Le mie statistiche</a>
+                                </li>
+                              <li class="dropdown-item">
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+        
+                                    <button type="submit" class="btn my-logout-btn-2 dropdown-item">
+                                        <span>Log Out</span>
+                                    </button>
+                                </form>
+                              </li>
+
+                            </ul>
+                        </div>
+                        @endisset
+
                     </div>
                 </div>
             </nav>

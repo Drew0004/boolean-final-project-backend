@@ -32,7 +32,7 @@ header{
     background-position: center;
     background-image: url('/storage/images/LogoBMusic.png');
 }
-.my-logout-btn{
+.my-logout-btn-1{
     background-color: #BADFDA;
     border-radius: 40px;
     font-weight: bold;
@@ -41,6 +41,21 @@ header{
     &:hover{
         background-color: white;
         color: #21252B;
+    }
+}
+.my-logout-btn-2{
+    background-color: #21252B;
+    padding: 10px 30px;
+    font-weight: bold;
+    border-radius: 30px;
+    &:hover{
+        border: 1px solid #21252B;
+        span{
+            color: #21252B !important
+        }
+    }
+    span{
+        color: white !important;
     }
 }
 .nav-link{
@@ -79,6 +94,7 @@ header{
     }
 }
 
+
 // Footer
 
 ul{
@@ -88,4 +104,14 @@ ul{
 .footer-claim{
     color: grey;
     font-size: small;
+}
+.img-pic-not-found{
+    // background-image: url('/storage/images/Not-Found.jpg');
+    background-color: #d3d3d3;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-position: center;
+    background-size: 100%;
 }
