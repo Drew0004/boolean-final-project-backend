@@ -43,7 +43,7 @@
             </div>
             @if($sponsoredUser->isNotEmpty())
             <div class="col-auto">
-                <h4 class="badge text-bg-success fs-4">
+                <h4 class="badge text-bg-success fs-4 bounce-in-y">
                     Attualmente sei sponsorizzato!
                 </h4>
             </div>

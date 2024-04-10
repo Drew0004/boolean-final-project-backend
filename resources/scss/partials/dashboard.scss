@@ -76,4 +76,20 @@
     .bounce-in-x {
         animation: bounceInX 0.9s ease-in-out;
     }
+
+    @keyframes bounceInY {
+        0% {
+            opacity: 0;
+            transform: translateX(80px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .bounce-in-y {
+        animation: bounceInY 0.9s ease-in-out;
+    }
+    
 }
