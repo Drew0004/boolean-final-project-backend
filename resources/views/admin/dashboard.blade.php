@@ -35,9 +35,21 @@
 
     {{-- Sezione Dati --}}
     <div class="container">
-        <h2 class="py-5">
-            I tuoi dati:
-        </h2>
+        <div class="row justify-content-between align-items-center">
+            <div class="col-auto">
+                <h2 class="py-5">
+                    I tuoi dati:
+                </h2>
+            </div>
+            @if($sponsoredUser->isNotEmpty())
+            <div class="col-auto">
+                <h4 class="badge text-bg-success fs-4">
+                    Attualmente sei sponsorizzato!
+                </h4>
+            </div>
+            @endif
+        </div>
+
     </div>
     
     {{-- Sezione ruoli e bio --}}

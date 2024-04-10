@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Auth;
 // Helpers
 use Illuminate\Support\Facades\Storage;
 
+// Carbon
+use Carbon\Carbon;
+
 class MainController extends Controller
 {
 
@@ -25,10 +28,14 @@ class MainController extends Controller
     {
         // Recupera l'utente autenticato
         $user = Auth::user();
+
+        $now = Carbon::now();
+        
+        $sponsoredUser = $user->sponsors()->where('expired_at', '>', $now)->get();
         // $user = auth()->user();
         // $userDetails = UserDetails::all();
 
-        return view('admin.dashboard', compact('user'));
+        return view('admin.dashboard', compact('user', 'sponsoredUser'));
     }
 
     public function edit()
