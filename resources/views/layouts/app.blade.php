@@ -339,16 +339,16 @@
         <footer class="my-blue-bg">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm-9 py-lg-5 py-md-5 py-sm-3">
+                    <div class="col-lg-3 col-md-3 col-sm-9 py-lg-5 py-md-5 py-sm-3 d-flex flex-wrap justify-content-center">
                         <div class="logo-container">
                             <a class="footer-logo d-inline-block" href="http://localhost:5174/"></a>
                         </div>
-                        <div class="p-3">
+                        <div class="p-sm-1 p-md-3">
                             <p class="my-cyan">
                                 Seguici su
                             </p>
                         </div>
-                        <ul class="d-flex py-3">
+                        <ul class="d-flex py-3 list-unstyled">
                             <li class="px-2">
                                 <a href="#nogo"><i class="fa-brands fa-facebook-f my-cyan"></i></a>
                             </li>
