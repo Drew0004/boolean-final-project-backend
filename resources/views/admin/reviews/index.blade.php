@@ -75,9 +75,10 @@
                     @endforeach
                     
                     @else
-                    <div class="text-center">
+                    <div class="col-7">
                         <h2 class="badge text-bg-danger fs-4 mb-5">Ops! Sembra che tu non abbia ancora ricevuto Recensioni!</h2>
                     </div>
+                        
                     @endif
                 </div>
 
@@ -86,9 +87,7 @@
                     @if(!$user->votes->isEmpty())
                     <canvas id="myChart2"></canvas>
                     @else
-                    <div class="text-center">
                         <h2 class="badge text-bg-danger fs-4 mb-5">Ops! Sembra che tu non abbia ancora ricevuto Votazioni!</h2>
-                    </div>
                     @endif
                 </div>
 
