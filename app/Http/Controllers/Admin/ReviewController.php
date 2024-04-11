@@ -21,9 +21,15 @@ class ReviewController extends Controller
         // Filtra le recensioni per l'ID dell'utente loggato
         $reviews = Review::where('user_id', $userId)->get();
         $user = Auth::user();
+
+        $voteCounts = $user->votes()
+        ->select('label', \DB::raw('COUNT(*) as total_votes'))
+        ->groupBy('label')
+        ->orderBy(\DB::raw('MIN(id)'))
+        ->pluck('total_votes', 'label');
         
         // Restituisci la vista con le recensioni filtrate
-        return view('admin.reviews.index', compact('reviews', 'user'));
+        return view('admin.reviews.index', compact('reviews', 'user', 'voteCounts'));
     }
 
     /**

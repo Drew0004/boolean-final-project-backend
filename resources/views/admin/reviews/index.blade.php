@@ -27,9 +27,12 @@
         @endisset
 
         {{-- Sezione Dati --}}
-        <div class="container">
+        <div class="container d-flex justify-content-between">
             <h2 class="pt-5">
                 Le tue recensioni:
+            </h2>
+            <h2 class="py-5">
+                Le tue votazioni:
             </h2>
         </div>
 
@@ -37,73 +40,96 @@
             {{-- Sezione reviews --}}
             <div class="row justify-content-between">
                 @if(!$reviews->isEmpty())
-                @foreach($reviews as $review)
-                <div class="col-5 my-5 my-review-card p-4">
-                    <div class="review-upper-card">
-                        {{-- Info utente --}}
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <div class="d-flex align-items-center">
-                                <i class="fa-solid fa-envelope text-white me-2"></i>
-                                <h4 class="text-white m-0">{{ $review->firstname }} {{ $review->lastname }}</h4>
+                <div class="col-7 mb-5 my-review-container bounce-in-x">
+                    @foreach($reviews as $review)
+                    <div class="col-12 mb-5 my-review-card p-4">
+                        <div class="review-upper-card">
+                            {{-- Info utente --}}
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-envelope text-white me-2"></i>
+                                    <h4 class="text-white m-0">{{ $review->firstname }} {{ $review->lastname }}</h4>
+                                </div>
+                                <h5 class="text-white m-0">{{ $review->created_at }}</h5>
                             </div>
-                            <h5 class="text-white m-0">{{ $review->created_at }}</h5>
                         </div>
-                    </div>
-
-                    <div class="review-middle-card">
-                        {{-- Contenuto review --}}
-                        <p class="text-white">{{ $review->description }}</p>
-                    </div>
-                    <div class="review-lower-card">
-                        <div class="d-flex justify-content-end">
     
-                            {{-- Bottone show --}}
-                            <a href="{{ route('admin.reviews.show', ['review' => $review->id]) }}" class="text-decoration-none">
-                                <i class="fa-solid fa-arrow-right text-white"></i>
-                            </a>
+                        <div class="review-middle-card">
+                            {{-- Contenuto review --}}
+                            <p class="text-white">{{ $review->description }}</p>
+                        </div>
+                        <div class="review-lower-card">
+                            <div class="d-flex justify-content-end">
+        
+                                {{-- Bottone show --}}
+                                <a href="{{ route('admin.reviews.show', ['review' => $review->id]) }}" class="text-decoration-none">
+                                    <i class="fa-solid fa-arrow-right text-white"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                @endforeach
-                
-                @else
-                <div class="text-center">
-                    <h2 class="badge text-bg-danger fs-4 mb-5">Ops! Sembra che tu non abbia ancora ricevuto Recensioni!</h2>
-                </div>
-                @endif
-
-            </div>
-            
-            <h2 class="py-5">
-                Le tue votazioni:
-            </h2>
-
-            {{-- Sezione Voti --}}
-            <div class="row justify-content-between pb-5">
-                @if(!$user->votes->isEmpty())
-                @foreach($user->votes as $vote)
-                <div class="col-3 my-4">
-                    <div class="vote-card p-4">
-                        <h4 class="text-white pb-3 fw-bold m-0">{{ $vote->label }}</h4>
-                        <div class="row g-0">
-                            @if (intval($vote->vote) >= 1 && intval($vote->vote)  <= 5)
-                                @for ($i = 0; $i < intval($vote->vote) ; $i++)
-                                    <div class="vote-circle me-3"></div>
-                                @endfor
-                            @endif
-                        </div>
-                        {{-- <div class="vote-circle"></div> --}}
+                    @endforeach
+                    
+                    @else
+                    <div class="text-center">
+                        <h2 class="badge text-bg-danger fs-4 mb-5">Ops! Sembra che tu non abbia ancora ricevuto Recensioni!</h2>
                     </div>
+                    @endif
                 </div>
-                @endforeach
-                @else
-                <div class="text-center">
-                    <h2 class="badge text-bg-danger fs-4 mb-5">Ops! Sembra che tu non abbia ancora ricevuto Votazioni!</h2>
+
+                {{-- Sezione Voti --}}
+                <div class="col-4 bounce-in-y">
+                    @if(!$user->votes->isEmpty())
+                    <canvas id="myChart2"></canvas>
+                    @else
+                    <div class="text-center">
+                        <h2 class="badge text-bg-danger fs-4 mb-5">Ops! Sembra che tu non abbia ancora ricevuto Votazioni!</h2>
+                    </div>
+                    @endif
                 </div>
-                @endif
+
             </div>
+
+
+
         </div>
   </section>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    //GRAFICO A TORTA VOTAZIONI
+    const ctx2 = document.getElementById('myChart2');
+    const voteCounts = {!! json_encode($voteCounts) !!};
+    const labels = Object.keys(voteCounts);
+    const data = Object.values(voteCounts);
+    new Chart(ctx2, {
+        type: 'doughnut',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Le tue votazioni',
+                data: data,
+                backgroundColor: [
+                    'rgb(33, 37, 43)',  //Pessimo
+                    'rgb(51, 64, 83)', //Scarso
+                    'rgb(100, 113, 132)', //Nella Media
+                    'rgb(46, 104, 192)', //Molto Buono
+                    'rgb(128, 179, 255)', //Eccellente
+                ],
+                borderColor: [
+                    'rgba(226, 226, 226, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+  </script>
 @endsection
 {{-- <h1>Reviews</h1>
 
