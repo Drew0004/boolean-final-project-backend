@@ -184,28 +184,28 @@
                     <div class="logo-container">
                         <a class="header-logo d-inline-block" href="http://localhost:5174/"></a>
                     </div>
-                    <button class="navbar-toggler" style="background-color: white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler my-hmb-menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarText">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link my-cyan" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                                <a class="nav-link my-cyan mt-sm-3 mt-lg-0 fs-lg-em" href="{{ route('admin.dashboard') }}">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link my-cyan" href="{{ route('admin.edit') }}">Modifica il profilo</a>
+                                <a class="nav-link my-cyan fs-lg-em" href="{{ route('admin.edit') }}">Modifica il profilo</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link my-cyan" href="{{ route('admin.messages.index') }}">I miei messaggi</a>
+                                <a class="nav-link my-cyan fs-lg-em" href="{{ route('admin.messages.index') }}">I miei messaggi</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link my-cyan" href="{{ route('admin.reviews.index') }}">Le mie recensioni</a>
+                                <a class="nav-link my-cyan fs-lg-em" href="{{ route('admin.reviews.index') }}">Le mie recensioni</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link my-cyan" href="{{ route('admin.statistics') }}">Le mie statistiche</a>
+                                <a class="nav-link my-cyan fs-lg-em" href="{{ route('admin.statistics') }}">Le mie statistiche</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link my-cyan" href="{{ route('admin.sponsorship') }}">Sponsorizzazioni</a>
+                                <a class="nav-link my-cyan fs-lg-em" href="{{ route('admin.sponsorship') }}">Sponsorizzazioni</a>
                             </li>
                         </ul>
                         @isset($user->userDetails->picture)
