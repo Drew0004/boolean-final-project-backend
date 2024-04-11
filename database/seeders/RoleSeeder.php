@@ -40,7 +40,7 @@ class RoleSeeder extends Seeder
                 'icon' => '/images/drum.png',
             ],
             [
-                'title' => 'Testierista',
+                'title' => 'Tastierista',
                 'icon' => '/images/music.png',
             ],
             [
@@ -60,7 +60,7 @@ class RoleSeeder extends Seeder
                 'icon' => '/images/saxophone.png',
             ],
             [
-                'title' => 'Band Musicale',
+                'title' => 'Band',
                 'icon' => '/images/music-band.png',
             ],
         ];
