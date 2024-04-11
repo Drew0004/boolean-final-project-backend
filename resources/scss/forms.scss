@@ -33,3 +33,32 @@
         background-color: #21252B ;
     }
 }
+.my-error-pay-form{
+    .my-error-bg{
+        background-color: rgb(48, 49, 56);
+    }
+    .img-danger-container{
+        width: 50px;
+        height: 50px;
+        img{
+            width: 100%;
+        }
+    }
+    .my-redirect-btn{
+        background-color: white;
+        padding: 10px 30px;
+        font-weight: bold;
+        border-radius: 30px;
+        &:hover{
+            background: none;
+            border: 1px solid #ffffff;
+            a{
+                color: white !important;
+            }
+        }
+        a{
+            color: #21252B !important;
+            text-decoration: none;
+        }
+    }
+}
