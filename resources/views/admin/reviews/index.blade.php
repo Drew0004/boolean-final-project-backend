@@ -28,12 +28,16 @@
 
         {{-- Sezione Dati --}}
         <div class="container d-flex justify-content-between">
+
             <h2 class="pt-5">
                 Le tue recensioni:
             </h2>
+
+
             <h2 class="py-5">
                 Le tue votazioni:
             </h2>
+
         </div>
 
         <div class="container">

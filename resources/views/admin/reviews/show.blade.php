@@ -32,7 +32,7 @@
                 Dettaglio Recensione
             </h2>
         </div>
-        <div class="my-review-card py-5 my-5">
+        <div class="my-review-card py-5 my-5 bounce-in-x">
             <div class="container">
                 <div class="review-upper-card">
                     {{-- Info utente --}}
