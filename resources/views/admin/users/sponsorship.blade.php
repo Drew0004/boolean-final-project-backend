@@ -11,12 +11,17 @@
             <label class="my-label mb-3" for="sponsor">Scegli il tuo piano di sponsorizzazione</label>
             <select class="form-select" aria-label="Default select example " id="sponsor" name="sponsor" required>
             @foreach ($sponsors as $singleSponsor)
-                <option value="{{ $singleSponsor->id }}">{{ $singleSponsor->type }}</option>
+                <option value="{{ $singleSponsor->id }}">{{ $singleSponsor->type }} - {{ $singleSponsor->price }}€</option>
             @endforeach
             </select>
             <h3 class="my-label mt-4">Inserisci i dati della carta:</h3>
             <div id="dropin-container"></div>
-            <input class="btn btn-primary" type="submit" value="Submit Payment" />
+            {{-- <input class="btn btn-primary" type="submit" value="Submit Payment" /> --}}
+            <div class="text-end">
+                <button class="btn login-btn" type="submit">
+                    <span>Paga ora</span>
+                </button>
+            </div>
             <input type="hidden" id="nonce" name="payment_method_nonce" />
         </form>
     </div>
