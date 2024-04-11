@@ -149,10 +149,10 @@
                 <div class="mb-4">
                     <label class="form-label my-label">Ruoli</label>
     
-                    <div class="my-4">
+                    <div class="my-4 d-flex flex-wrap align-items-center">
                         
                         @foreach ($roles as $role)
-                            <div class="form-check form-check-inline">
+                            <div class="form-check form-check-inline d-flex align-items-center">
                                 <input
                                     {{-- Se c'è l'old, vuol dire che c'è stato un errore --}}
                                     @if ($errors->any())
@@ -163,13 +163,13 @@
                                         {{-- {{ $user->role ? ($user->roles->contains($role->id) ? 'checked' : '') : '' }} --}}
                                         {{ $user->roles->contains($role->id) ? 'checked' : '' }}
                                     @endif
-                                    class="form-check-input role-checkbox"
+                                    class="form-check-input role-checkbox me-2 my-sm-2"
                                     type="checkbox"
                                     id="role-{{ $role->id }}"
                                     name="roles[]"
                                     value="{{ $role->id }}"
                                     minlength="1">
-                                <label class="form-check-label fw-bold my-blue" for="role-{{ $role->id }}">{{ $role->title }}</label>
+                                <label class="form-check-label fw-bold my-blue my-sm-2" for="role-{{ $role->id }}">{{ $role->title }}</label>
                             </div>
                         @endforeach
                     </div>
