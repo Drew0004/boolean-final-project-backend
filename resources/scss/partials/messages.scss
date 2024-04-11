@@ -4,6 +4,17 @@
         font-weight: bold;
         color: #21252B;
     }
+    .my-message-container{
+        height: 500px;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            width: 7px;
+            }
+            &::-webkit-scrollbar-thumb {
+            background: #21252B;
+            border-radius: 5px;
+            }
+    }
     .my-message-card{
         background-color: #21252B;
         border-radius: 20px;
@@ -69,6 +80,21 @@
     .bounce-in {
       animation: bounceIn 0.9s ease-in-out;
     }
+
+    @keyframes bounceInX {
+        0% {
+            opacity: 0;
+            transform: translateX(-80px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .bounce-in-x {
+        animation: bounceInX 0.9s ease-in-out;
+    }
 }
 #messages-show{
     h2{
@@ -115,6 +141,21 @@
     
     .bounce-in {
       animation: bounceIn 0.9s ease-in-out;
+    }
+
+    @keyframes bounceInX {
+        0% {
+            opacity: 0;
+            transform: translateX(-80px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .bounce-in-x {
+        animation: bounceInX 0.9s ease-in-out;
     }
 }
 

@@ -32,7 +32,7 @@
                 Dettaglio messaggio
             </h2>
         </div>
-        <div class="my-message-card py-5 my-5">
+        <div class="my-message-card py-5 my-5 bounce-in-x">
             <div class="container">
                 <div class="message-upper-card">
                     {{-- Info utente --}}
