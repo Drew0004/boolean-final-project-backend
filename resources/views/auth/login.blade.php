@@ -82,7 +82,7 @@
                 }
     
                 // Validazione PSW
-                if (passwordInput.value.length < 9) {
+                if (passwordInput.value.length < 8) {
                     isValid = false;
                     displayError(passwordInput, 'La password deve contenere almeno 9 caratteri');
                 } else {
