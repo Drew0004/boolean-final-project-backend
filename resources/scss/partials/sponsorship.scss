@@ -1,44 +1,30 @@
-.sponsor-user {
-    min-height: 100px;
-    min-width: 100px;
-    border: 1px dashed black;
-}
+#sponsorship{
+    .my-fs{
+        font-size: 2.2rem;   
+    }
+    .my-sponsor-card{
+        background-color: #ffffff;
+        border: 0.5px solid #21252B;
+        border-radius: 20px;
+        i{
+            font-size: 3rem;
+        }
+        h4{
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        p{
+            font-weight: light;
+            font-size: 1rem;
+        }
+        transition: 0.3s ease-in-out;
 
-.user-icon {
-    text-align: center;
-    border: 1px solid red;
-    height: 75px;
-    width: 75px;
-    border-radius: 10px;
-}
-
-.card {
-    border: 5px solid #BADFDA;
-    border-radius: 20px;
-    background-color: #21252B;
-    color: #BADFDA
-}
-
-.fa-volume-off, .fa-volume-low, .fa-volume-high {
-    font-size: 50px;
-    color: #BADFDA;
-}
-
-.btn {
-    background-color: #BADFDA;
-    color: #21252B
-}
-
-.badge {
-    position: absolute;
-    top: 10px;
-    left: 0;
-    border-radius: 0 20px 20px 0;
-    padding: 5px;
-    background-color: #BADFDA;
-    color: #21252B
-}
-
-.mySwiper {
-    height: 500px;
+        &:hover{
+            background-color: #21252B;
+            border: 0.5px solid #BADFDA;
+            i, h4, h2, p{
+                color: #BADFDA;
+            }
+        }
+    }
 }

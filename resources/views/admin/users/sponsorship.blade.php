@@ -3,120 +3,32 @@
 
 @section('main-content')
 
+@if($usersWithoutSponsorship->contains($user) || !$sponsoredUser->contains($user))
+{{-- Sezione card --}}
 <section id="sponsorship">
-    <div class="container py-5 ">
-        <div class="row">
-            <!--CARD1-->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <!--Card Top-->
-                    <div class="card-top text-center mb-2 pt-3">
-                        <div class="icon">
-                            <i class="fa-solid fa-volume-off"></i>
-                        </div>
-                        <h3>Bronze</h3>
-                        {{-- <h3>2.99€ / 24h </h3> --}}
+    <div class="container">
+        <h2 class="my-4 my-blue my-fs fw-bold">Piani disponibili:</h2>
+        <div class="row justify-content-between my-5">
+            @foreach($sponsorPlans as $singlePlan)
+                <div class="col-3 my-sponsor-card p-4">
+                    <div class="text-center">
+                        <i class="{{ $singlePlan['icon'] }} my-blue"></i>
                     </div>
-                    <!--Card bottom-->
-                    <div class="card-bottom pt-2">
-                        <ul>
-                            <li class="mb-2 py-2 ">
-                               <h4>
-                                    Costo: 2,99 €
-                               </h4>
-                            </li>
-                            
-                            <li class="mb-2 py-2 ">
-                                <h4>
-                                    Durata: 24 h
-                               </h4> 
-                            </li>
-                            <li class="mb-2 py-2 ">
-                                Diventa un utente sponsorizzato !
-                                <br>
-                                - Raggiungi il 30% in più di potenziali clienti
-                                <br>
-                                - Appari fra gli artisti in evidenza in homepage
-                                <br>
-                                - Sarai primo nelle ricerche dei nostri utenti 
-                            </li>
-                        </ul>
+                    <h2 class="my-blue fw-bold my-4 text-center">{{ $singlePlan['plan'] }}</h2>
+                    <div class="d-flex justify-content-between mb-3">
+                        <h4 class="my-blue">Costo: {{ $singlePlan['price'] }}</h4>
+                        <h4 class="my-blue">Durata: {{ $singlePlan['duration'] }}</h4>
                     </div>
-                </div>  
-            </div>
-            
-            <!--CARD2-->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="badge">
-                        Most Popular
-                    </div>
-                    <!--Card Top-->
-                    <div class="card-top text-center mb-2 pt-3">
-                        <div class="icon">
-                        <i class="fa-solid fa-volume-low"></i>
-                    </div>
-                        <h3>Silver</h3>
-                    </div>
-                    <!--Card bottom-->
-                    <div class="card-bottom pt-2">
-                        <ul>
-                            <li class="mb-2 py-2 ">
-                               <h4>
-                                    Costo: 5,99 €
-                               </h4>
-                            </li>
-                            
-                            <li class="mb-2 py-2 ">
-                                <h4>
-                                    Durata: 72 h
-                               </h4> 
-                            </li>
-                            <li class="mb-2 py-2 ">
-                                Raggiungi il 40% in più di potenziali clienti apparendo nella sezione degli artisti in evidenza. 
-                            </li>
-                        </ul>
-                    </div>
-                  
-                </div>  
-            </div>
-        
-            <!--CARD3-->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <!--Card Top-->
-                    <div class="card-top text-center mb-2 pt-3">
-                        <div class="icon">
-                        <i class="fa-solid fa-volume-high"></i>
-                    </div>
-                        <h3>Gold</h3>
-                    </div>
-                    <!--Card bottom-->
-                    <div class="card-bottom pt-2">
-                        <ul>
-                            <li class="mb-2 py-2 ">
-                               <h4>
-                                    Costo: 9,99 €
-                               </h4>
-                            </li>
-                            
-                            <li class="mb-2 py-2 ">
-                                <h4>
-                                    Durata: 144 h
-                               </h4> 
-                            </li>
-                            <li class="mb-2 py-2 ">
-                                Raggiungi il 50% in più di potenziali clienti apparendo nella sezione degli artisti in evidenza. 
-                            </li>
-                        </ul>
-                    </div>
-                </div>  
-            </div>
+                    <p class="my-blue">{{ $singlePlan['description'] }}</p>
+                </div>
+            @endforeach
         </div>
     </div>
-    @if($usersWithoutSponsorship->contains($user) || !$sponsoredUser->contains($user))
+</section>
+
+{{-- Sezione form --}}
 <section id="forms">
-    <div class="container py-5">
+    <div class="container pb-5">
         <form id="payment-form" action="{{ route('admin.sponsorship.store') }}" method="post">
             @csrf
             <label class="my-label mb-3" for="sponsor">Scegli il tuo piano di sponsorizzazione</label>
@@ -157,8 +69,6 @@
 </div>
 @endif
 
-
-</section>
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">

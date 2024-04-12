@@ -120,6 +120,8 @@ class SponsorController extends Controller
     {
         $usersWithoutSponsorship = User::whereDoesntHave('sponsors')->get();
 
+        $sponsorPlans = config('sponsorsplans');
+
         $now = Carbon::now();
 
         $user = Auth::user();
@@ -146,7 +148,7 @@ class SponsorController extends Controller
             "customerId" => $customerId
         ]);
     
-        return view('admin.users.sponsorship', compact('clientToken', 'sponsors', 'customerId', 'sponsoredUser', 'usersWithoutSponsorship', 'user'));
+        return view('admin.users.sponsorship', compact('clientToken', 'sponsors', 'customerId', 'sponsoredUser', 'usersWithoutSponsorship', 'user', 'sponsorPlans'));
     }
 
     /**
