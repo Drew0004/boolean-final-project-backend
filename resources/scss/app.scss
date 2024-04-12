@@ -13,6 +13,10 @@ header{
     background-color: #21252B;
 }
 
+.my-hmb-menu{
+    background-color: white;
+}
+
 .my-cyan{
     color: #BADFDA;
 }
@@ -115,3 +119,9 @@ ul{
     background-position: center;
     background-size: 100%;
 }
+
+@media only screen and (max-width: 1220px) {
+    .fs-lg-em {
+      font-size: 0.8rem;
+    }
+  }

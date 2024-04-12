@@ -45,7 +45,7 @@
             </div>
             @if(!$usersWithoutSponsorship->contains($user) && $sponsoredUser->contains($user))
             <div class="col-auto">
-                <h4 class="badge text-bg-success fs-4 bounce-in-y">
+                <h4 class="badge text-bg-success mb-sm-5 mb-md-0  fs-4 bounce-in-y">
                     Attualmente sei sponsorizzato!
                 </h4>
             </div>
