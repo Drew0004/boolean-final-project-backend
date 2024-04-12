@@ -37,6 +37,7 @@ class MessageSeeder extends Seeder
                 'lastname' => $singleMessage['lastname'],
                 'email' => $singleMessage['email'],
                 'message' => $singleMessage['message'],
+                'created_at' => fake()->dateTimeBetween('-4 year', 'now')->format('Y-m-d H:i:s'),
             ]);
         }
     }

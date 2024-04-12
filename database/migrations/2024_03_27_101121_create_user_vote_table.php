@@ -25,6 +25,7 @@ return new class extends Migration
                 ->on('votes')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+            $table->timestamps();
 
                 // $table->primary(['user_id', 'vote_id']);
 

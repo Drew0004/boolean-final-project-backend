@@ -35,6 +35,7 @@ class ReviewSeeder extends Seeder
                 'firstname' => $singleReview['firstname'],
                 'lastname' => $singleReview['lastname'],
                 'description' => $singleReview['description'],
+                'created_at' => fake()->dateTimeBetween('-4 year', 'now')->format('Y-m-d H:i:s'),
             ]);
         }
     }

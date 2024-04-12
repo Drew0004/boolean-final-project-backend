@@ -33,7 +33,7 @@ class UserVoteSeeder extends Seeder
             // Se la coppia non esiste, inserisco il nuovo dato
             // if (!$existigData) {
                 DB::table('user_vote')->insert([
-                    ['user_id' => $randomUser->id, 'vote_id' => $randomVote->id]
+                    ['user_id' => $randomUser->id, 'vote_id' => $randomVote->id, 'created_at'=> fake()->dateTimeBetween('-4 year', 'now')->format('Y-m-d H:i:s')]
                 ]);
             // }
         }
