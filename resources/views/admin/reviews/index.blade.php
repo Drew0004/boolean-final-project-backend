@@ -83,7 +83,7 @@
                 </div>
 
                 {{-- Sezione Voti --}}
-                <div class="col-4 bounce-in-y">
+                <div class="col-4 bounce-in-y" id="chartContainer">
                     @if(!$user->votes->isEmpty())
                     <canvas id="myChart2"></canvas>
                     @else
@@ -99,40 +99,42 @@
   </section>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-    //GRAFICO A TORTA VOTAZIONI
-    const ctx2 = document.getElementById('myChart2');
-    const voteCounts = {!! json_encode($voteCounts) !!};
-    const labels = Object.keys(voteCounts);
-    const data = Object.values(voteCounts);
-    new Chart(ctx2, {
-        type: 'doughnut',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Le tue votazioni',
-                data: data,
-                backgroundColor: [
-                    'rgb(33, 37, 43)',  //Pessimo
-                    'rgb(51, 64, 83)', //Scarso
-                    'rgb(100, 113, 132)', //Nella Media
-                    'rgb(46, 104, 192)', //Molto Buono
-                    'rgb(128, 179, 255)', //Eccellente
-                ],
-                borderColor: [
-                    'rgba(226, 226, 226, 1)',
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
+    setTimeout(function() {
+        //GRAFICO A TORTA VOTAZIONI
+        const ctx2 = document.getElementById('myChart2');
+        const voteCounts = {!! json_encode($voteCounts) !!};
+        const labels = Object.keys(voteCounts);
+        const data = Object.values(voteCounts);
+        new Chart(ctx2, {
+            type: 'doughnut',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Le tue votazioni',
+                    data: data,
+                    backgroundColor: [
+                        'rgb(33, 37, 43)',  //Pessimo
+                        'rgb(51, 64, 83)', //Scarso
+                        'rgb(100, 113, 132)', //Nella Media
+                        'rgb(46, 104, 192)', //Molto Buono
+                        'rgb(128, 179, 255)', //Eccellente
+                    ],
+                    borderColor: [
+                        'rgba(226, 226, 226, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
-        }
-    });
-  </script>
+        });
+    }, 100);
+</script>
 @endsection
 {{-- <h1>Reviews</h1>
 
