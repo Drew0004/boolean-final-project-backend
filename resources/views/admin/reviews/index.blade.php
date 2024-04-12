@@ -133,7 +133,7 @@
                 }
             }
         });
-    }, 200);
+    }, 100);
 </script>
 @endsection
 {{-- <h1>Reviews</h1>
