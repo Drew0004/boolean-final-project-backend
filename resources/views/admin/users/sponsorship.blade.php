@@ -2,8 +2,7 @@
 @section('page-title', 'Dashboard')
 
 @section('main-content')
-
-@if($usersWithoutSponsorship->contains($user) || !$sponsoredUser->contains($user))
+@if($usersWithoutSponsorship->contains($user) || $sponsoredUser == null)
 {{-- Sezione card --}}
 <section id="sponsorship">
     <div class="container">
@@ -61,6 +60,7 @@
         </div>
         <div class="col-5 mb-5">
             <p class="text-white text-center">Attualmente hai una sponsorizzazione attiva. Potrai attivarne una nuova solo dopo che la tua sponsorizzazione attuale sarà scaduta.</p>
+            <h4 class="text-white text-center fw-bold mt-4 fs-6">Scadenza prevista: {{ $formattedExpiredDate }}</h4>
         </div>
         <button class="btn my-redirect-btn">
             <a href="{{ route('admin.dashboard') }}">Torna alla Dashboard</a>

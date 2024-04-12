@@ -128,10 +128,24 @@ class SponsorController extends Controller
 
         // $usersWithoutSponsorship = $user->whereDoesntHave('sponsors')->get();
 
-        $sponsoredUser =  User::whereHas('sponsors', function ($query) use ($now) {
-            $query->where('expired_at', '>', $now);
-        })
-        ->get();
+        // $sponsoredUser =  User::whereHas('sponsors', function ($query) use ($now) {
+        //     $query->where('expired_at', '>', $now);
+        // })
+        // ->get();
+
+        $sponsoredUser = DB::table('user_sponsor')
+        ->where('user_id', $user->id)
+        ->where('expired_at', '>', $now)
+        ->orderBy('expired_at', 'desc')
+        ->first();
+        $formattedExpiredDate = null;
+
+        if($sponsoredUser != null){
+            $formattedExpiredDate = Carbon::parse($sponsoredUser->expired_at)->format('d/m/Y H:i');
+
+        }
+
+
         $sponsors = Sponsor::All();
         $gateway = new BraintreeGateway([
             'environment' => 'sandbox',
@@ -148,7 +162,7 @@ class SponsorController extends Controller
             "customerId" => $customerId
         ]);
     
-        return view('admin.users.sponsorship', compact('clientToken', 'sponsors', 'customerId', 'sponsoredUser', 'usersWithoutSponsorship', 'user', 'sponsorPlans'));
+        return view('admin.users.sponsorship', compact('clientToken', 'sponsors', 'customerId', 'sponsoredUser', 'usersWithoutSponsorship', 'user', 'sponsorPlans', 'formattedExpiredDate'));
     }
 
     /**
