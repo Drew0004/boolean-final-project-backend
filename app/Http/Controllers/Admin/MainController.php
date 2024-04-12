@@ -14,6 +14,7 @@ use App\Models\UserDetails;
 
 // Facades
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 // Helpers
 use Illuminate\Support\Facades\Storage;
@@ -124,6 +125,31 @@ class MainController extends Controller
         $totalVotes = $user->votes()->count();
         $totalReviews = $user->reviews()->count();
         $totalMessages = $user->messages()->count();
+
+        // Query media voti per mese/anno
+        $voteAvg = DB::table('user_vote')
+        ->select(DB::raw('YEAR(created_at) AS year'), DB::raw('MONTH(created_at) AS month'), DB::raw('COUNT(*) AS vote_count'))
+        ->groupBy(DB::raw('YEAR(created_at)'), DB::raw('MONTH(created_at)'))
+        ->orderByDesc('year')
+        ->orderByDesc('month')
+        ->get();
+
+        // Query media messaggi per mese/anno
+        $messagesAvg = DB::table('messages')
+        ->select(DB::raw('YEAR(created_at) AS year'), DB::raw('MONTH(created_at) AS month'), DB::raw('COUNT(*) AS message_count'))
+        ->groupBy(DB::raw('YEAR(created_at)'), DB::raw('MONTH(created_at)'))
+        ->orderByDesc('year')
+        ->orderByDesc('month')
+        ->get();
+
+        // Query media recensioni per mese/anno
+        $reviewsAvg = DB::table('reviews')
+        ->select(DB::raw('YEAR(created_at) AS year'), DB::raw('MONTH(created_at) AS month'), DB::raw('COUNT(*) AS message_count'))
+        ->groupBy(DB::raw('YEAR(created_at)'), DB::raw('MONTH(created_at)'))
+        ->orderByDesc('year')
+        ->orderByDesc('month')
+        ->get();
+
 
         // Ottieni la somma dei voti per ciascuna etichetta per l'utente autenticato
         $voteCounts = $user->votes()
