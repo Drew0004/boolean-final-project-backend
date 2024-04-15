@@ -7,7 +7,7 @@
 
     <div class="container py-5">
     
-      <h2 class="my-blue fw-bold text-center mb-5">Le tue statistiche:</h2>
+      <h2 class="my-blue fw-bold text-center mb-5 fs-1">Le tue statistiche:</h2>
       
         <div class="row justify-content-between">
           <h2  class="my-blue fw-bold my-5">Sezione votazioni:</h2>
