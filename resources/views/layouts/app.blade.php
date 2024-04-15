@@ -338,8 +338,8 @@
         </footer> --}}
         <footer class="my-blue-bg">
             <div class="container">
-                <div class="row justify-content-center ">
-                    <div class="col-lg-3 col-md-3 col-sm-9 py-lg-5 py-md-5 py-sm-3 text-center py-3   ">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 py-lg-5 py-md-5 py-sm-3  ">
                         <div class="logo-container"> 
                             <a class="footer-logo " href="http://localhost:5174/"></a>
                         </div>
@@ -348,7 +348,7 @@
                                 Seguici su
                             </p>
                         </div>
-                        <ul class="d-flex justify-content-around py-3 list-unstyled">
+                        <ul class="d-flex list-unstyled">
                             <li class="px-2">
                                 <a href="#nogo"><i class="fa-brands fa-facebook-f my-cyan"></i></a>
                             </li>
@@ -364,9 +364,9 @@
                         </ul>
                     </div>
                     @foreach($footerLink as $title => $elem)
-                        <div class="col-lg-3 col-md-3 col-sm-12 py-lg-5 py-md-5 py-sm-3 text-center">
-                            <div class="col-md-12">
-                                <ul>
+                        <div class="col-lg-3 col-md-3 col-sm-12 py-lg-5 py-md-5 py-sm-3 text-center text-lg-start">
+                            <div class="col-md-12 text-center">
+                                <ul class="p-0">
                                     <h4 class="my-cyan">{{$title}}</h4>
                                     @foreach ($elem as $singleElem)
                                         <li class="py-1">
@@ -378,7 +378,7 @@
                         </div>
                     @endforeach
                     <div>
-                        <p class="footer-claim pb-3 mb-0  text-center">
+                        <p class="footer-claim pb-3 mb-0 text-center">
                             BMusic asserts its exclusive rights over all content featured on this website. Unauthorized use, reproduction, distribution, display, or transmission of any content is strictly prohibited without prior authorization from BMusic. All rights reserved.
                         </p>
                     </div>
