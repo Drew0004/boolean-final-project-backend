@@ -23,6 +23,13 @@
         <div class="col-6">
             <canvas id="myChart4"></canvas>
         </div>
+        <h2  class="my-blue fw-bold my-4">Sezione recensioni:</h2>
+        <div class="col-6">
+            <canvas id="myChart5"></canvas>
+        </div>
+        <div class="col-6">
+            <canvas id="myChart6"></canvas>
+        </div>
       </div>
       
       {{-- <div class="text-center">
@@ -41,6 +48,8 @@
       const totalVotesPerMonth = {!! json_encode($totalVotesPerMonth) !!};
       const totalMessagesPerMonth = {!! json_encode($totalMessagesPerMonth) !!};
       const totalMessagesPerYear = {!! json_encode($totalMessagesPerYear) !!};
+      const totalReviewsPerMonth = {!! json_encode($totalReviewsPerMonth) !!};
+      const totalReviewsPerYear = {!! json_encode($totalReviewsPerYear) !!};
 
   
       // Imposta il contesto del grafico
@@ -136,7 +145,7 @@
             label: 'Media messaggi per mese',
             data: totalMessagesPerMonth,
             fill: false,
-            borderColor: 'rgb(75, 192, 192)',
+            borderColor: 'rgba(33, 37, 43, 0.6)',
             tension: 0.1
         }]
     };
@@ -158,7 +167,7 @@
             label: 'Media messaggi per anno',
             data: totalMessagesPerYear,
             fill: false,
-            borderColor: 'rgb(75, 192, 192)',
+            borderColor: 'rgba(33, 37, 43, 0.6)',
             tension: 0.1
         }]
     };
@@ -167,6 +176,49 @@
     let myChart4 = new Chart(ctx4, {
         type: 'line',
         data: messageYearData
+    });
+
+    // Grafico recensioni per mese
+
+    const ctx5 = document.getElementById('myChart5').getContext('2d');
+    
+    // Definisci i dati del grafico
+    const reviewMonthData = {
+        labels: months,
+        datasets: [{
+            label: 'Media recensioni per mese',
+            data: totalReviewsPerMonth,
+            fill: false,
+            borderColor: 'rgba(54, 162, 235, 0.6)',
+            tension: 0.1
+        }]
+    };
+    // Crea il grafico
+    let myChart5 = new Chart(ctx5, {
+    type: 'line',
+    data: reviewMonthData
+    });
+
+    // Grafico recensioni per anno
+
+    const ctx6 = document.getElementById('myChart6').getContext('2d');
+    
+    // Definisci i dati del grafico
+    const reviewsYearData = {
+        labels: years,
+        datasets: [{
+            label: 'Media recensioni per anno',
+            data: totalReviewsPerYear,
+            fill: false,
+            borderColor: 'rgba(54, 162, 235, 0.6)',
+            tension: 0.1
+        }]
+    };
+
+    // Crea il grafico
+    let myChart6 = new Chart(ctx6, {
+        type: 'line',
+        data: reviewsYearData
     });
   
   </script>

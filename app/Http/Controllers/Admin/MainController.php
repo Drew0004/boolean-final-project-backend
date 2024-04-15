@@ -142,7 +142,8 @@ class MainController extends Controller
 
         // Query media recensioni per mese/anno
         $reviewsAvg = DB::table('reviews')
-        ->select(DB::raw('YEAR(created_at) AS year'), DB::raw('MONTH(created_at) AS month'), DB::raw('COUNT(*) AS message_count'))
+        ->select(DB::raw('YEAR(created_at) AS year'), DB::raw('MONTH(created_at) AS month'), DB::raw('COUNT(*) AS review_count'))
+        ->where('user_id', $user_id)
         ->groupBy(DB::raw('YEAR(created_at)'), DB::raw('MONTH(created_at)'))
         ->orderByDesc('year')
         ->orderByDesc('month')
@@ -185,7 +186,23 @@ class MainController extends Controller
             $totalMessagesPerYear[$message->year] += $message->message_count;
         }
 
-        return view('admin.users.statistics', compact('user', 'totalVotesPerMonth', 'totalVotesPerYear','totalMessagesPerMonth','totalMessagesPerYear'));
+        // Sezione recensioni ------
+        $totalReviewsPerMonth = array_fill(0, 12, 0);
+        foreach ($reviewsAvg as $review) {
+            $totalReviewsPerMonth[$review->month - 1] += $review->review_count;
+        }
+
+        $totalReviewsPerYear = [];
+    
+        foreach ($years as $year) {
+            $totalReviewsPerYear[$year] = 0;
+        }
+    
+        foreach ($reviewsAvg as $review) {
+            $totalReviewsPerYear[$review->year] += $review->review_count;
+        }
+
+        return view('admin.users.statistics', compact('user', 'totalVotesPerMonth', 'totalVotesPerYear','totalMessagesPerMonth','totalMessagesPerYear', 'totalReviewsPerMonth', 'totalReviewsPerYear'));
     }
 
 
