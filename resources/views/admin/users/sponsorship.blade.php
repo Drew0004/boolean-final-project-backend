@@ -9,7 +9,7 @@
         <h2 class="my-4 my-blue my-fs fw-bold">Piani disponibili:</h2>
         <div class="row justify-content-between my-5">
             @foreach($sponsorPlans as $singlePlan)
-                <div class="col-3 my-sponsor-card p-4">
+                <div class="col-md-3 mb-3 my-sponsor-card p-4">
                     <div class="text-center">
                         <i class="{{ $singlePlan['icon'] }} my-blue"></i>
                     </div>
