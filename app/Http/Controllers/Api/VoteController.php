@@ -7,6 +7,8 @@ use App\Models\Vote;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
+
 // Form Request
 use App\Http\Requests\StoreVoteRequest as VoteStoreRequest;
 
@@ -22,12 +24,14 @@ class VoteController extends Controller
         // Imposta la label in base al voto
         $label = $this->setLabelFromVote($validatedData['vote']);
 
-        $vote = Vote::create([
-            'label' => $label,
-            'vote' => $validatedData['vote'],
+        DB::table('user_vote')->insert([
+            [
+                'user_id' => $validatedData['user_id'], 
+                'vote_id' => $validatedData['vote'],
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
         ]);
-
-        $user->votes()->attach($vote->id);
 
         return response()->json([
             'success' => true,
