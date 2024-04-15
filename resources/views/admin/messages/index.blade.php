@@ -41,13 +41,13 @@
                     <div class="col-12 my-3 my-message-card p-4">
                         <div class="message-upper-card">
                             {{-- Info utente --}}
-                            <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-md-flex justify-content-between align-items-center mb-3">
                                 <div class="d-flex align-items-center">
                                     <i class="fa-solid fa-envelope text-white me-2"></i>
                                     <h4 class="text-white m-0">{{ $message->firstname }} {{ $message->lastname }}</h4>
                                 </div>
-                                <h4 class="text-white m-0">{{ $message->email }}</h4>
-                                <h5 class="text-white m-0">{{ $message->created_at }}</h5>
+                                <h4 class="text-white m-0 py-2 py-md-0  ">{{ $message->email }}</h4>
+                                <h5 class="text-white m-0 ">{{ $message->created_at }}</h5>
                             </div>
                         </div>
     
