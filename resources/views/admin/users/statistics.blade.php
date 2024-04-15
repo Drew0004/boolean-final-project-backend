@@ -16,9 +16,13 @@
         <div class="col-6">
           <canvas id="myChart2"></canvas>
         </div>
+        <h2  class="my-blue fw-bold my-4">Sezione messaggi:</h2>
         <div class="col-6">
             <canvas id="myChart3"></canvas>
-          </div>
+        </div>
+        <div class="col-6">
+            <canvas id="myChart4"></canvas>
+        </div>
       </div>
       
       {{-- <div class="text-center">
@@ -36,6 +40,7 @@
       'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
       const totalVotesPerMonth = {!! json_encode($totalVotesPerMonth) !!};
       const totalMessagesPerMonth = {!! json_encode($totalMessagesPerMonth) !!};
+      const totalMessagesPerYear = {!! json_encode($totalMessagesPerYear) !!};
 
   
       // Imposta il contesto del grafico
@@ -120,26 +125,49 @@
         data: chartData
     });
 
+    // Grafico messaggi per mese
 
-const ctx3 = document.getElementById('myChart3').getContext('2d');
-  
-  // Definisci i dati del grafico
-  const messageMonthdata = {
-      labels: months,
-      datasets: [{
-        label: 'Media messaggi per mese',
-        data: totalMessagesPerMonth,
-        fill: false,
-        borderColor: 'rgb(75, 192, 192)',
-        tension: 0.1
-      }]
-  };
+    const ctx3 = document.getElementById('myChart3').getContext('2d');
+    
+    // Definisci i dati del grafico
+    const messageMonthdata = {
+        labels: months,
+        datasets: [{
+            label: 'Media messaggi per mese',
+            data: totalMessagesPerMonth,
+            fill: false,
+            borderColor: 'rgb(75, 192, 192)',
+            tension: 0.1
+        }]
+    };
 
-  // Crea il grafico
-  let myChart3 = new Chart(ctx3, {
-      type: 'line',
-      data: messageMonthdata
-  });
+    // Crea il grafico
+    let myChart3 = new Chart(ctx3, {
+        type: 'line',
+        data: messageMonthdata
+    });
+
+    // Grafico messaggi per anno
+
+    const ctx4 = document.getElementById('myChart4').getContext('2d');
+    
+    // Definisci i dati del grafico
+    const messageYearData = {
+        labels: years,
+        datasets: [{
+            label: 'Media messaggi per anno',
+            data: totalMessagesPerYear,
+            fill: false,
+            borderColor: 'rgb(75, 192, 192)',
+            tension: 0.1
+        }]
+    };
+
+    // Crea il grafico
+    let myChart4 = new Chart(ctx4, {
+        type: 'line',
+        data: messageYearData
+    });
   
   </script>
   @endsection

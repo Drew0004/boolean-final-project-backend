@@ -148,6 +148,7 @@ class MainController extends Controller
         ->orderByDesc('month')
         ->get();
 
+        // Sezione voti ------
         $totalVotesPerMonth = array_fill(0, 12, 0);
         foreach ($voteAvg as $vote) {
             // Utilizzo l'indice del mese come chiave per mantenere l'allineamento corretto
@@ -168,14 +169,23 @@ class MainController extends Controller
             $totalVotesPerYear[$vote->year] += $vote->vote_count;
         }
 
+        // Sezione messaggi ------
         $totalMessagesPerMonth = array_fill(0, 12, 0);
         foreach ($messagesAvg as $message) {
-            // Utilizzo l'indice del mese come chiave per mantenere l'allineamento corretto
-            // Aggiungo il conteggio del voto al mese corrispondente
             $totalMessagesPerMonth[$message->month - 1] += $message->message_count;
         }
 
-        return view('admin.users.statistics', compact('user', 'totalVotesPerMonth', 'totalVotesPerYear','totalMessagesPerMonth',));
+        $totalMessagesPerYear = [];
+    
+        foreach ($years as $year) {
+            $totalMessagesPerYear[$year] = 0;
+        }
+    
+        foreach ($messagesAvg as $message) {
+            $totalMessagesPerYear[$message->year] += $message->message_count;
+        }
+
+        return view('admin.users.statistics', compact('user', 'totalVotesPerMonth', 'totalVotesPerYear','totalMessagesPerMonth','totalMessagesPerYear'));
     }
 
 
