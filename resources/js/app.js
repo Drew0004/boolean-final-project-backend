@@ -10,6 +10,7 @@ import '~resources/scss/partials/edit.scss';
 import '~resources/scss/partials/messages.scss';
 import '~resources/scss/partials/reviews.scss';
 import '~resources/scss/partials/sponsorship.scss';
+import '~resources/scss/partials/statistics.scss';
 
 
 

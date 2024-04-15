@@ -3,40 +3,43 @@
 @section('page-title', 'Dashboard')
 
 @section('main-content')
+<section id="statistics">
 
-  <div class="container py-5">
-
-    <h2 class="my-blue fw-bold text-center mb-5">Le tue statistiche:</h2>
+    <div class="container py-5">
     
-      <div class="row">
-        <h2  class="my-blue fw-bold mb-2">Sezione votazioni:</h2>
-        <div class="col-6">
-          <canvas id="myChart"></canvas>
-        </div>
-        <div class="col-6">
-          <canvas id="myChart2"></canvas>
-        </div>
-        <h2  class="my-blue fw-bold my-4">Sezione messaggi:</h2>
-        <div class="col-6">
-            <canvas id="myChart3"></canvas>
-        </div>
-        <div class="col-6">
-            <canvas id="myChart4"></canvas>
-        </div>
-        <h2  class="my-blue fw-bold my-4">Sezione recensioni:</h2>
-        <div class="col-6">
-            <canvas id="myChart5"></canvas>
-        </div>
-        <div class="col-6">
-            <canvas id="myChart6"></canvas>
-        </div>
-      </div>
+      <h2 class="my-blue fw-bold text-center mb-5">Le tue statistiche:</h2>
       
-      {{-- <div class="text-center">
-        <h2 class="badge text-bg-danger fs-4">Ops! Sembra che tu non abbia ancora ricevuto Messaggi, Voti, o Recensioni!</h2>
-      </div> --}}
-  
-  </div>
+        <div class="row justify-content-between">
+          <h2  class="my-blue fw-bold my-5">Sezione votazioni:</h2>
+          <div class="col-6 my-char-container p-5">
+            <canvas id="myChart"></canvas>
+          </div>
+          <div class="col-5 my-char-container p-5">
+            <canvas id="myChart2"></canvas>
+          </div>
+          <h2  class="my-blue fw-bold my-5">Sezione messaggi:</h2>
+          <div class="col-6 my-char-container p-5">
+              <canvas id="myChart3"></canvas>
+          </div>
+          <div class="col-5 my-char-container p-5">
+              <canvas id="myChart4"></canvas>
+          </div>
+          <h2  class="my-blue fw-bold my-5">Sezione recensioni:</h2>
+          <div class="col-6 my-char-container p-5">
+              <canvas id="myChart5"></canvas>
+          </div>
+          <div class="col-5 my-char-container p-5">
+              <canvas id="myChart6"></canvas>
+          </div>
+        </div>
+        
+        
+      </div>
+</section>
+
+    {{-- <div class="text-center">
+      <h2 class="badge text-bg-danger fs-4">Ops! Sembra che tu non abbia ancora ricevuto Messaggi, Voti, o Recensioni!</h2>
+    </div> --}}
     
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
