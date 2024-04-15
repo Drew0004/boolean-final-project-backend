@@ -121,11 +121,6 @@ class MainController extends Controller
         // Ottieni l'utente autenticato
         $user = Auth::user();
 
-        // Otteni la somma dei voti, messaggi e recensioni per l'utente autenticato
-        // $totalVotes = $user->votes()->count();
-        // $totalReviews = $user->reviews()->count();
-        // $totalMessages = $user->messages()->count();
-
         $user_id = Auth::user()->id;
         // Query media voti per mese/anno
         $voteAvg = DB::table('user_vote')
@@ -152,15 +147,27 @@ class MainController extends Controller
         ->orderByDesc('month')
         ->get();
 
+        $totalVotesPerMonth = array_fill(0, 12, 0);
+        foreach ($voteAvg as $vote) {
+            // Utilizzo l'indice del mese come chiave per mantenere l'allineamento corretto
+            // Aggiungo il conteggio del voto al mese corrispondente
+            $totalVotesPerMonth[$vote->month - 1] += $vote->vote_count;
+        }
+    
+        $totalVotesPerYear = [];
+        $years = ['2020','2021', '2022', '2023', '2024'];
+    
+        // Inizializzo l'array con valori zero per tutti gli anni
+        foreach ($years as $year) {
+            $totalVotesPerYear[$year] = 0;
+        }
+    
+        // Aggiorno i valori effettivi per gli anni in cui ci sono voti
+        foreach ($voteAvg as $vote) {
+            $totalVotesPerYear[$vote->year] += $vote->vote_count;
+        }
 
-        // Ottieni la somma dei voti per ciascuna etichetta per l'utente autenticato
-        // $voteCounts = $user->votes()
-        // ->select('label', \DB::raw('COUNT(*) as total_votes'))
-        // ->groupBy('label')
-        // ->pluck('total_votes', 'label');
-
-
-        return view('admin.users.statistics', compact('user', 'voteAvg', 'messagesAvg', 'reviewsAvg',));
+        return view('admin.users.statistics', compact('user', 'totalVotesPerMonth', 'totalVotesPerYear',));
     }
 
 

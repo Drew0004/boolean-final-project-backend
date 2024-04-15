@@ -3,30 +3,10 @@
 @section('page-title', 'Dashboard')
 
 @section('main-content')
-<?php
-    $totalVotesPerMonth = array_fill(0, 12, 0);
-    foreach ($voteAvg as $vote) {
-        // Utilizzo l'indice del mese come chiave per mantenere l'allineamento corretto
-        // Aggiungo il conteggio del voto al mese corrispondente
-        $totalVotesPerMonth[$vote->month - 1] += $vote->vote_count;
-    }
-
-    $totalVotesPerYear = [];
-    $years = ['2020','2021', '2022', '2023', '2024'];
-
-    // Inizializzo l'array con valori zero per tutti gli anni
-    foreach ($years as $year) {
-        $totalVotesPerYear[$year] = 0;
-    }
-
-    // Aggiorno i valori effettivi per gli anni in cui ci sono voti
-    foreach ($voteAvg as $vote) {
-        $totalVotesPerYear[$vote->year] += $vote->vote_count;
-    }
-
-?>
 
   <div class="container py-5">
+
+    <h2 class="my-blue fw-bold text-center mb-5">Le tue statistiche:</h2>
     
       <div class="row">
         <div class="col-6">
@@ -100,39 +80,40 @@
           data: data
       });
 
-        const years = ['2020','2021', '2022', '2023', '2024'];
-        const totalVotesPerYear = {!! json_encode(array_values($totalVotesPerYear)) !!}; // Utilizza array_values per ottenere solo i valori dall'array associativo
+    // Grafico media votazioni per anno
+    const years = ['2020','2021', '2022', '2023', '2024'];
+    const totalVotesPerYear = {!! json_encode(array_values($totalVotesPerYear)) !!}; // Utilizza array_values per ottenere solo i valori dall'array associativo
 
-        // Imposta il contesto del grafico
-        const ctx2 = document.getElementById('myChart2').getContext('2d');
+    // Imposta il contesto del grafico
+    const ctx2 = document.getElementById('myChart2').getContext('2d');
 
-        // Definisci i dati del grafico
-        const chartData = {
-            labels: years,
-            datasets: [{
-                label: 'Media voti per anno',
-                data: totalVotesPerYear,
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(255, 159, 64, 0.2)',
-                    'rgba(255, 205, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)'
-                ],
-                borderColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(255, 159, 64)',
-                    'rgb(255, 205, 86)',
-                    'rgb(75, 192, 192)'
-                ],
-                borderWidth: 1
-            }]
-        };
+    // Definisci i dati del grafico
+    const chartData = {
+        labels: years,
+        datasets: [{
+            label: 'Media voti per anno',
+            data: totalVotesPerYear,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 205, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)'
+            ],
+            borderColor: [
+                'rgb(255, 99, 132)',
+                'rgb(255, 159, 64)',
+                'rgb(255, 205, 86)',
+                'rgb(75, 192, 192)'
+            ],
+            borderWidth: 1
+        }]
+    };
 
-        // Crea il grafico
-        let myChart2 = new Chart(ctx2, {
-            type: 'bar',
-            data: chartData
-        });
+    // Crea il grafico
+    let myChart2 = new Chart(ctx2, {
+        type: 'bar',
+        data: chartData
+    });
   
   </script>
   @endsection
