@@ -9,12 +9,16 @@
     <h2 class="my-blue fw-bold text-center mb-5">Le tue statistiche:</h2>
     
       <div class="row">
+        <h2  class="my-blue fw-bold mb-2">Sezione votazioni:</h2>
         <div class="col-6">
           <canvas id="myChart"></canvas>
         </div>
         <div class="col-6">
           <canvas id="myChart2"></canvas>
         </div>
+        <div class="col-6">
+            <canvas id="myChart3"></canvas>
+          </div>
       </div>
       
       {{-- <div class="text-center">
@@ -31,6 +35,7 @@
       'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 
       'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
       const totalVotesPerMonth = {!! json_encode($totalVotesPerMonth) !!};
+      const totalMessagesPerMonth = {!! json_encode($totalMessagesPerMonth) !!};
 
   
       // Imposta il contesto del grafico
@@ -75,7 +80,7 @@
       };
   
       // Crea il grafico
-      let myChart = new Chart(ctx, {
+      let myChart1 = new Chart(ctx, {
           type: 'bar',
           data: data
       });
@@ -114,6 +119,27 @@
         type: 'bar',
         data: chartData
     });
+
+
+const ctx3 = document.getElementById('myChart3').getContext('2d');
+  
+  // Definisci i dati del grafico
+  const messageMonthdata = {
+      labels: months,
+      datasets: [{
+        label: 'Media messaggi per mese',
+        data: totalMessagesPerMonth,
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.1
+      }]
+  };
+
+  // Crea il grafico
+  let myChart3 = new Chart(ctx3, {
+      type: 'line',
+      data: messageMonthdata
+  });
   
   </script>
   @endsection

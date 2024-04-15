@@ -134,6 +134,7 @@ class MainController extends Controller
         // Query media messaggi per mese/anno
         $messagesAvg = DB::table('messages')
         ->select(DB::raw('YEAR(created_at) AS year'), DB::raw('MONTH(created_at) AS month'), DB::raw('COUNT(*) AS message_count'))
+        ->where('user_id', $user_id)
         ->groupBy(DB::raw('YEAR(created_at)'), DB::raw('MONTH(created_at)'))
         ->orderByDesc('year')
         ->orderByDesc('month')
@@ -167,7 +168,14 @@ class MainController extends Controller
             $totalVotesPerYear[$vote->year] += $vote->vote_count;
         }
 
-        return view('admin.users.statistics', compact('user', 'totalVotesPerMonth', 'totalVotesPerYear',));
+        $totalMessagesPerMonth = array_fill(0, 12, 0);
+        foreach ($messagesAvg as $message) {
+            // Utilizzo l'indice del mese come chiave per mantenere l'allineamento corretto
+            // Aggiungo il conteggio del voto al mese corrispondente
+            $totalMessagesPerMonth[$message->month - 1] += $message->message_count;
+        }
+
+        return view('admin.users.statistics', compact('user', 'totalVotesPerMonth', 'totalVotesPerYear','totalMessagesPerMonth',));
     }
 
 
