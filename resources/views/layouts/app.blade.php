@@ -339,8 +339,8 @@
         <footer class="my-blue-bg">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm-12 py-lg-5 py-md-5 py-sm-3  ">
-                        <div class="logo-container"> 
+                    <div class="col-lg-3 col-md-3 col-sm-12 py-lg-5 py-md-5 py-sm-3 text-center">
+                        <div class="logo-container w-auto"> 
                             <a class="footer-logo " href="http://localhost:5174/"></a>
                         </div>
                         <div class="p-sm-1 p-md-3">
@@ -348,7 +348,7 @@
                                 Seguici su
                             </p>
                         </div>
-                        <ul class="d-flex list-unstyled">
+                        <ul class="list-unstyled d-flex justify-content-center ">
                             <li class="px-2">
                                 <a href="#nogo"><i class="fa-brands fa-facebook-f my-cyan"></i></a>
                             </li>
