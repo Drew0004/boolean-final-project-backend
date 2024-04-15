@@ -54,8 +54,21 @@ class SponsorController extends Controller
             'privateKey' => 'ebb299d16269eb2697c5cba54b6f373b'
         ]);
 
+        $sponsorPrice = 0; // Default
+        switch ($paymentData['sponsor']) {
+            case '1': //Piano bronze
+                $sponsorPrice = 2.99;
+                break;
+            case '2': //Piano Silver
+                $sponsorPrice = 5.99;
+                break;
+            case '3': //Piano gold
+                $sponsorPrice = 9.99;
+                break;
+        }
+
         $result = $gateway->transaction()->sale([
-            'amount' => '10.00', // Importo del pagamento
+            'amount' => $sponsorPrice, // Importo del pagamento
             'paymentMethodNonce' => $nonce,
             'options' => [
                 'submitForSettlement' => true
