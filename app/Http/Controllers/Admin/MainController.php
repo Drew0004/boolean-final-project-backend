@@ -122,13 +122,15 @@ class MainController extends Controller
         $user = Auth::user();
 
         // Otteni la somma dei voti, messaggi e recensioni per l'utente autenticato
-        $totalVotes = $user->votes()->count();
-        $totalReviews = $user->reviews()->count();
-        $totalMessages = $user->messages()->count();
+        // $totalVotes = $user->votes()->count();
+        // $totalReviews = $user->reviews()->count();
+        // $totalMessages = $user->messages()->count();
 
+        $user_id = Auth::user()->id;
         // Query media voti per mese/anno
         $voteAvg = DB::table('user_vote')
         ->select(DB::raw('YEAR(created_at) AS year'), DB::raw('MONTH(created_at) AS month'), DB::raw('COUNT(*) AS vote_count'))
+        ->where('user_id', $user_id)
         ->groupBy(DB::raw('YEAR(created_at)'), DB::raw('MONTH(created_at)'))
         ->orderByDesc('year')
         ->orderByDesc('month')
@@ -152,13 +154,13 @@ class MainController extends Controller
 
 
         // Ottieni la somma dei voti per ciascuna etichetta per l'utente autenticato
-        $voteCounts = $user->votes()
-        ->select('label', \DB::raw('COUNT(*) as total_votes'))
-        ->groupBy('label')
-        ->pluck('total_votes', 'label');
+        // $voteCounts = $user->votes()
+        // ->select('label', \DB::raw('COUNT(*) as total_votes'))
+        // ->groupBy('label')
+        // ->pluck('total_votes', 'label');
 
 
-        return view('admin.users.statistics', compact('user', 'totalVotes', 'totalReviews', 'totalMessages', 'voteCounts'));
+        return view('admin.users.statistics', compact('user', 'voteAvg', 'messagesAvg', 'reviewsAvg',));
     }
 
 
