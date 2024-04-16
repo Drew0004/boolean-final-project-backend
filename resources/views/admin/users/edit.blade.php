@@ -180,12 +180,12 @@
                 <div class="row justify-content-between py-5">
                     <div class="col-auto">
                         <button class="btn undo-button" type="button">
-                            <a class="text-decoration-none" href="{{ route('admin.dashboard') }}">Annulla</a>
+                            <a class="text-decoration-none" href="{{ route('admin.dashboard') }}">Modifica più tardi</a>
                         </button>
                     </div>
                     <div class="col-auto">
                         <button class="btn edit-btn" type="submit">
-                            <span>Modifica +</span>
+                            <span>Modifica</span>
                         </button>
                     </div>
                 </div>
