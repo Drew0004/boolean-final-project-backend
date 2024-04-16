@@ -110,9 +110,7 @@
                 {{-- Input della bio --}}
                 <div class="my-4">
                     <label for="bio" class="form-label my-label">Bio</label>
-                    <textarea  class="rounded-5 my-4 ps-4 form-control @error('bio') is-invalid @enderror" id="bio" name="bio" rows="3" placeholder="Aggiungi una bio" maxlength="1024">
-                    {{ $user->userDetails->bio }}
-                    </textarea>
+                    <textarea class="rounded-5 my-4 ps-4 form-control @error('bio') is-invalid @enderror" id="bio" name="bio" rows="3" placeholder="Aggiungi una bio" maxlength="1024">{{ $user->userDetails->bio }}</textarea>
                 </div>
                 @error('bio')
                 <div class="alert alert-danger">
