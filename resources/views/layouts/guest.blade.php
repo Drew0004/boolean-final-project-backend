@@ -81,16 +81,16 @@
         <footer class="my-blue-bg">
             <div class="container">
                 <div class="row">
-                    <div class="col-6 py-5">
-                        <div class="logo-container">
-                            <a class="footer-logo d-inline-block" href="http://localhost:5174/"></a>
+                    <div class="col-lg-3 col-md-3 col-sm-12 py-lg-5 py-md-5 py-sm-3 text-center">
+                        <div class="logo-container w-auto"> 
+                            <a class="footer-logo " href="http://localhost:5174/"></a>
                         </div>
-                        <div class="p-5 ">
+                        <div class="p-sm-1 p-md-3">
                             <p class="my-cyan">
                                 Seguici su
                             </p>
                         </div>
-                        <ul class="d-flex py-3">
+                        <ul class="list-unstyled d-flex justify-content-center ">
                             <li class="px-2">
                                 <a href="#nogo"><i class="fa-brands fa-facebook-f my-cyan"></i></a>
                             </li>
@@ -105,27 +105,27 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-6 py-5 d-flex flex-wrap align-items-start">
-                        @foreach($footerLink as $title => $elem)
-                        <div class="col-4">
-                            <ul>
-                                <h4 class="my-cyan">{{$title}}</h4>
-                                @foreach ($elem as $singleElem)
-                                    <li class="py-1">
-                                        <a class="text-decoration-none my-cyan nav-link" href="#nogo">{{$singleElem}}</a>
-                                    </li>
-                                @endforeach
-                            </ul>
+                    @foreach($footerLink as $title => $elem)
+                        <div class="col-lg-3 col-md-3 col-sm-12 py-lg-5 py-md-5 py-sm-3 text-center text-lg-start">
+                            <div class="col-md-12 text-center">
+                                <ul class="p-0">
+                                    <h4 class="my-cyan">{{$title}}</h4>
+                                    @foreach ($elem as $singleElem)
+                                        <li class="py-1">
+                                            <a class="text-decoration-none my-cyan nav-link" href="#nogo">{{$singleElem}}</a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
                         </div>
-                        @endforeach
+                    @endforeach
+                    <div>
+                        <p class="footer-claim pb-3 mb-0 text-center">
+                            BMusic asserts its exclusive rights over all content featured on this website. Unauthorized use, reproduction, distribution, display, or transmission of any content is strictly prohibited without prior authorization from BMusic. All rights reserved.
+                        </p>
                     </div>
                 </div>
-                <div>
-                    <p class="footer-claim pb-3 mb-0  text-center">
-                        BMusic asserts its exclusive rights over all content featured on this website. Unauthorized use, reproduction, distribution, display, or transmission of any content is strictly prohibited without prior authorization from BMusic. All rights reserved.
-                    </p>
-                </div>
-
+                
             </div>
         </footer>
     </body>
