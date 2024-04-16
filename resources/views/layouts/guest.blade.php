@@ -80,7 +80,7 @@
         @endphp
         <footer class="my-blue-bg">
             <div class="container">
-                <div class="row">
+                <div class="row pt-3">
                     <div class="col-lg-3 col-md-3 col-sm-12 py-lg-5 py-md-5 py-sm-3 text-center">
                         <div class="logo-container w-auto"> 
                             <a class="footer-logo " href="http://localhost:5174/"></a>
