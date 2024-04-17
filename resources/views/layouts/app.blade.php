@@ -28,7 +28,7 @@
             overflow: hidden;
             border-radius: 50%;
             background-position: center;
-            background-size: 100%;
+            background-size: cover;
             background-repeat: no-repeat;
         };
    
