@@ -63,7 +63,7 @@
                         Bio
                     </h2>
                     @isset($user->userDetails->bio)
-                    <p class="text-white pt-4">{{ $user->userDetails->bio }}</p>
+                    <p class="text-white">{{ $user->userDetails->bio }}</p>
                     @else 
                     <span class="bg-white p-3 rounded-4 my-blue">Bio mancante! Aggiorna le tue informazioni</span>
                     @endisset
