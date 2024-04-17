@@ -160,8 +160,8 @@
                 </div>
             </div>
             @else
-            <div class="text-center">
-                <h2 class="badge text-bg-danger fs-4 mb-5">Ops! Sembra che tu non abbia ancora ricevuto Messaggi!</h2>
+            <div class="text-center mb-5">
+                <span class="my-blue-bg p-3 rounded-4 text-white fs-4">Ops! Sembra che tu non abbia ancora ricevuto Messaggi!</span>
             </div>
             @endif
         </div>

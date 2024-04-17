@@ -59,13 +59,13 @@
         <div class="container">
             <div class="row justify-content-between py-5">
                 <div class="col-8">
-                    <h2 class="text-white">
+                    <h2 class="text-white mb-5">
                         Bio
                     </h2>
                     @isset($user->userDetails->bio)
                     <p class="text-white pt-4">{{ $user->userDetails->bio }}</p>
                     @else 
-                    <span class="badge text-bg-danger">Bio mancante! Aggiorna le tue informazioni</span>
+                    <span class="bg-white p-3 rounded-4 my-blue">Bio mancante! Aggiorna le tue informazioni</span>
                     @endisset
                 </div>
                 <div class="col-auto">
@@ -81,7 +81,7 @@
                         @endforeach
                     </div>
                     @else 
-                    <span class="badge text-bg-danger">Nessun ruolo assegnato</span>
+                    <span class="my-blue-bg p-3 rounded-4 text-white">Nessun ruolo assegnato</span>
                     @endisset
                 </div>
             </div>
@@ -98,12 +98,12 @@
                     <source src="{{ asset('storage/'.$user->userDetails->demo) }}" type="audio/mpeg">
                 </audio>
             @else 
-            <span class="badge text-bg-danger">Demo non presente</span>
+            <span class="my-blue-bg p-3 rounded-4 text-white">Demo non presente</span>
             @endisset
             <h2 class="py-5">
                 Info di contatto
             </h2>
-            <div class="fs-5 pb-3">
+            <div class="fs-5 pb-3 mb-3">
                 <i class="fa-solid fa-envelope me-3 my-blue"></i>
                 <span class="fw-bold">Mail: </span><span class="fw-semibold">{{ $user->email }}</span>
             </div>
@@ -113,7 +113,7 @@
                 <span class="fw-bold">Cell: </span><span class="fw-semibold">{{ $user->userDetails->cellphone }}</span> 
             </div>
             @else
-            <span class="badge text-bg-danger">Cellulare mancante! Aggiorna le tue informazioni</span>
+            <span class="my-blue-bg p-3 rounded-4 text-white">Cellulare mancante! Aggiorna le tue informazioni</span>
             @endisset
             <div class="text-center py-5">
                 @if(

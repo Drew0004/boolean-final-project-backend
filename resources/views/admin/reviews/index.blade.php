@@ -74,22 +74,24 @@
                     </div>
                     @endforeach
                     
-                    @else
-                    <div class="col-7">
-                        <h2 class="badge text-bg-danger fs-4 mb-5">Ops! Sembra che tu non abbia ancora ricevuto Recensioni!</h2>
-                    </div>
-                        
-                    @endif
                 </div>
+                @else
+                <div class="col-6 mb-5">
+                    <span class="my-blue-bg p-3 rounded-4 text-white fs-4">Ops! Sembra che tu non abbia ancora ricevuto Recensioni!</span>
+                </div>
+                    
+                @endif
 
                 {{-- Sezione Voti --}}
+                @if(!$user->votes->isEmpty())
                 <div class="col-4 bounce-in-y" id="chartContainer">
-                    @if(!$user->votes->isEmpty())
                     <canvas id="myChart2"></canvas>
-                    @else
-                        <h2 class="badge text-bg-danger fs-4 mb-5">Ops! Sembra che tu non abbia ancora ricevuto Votazioni!</h2>
-                    @endif
                 </div>
+                @else
+                <div class="col-6 mb-5">
+                    <span class="my-blue-bg p-3 rounded-4 text-white fs-4">Ops! Sembra che tu non abbia ancora ricevuto Votazioni!</span>
+                </div>
+                @endif
 
             </div>
 
