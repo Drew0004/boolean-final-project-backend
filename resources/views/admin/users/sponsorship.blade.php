@@ -52,11 +52,12 @@
 <div class="container py-5 my-error-pay-form">
     {{-- <h2 class="badge text-bg-danger my-5 fs-4">Sembra che tu abbia già una sponsorizzazione attiva, potrai crearne una nuova appena quest'ultima sarà scaduta</h2> --}}
     <div class="my-error-bg d-flex flex-column align-items-center p-5 rounded-5">
-        <div class="img-danger-container mb-5">
+        <i class="fs-1 mb-5 fa-solid fa-triangle-exclamation my-cyan"></i>
+        {{-- <div class="img-danger-container mb-5">
             <img src="{{ asset("storage/images/warning.png")}}" alt="Danger">
-        </div>
-        <div class="bg-danger p-1 rounded-4 text-center col-5 mb-5">
-            <h2 class="text-white">Sponsorizzazione attiva!</h2>
+        </div> --}}
+        <div class="my-cyan-bg p-2 rounded-4 text-center col-5 mb-5">
+            <h2 class="text-white m-0">Sponsorizzazione attiva!</h2>
         </div>
         <div class="col-5 mb-5">
             <p class="text-white text-center">Attualmente hai una sponsorizzazione attiva. Potrai attivarne una nuova solo dopo che la tua sponsorizzazione attuale sarà scaduta.</p>
