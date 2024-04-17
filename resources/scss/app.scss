@@ -47,6 +47,13 @@ header{
         color: #21252B;
     }
 }
+// .dropdown-menu{
+//     --bs-dropdown-bg:#21252B !important;
+//     --bs-dropdown-color: #BADFDA !important;
+// }
+.dropdown-item{
+    --bs-dropdown-link-active-bg: none !important;
+}
 .my-logout-btn-2{
     background-color: #21252B;
     padding: 10px 30px;
