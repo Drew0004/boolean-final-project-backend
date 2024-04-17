@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page-title', 'Reviews')
+@section('page-title', 'Tutte le recensioni')
 
 @section('main-content')
 <style>

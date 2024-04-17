@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('page-title', 'Dashboard')
+@section('page-title', 'Sponsorizzazioni')
 
 @section('main-content')
 @if($usersWithoutSponsorship->contains($user) || $sponsoredUser == null)

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page-title', 'Edit project')
+@section('page-title', 'Modifica il profilo')
 
 @section('main-content')
 <section id="edit">
