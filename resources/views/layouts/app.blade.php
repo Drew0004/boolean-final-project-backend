@@ -29,6 +29,7 @@
             border-radius: 50%;
             background-position: center;
             background-size: 100%;
+            background-repeat: no-repeat;
         };
    
     </style>
