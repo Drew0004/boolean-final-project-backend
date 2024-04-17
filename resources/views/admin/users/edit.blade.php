@@ -57,7 +57,7 @@
                             </audio>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="1" id="delete_demo" name="delete_demo">
+                            <input class="form-check-input role-checkbox" type="checkbox" value="1" id="delete_demo" name="delete_demo">
                             <label class="form-check-label fw-bold my-blue" for="delete_demo">
                                 Rimuovi demo
                             </label>
@@ -93,7 +93,7 @@
                             <img class="w-100 object-fit-cover profile-pic" src="/storage/{{ $user->userDetails->picture }}">
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="1" id="delete_picture" name="delete_picture">
+                            <input class="form-check-input role-checkbox" type="checkbox" value="1" id="delete_picture" name="delete_picture">
                             <label class="form-check-label fw-bold my-blue" for="delete_picture">
                                 Rimuovi immagine
                             </label>
