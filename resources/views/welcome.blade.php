@@ -1,3 +1,4 @@
+@section('page-title', 'Benvenuto')
 @extends('layouts.guest')
 
 @section('main-content')

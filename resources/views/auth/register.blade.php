@@ -1,3 +1,4 @@
+@section('page-title', 'Registrati')
 @extends('layouts.guest')
 
 @section('main-content')
