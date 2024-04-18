@@ -1,0 +1,30 @@
+#sponsorship{
+    .my-fs{
+        font-size: 2.2rem;   
+    }
+    .my-sponsor-card{
+        background-color: #ffffff;
+        border: 0.5px solid #21252B;
+        border-radius: 20px;
+        i{
+            font-size: 3rem;
+        }
+        h4{
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        p{
+            font-weight: light;
+            font-size: 1rem;
+        }
+        transition: 0.3s ease-in-out;
+
+        &:hover{
+            background-color: #21252B;
+            border: 0.5px solid #BADFDA;
+            i, h4, h2, p{
+                color: #BADFDA;
+            }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+#statistics{
+    .my-char-container{
+        background-color: rgb(253, 253, 253);
+        border: 1px solid rgba(33, 37, 43, 0.2);
+        border-radius: 20px;
+    }
+
+    @keyframes bounceIn {
+        0% {
+            opacity: 0;
+            transform: translateY(150px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .bounce-in {
+      animation: bounceIn 0.9s ease-in-out;
+    }
+
+    @keyframes bounceInX {
+        0% {
+            opacity: 0;
+            transform: translateX(-80px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .bounce-in-x {
+        animation: bounceInX 0.9s ease-in-out;
+    }
+
+    @keyframes bounceInY {
+        0% {
+            opacity: 0;
+            transform: translateX(80px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .bounce-in-y {
+        animation: bounceInY 0.9s ease-in-out;
+    }
+    
+}

@@ -1,0 +1,96 @@
+#dashboard{
+    h1{
+        line-height: 4rem;
+        font-size: 3rem;
+    }
+
+    h2{
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: #21252B;
+    }
+
+    .bio-role-section{
+        background-color: #21252B;
+
+        p{
+            line-height: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .role-icon{
+            max-width: 80px;
+        }
+        .single-icon{
+            filter: invert(100%);
+        }
+    }
+    .img-not-found{
+        background-image: url('/storage/images/Not-Found.jpg');
+        min-height: 400px;
+        background-size: cover;
+        background-position: center; 
+    }
+    .edit-btn{
+        background-color: #21252B;
+        padding: 10px 30px;
+        font-weight: bold;
+        border-radius: 30px;
+        &:hover{
+            background-color: white;
+            border: 1px solid #21252B;
+            a{
+                color: #21252B !important
+            }
+        }
+        a{
+            color: white !important;
+        }
+    }
+
+    @keyframes bounceIn {
+        0% {
+            opacity: 0;
+            transform: translateY(150px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .bounce-in {
+      animation: bounceIn 0.9s ease-in-out;
+    }
+
+    @keyframes bounceInX {
+        0% {
+            opacity: 0;
+            transform: translateX(-80px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .bounce-in-x {
+        animation: bounceInX 0.9s ease-in-out;
+    }
+
+    @keyframes bounceInY {
+        0% {
+            opacity: 0;
+            transform: translateX(80px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .bounce-in-y {
+        animation: bounceInY 0.9s ease-in-out;
+    }
+    
+}

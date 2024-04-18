@@ -1,5 +1,134 @@
 @import "~bootstrap/scss/bootstrap";
-
-main {
-    background-color: lightcoral;
+header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
 }
+.my-blue{
+    color: #21252B;
+}
+.my-blue-bg{
+    background-color: #21252B;
+}
+
+.my-hmb-menu{
+    background-color: white;
+}
+
+.my-cyan{
+    color: #BADFDA;
+}
+.my-cyan-bg{
+    background-color: #BADFDA;
+}
+.logo-container{
+    width: 200px;
+    display: flex;
+    align-items: center;
+}
+.header-logo, .footer-logo{
+    width: 100%;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('/storage/images/LogoBMusic.png');
+}
+.my-logout-btn-1{
+    background-color: #BADFDA;
+    border-radius: 40px;
+    font-weight: bold;
+    color: white;
+    padding: 5px 50px;
+    &:hover{
+        background-color: white;
+        color: #21252B;
+    }
+}
+// .dropdown-menu{
+//     --bs-dropdown-bg:#21252B !important;
+//     --bs-dropdown-color: #BADFDA !important;
+// }
+.dropdown-item{
+    --bs-dropdown-link-active-bg: none !important;
+}
+.my-logout-btn-2{
+    background-color: #21252B;
+    padding: 10px 30px;
+    font-weight: bold;
+    border-radius: 30px;
+    &:hover{
+        border: 1px solid #21252B;
+        span{
+            color: #21252B !important
+        }
+    }
+    span{
+        color: white !important;
+    }
+}
+.nav-link{
+    &:hover{
+        color: white;
+    }
+}
+.register-btn{
+    background-color: #21252B;
+    padding: 10px 30px;
+    font-weight: bold;
+    border-radius: 30px;
+    &:hover{
+        border: 1px solid #21252B;
+        a{
+            color: #21252B !important
+        }
+    }
+    a{
+        color: white !important;
+    }
+}
+.login-btn{
+    border-radius: 30px;
+    background-color: #ffffff;
+    padding: 10px 30px;
+    border: 0.5px solid #21252B;
+    &:hover{
+        background-color: #21252B;
+        a{
+            color: white;
+        }
+    }
+    a{
+        color: #21252B;
+    }
+}
+
+
+// Footer
+
+ul{
+    list-style-type: none;
+}
+
+.footer-claim{
+    color: grey;
+    font-size: small;
+}
+.img-pic-not-found{
+    // background-image: url('/storage/images/Not-Found.jpg');
+    background-color: #d3d3d3;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-position: center;
+    background-size: 100%;
+}
+
+@media only screen and (max-width: 1220px) {
+    .fs-lg-em {
+      font-size: 0.8rem;
+    }
+  }

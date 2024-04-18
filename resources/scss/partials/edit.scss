@@ -1,0 +1,69 @@
+#edit{
+    .my-label{
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: #21252B;
+    }
+    .form-img-round{
+        width: 100%;
+        height: 300px;
+        border-radius: 30px;
+        overflow: hidden;
+        .profile-pic{
+            object-position: center;
+            height: 100%;
+        }
+    }
+    .role-checkbox{
+        background-color: #21252B;
+        border-radius: 10px;
+    }
+    .role-checkbox {
+        background-color: #FFF;
+    }
+    
+    /* Checkbox selezionata */
+    .role-checkbox:checked {
+        background-color: #21252B ;
+    }
+    .edit-btn{
+        background-color: #21252B;
+        padding: 10px 30px;
+        font-weight: bold;
+        border-radius: 30px;
+        &:hover{
+            background-color: white;
+            border: 1px solid #21252B;
+            span{
+                color: #21252B !important;
+            }
+        }
+        span{
+            color: white !important;
+        }
+    }
+
+    .undo-button{
+        border-radius: 30px;
+        background-color: #ffffff;
+        padding: 10px 30px;
+        border: 0.5px solid #21252B;
+        &:hover{
+            background-color: #21252B;
+            a{
+                color: white;
+            }
+        }
+        a{
+            color: #21252B;
+            font-weight: lighter;
+        }
+    
+    }
+    .img-not-found{
+        background-image: url('/storage/images/Not-Found.jpg');
+        min-height: 400px;
+        background-size: cover;
+        background-position: center; 
+    }
+}

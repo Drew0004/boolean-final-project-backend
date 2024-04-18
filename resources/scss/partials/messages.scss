@@ -1,0 +1,161 @@
+#messages{
+    h2{
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: #21252B;
+    }
+    .my-message-container{
+        height: 500px;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            width: 7px;
+            }
+            &::-webkit-scrollbar-thumb {
+            background: #21252B;
+            border-radius: 5px;
+            }
+    }
+    .my-message-card{
+        background-color: #21252B;
+        border-radius: 20px;
+        .message-upper-card{
+            h4{
+                font-size: 1rem;
+            }
+            h5{
+                font-size: 0.8rem;
+            }
+        }
+        .message-middle-card{
+            p{
+                font-weight: lighter;
+                line-height: 1.7rem;
+            }
+        }
+    }
+    .invisible-btn{
+        background-color: transparent;
+        border: none;
+        padding: 0;
+    }
+    .modal-btn{
+        background-color: #21252B;
+        padding: 10px 30px;
+        font-weight: bold;
+        border-radius: 30px;
+        &:hover{
+            border: 1px solid #21252B;
+            background-color: white;
+            span{
+                color: #21252B !important
+            }
+        }
+        span{
+            color: white !important;
+        }
+    }
+    .modal-card{
+        background-color: #21252B;
+        border-radius: 20px;
+        padding: 10px;
+    }
+    .img-not-found{
+        background-image: url('/storage/images/Not-Found.jpg');
+        min-height: 400px;
+        background-size: cover;
+        background-position: center; 
+    }
+
+    @keyframes bounceIn {
+        0% {
+            opacity: 0;
+            transform: translateY(150px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .bounce-in {
+      animation: bounceIn 0.9s ease-in-out;
+    }
+
+    @keyframes bounceInX {
+        0% {
+            opacity: 0;
+            transform: translateX(-80px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .bounce-in-x {
+        animation: bounceInX 0.9s ease-in-out;
+    }
+}
+#messages-show{
+    h2{
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: #21252B;
+    }
+    .my-message-card{
+        background-color: #21252B;
+        .message-upper-card{
+            i{
+                font-size: 2rem;
+            }
+            h4{
+                font-size: 2rem;
+            }
+            h5{
+                font-size: 1.2rem;
+            }
+        }
+        .message-middle-card{
+            p{
+                font-weight: lighter;
+            }
+        }
+    }
+    .img-not-found{
+        background-image: url('/storage/images/Not-Found.jpg');
+        min-height: 400px;
+        background-size: cover;
+        background-position: center; 
+    }
+
+    @keyframes bounceIn {
+        0% {
+            opacity: 0;
+            transform: translateY(150px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .bounce-in {
+      animation: bounceIn 0.9s ease-in-out;
+    }
+
+    @keyframes bounceInX {
+        0% {
+            opacity: 0;
+            transform: translateX(-80px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .bounce-in-x {
+        animation: bounceInX 0.9s ease-in-out;
+    }
+}
+

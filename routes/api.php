@@ -3,6 +3,16 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+//Controllers
+use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\RoleController;
+use App\Http\Controllers\Api\MessageController;
+use App\Http\Controllers\Api\ReviewController;
+use App\Http\Controllers\Api\VoteController;
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +24,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::name('api.')->group(function() {
+    Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+        return $request->user();
+    });
+
+
+    Route::resource('users', UserController::class)->only([
+        'index',
+        'show',
+    ]);
+
+    Route::resource('roles', RoleController::class)->only([
+        'index',
+    ]);
+
+    /* Route::get('users/search/{name}', [UserController::class, 'search']); */
+    Route::get('users/search', [UserController::class, 'search']);
+
+    Route::get('/sponsor', [UserController::class, 'sponsor']);
+
+    // Rotta store messaggi
+    Route::post('/messages',[MessageController::class, 'store'])->name('messages.store');
+    // Rotta store reviews
+    Route::post('/reviews',[ReviewController::class, 'store'])->name('reviews.store');
+    // Rotta store votes
+    Route::post('/votes',[VoteController::class, 'store'])->name('votes.store');
+
 });
+
+

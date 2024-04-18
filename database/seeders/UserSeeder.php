@@ -24,40 +24,9 @@ class UserSeeder extends Seeder
         User::truncate();
         Schema::enableForeignKeyConstraints();
 
-        $allUsers = [
-            [
-                'name' => 'Mario Cilino',
-                'email' => 'mario.cilino@gmail.com',
-                'password' => 'mariocilino30',
-                'city' => 'Milano'
-            ],
-            [
-                'name' => 'Paola Gagliardi',
-                'email' => 'paola.gagliardi@gmail.com',
-                'password' => 'paolagagliardi30',
-                'city' => 'Firenze'
-            ],
-            [
-                'name' => 'The Rock Army',
-                'email' => 'rock.army@hotmail.it',
-                'password' => 'rockarmy30',
-                'city' => 'Padova'
-            ],
-            [
-                'name' => 'Nathan Drake',
-                'email' => 'nathan.drake@gmail.com',
-                'password' => 'nathandrake30',
-                'city' => 'Toronto'
-            ],
-            [
-                'name' => 'Jazzy Sons',
-                'email' => 'jazzysons@outlook.com',
-                'password' => 'jazzysons30',
-                'city' => 'Venezia'
-            ],
-        ];
+        $users = config('users');
 
-        foreach ($allUsers as $singleUser) {
+        foreach ($users as $singleUser) {
             $user = User::create([
                 'name' => $singleUser['name'],
                 'email' => $singleUser['email'],

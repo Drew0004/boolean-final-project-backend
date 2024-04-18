@@ -43,4 +43,31 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    // Relazione one to one con i dettagli utente
+    public function userDetails(){
+        return $this->hasOne(UserDetails::class);
+    }
+
+    // Relazione many to many con i ruoli
+    public function roles(){
+        return $this->belongsToMany(Role::class, 'user_role');
+    }
+    public function votes(){
+        return $this->belongsToMany(Vote::class);
+    }
+    // Relazione one to many con i messaggi
+    public function messages(){
+        return $this->hasMany(Message::class);
+    }
+
+    // Relazione one to many con le reviews
+    public function reviews(){
+        return $this->hasMany(Review::class);
+    }
+
+    //Relazione many to many con sponsor
+    public function sponsors(){
+        return $this->belongsToMany(Sponsor::class, 'user_sponsor');
+    }
 }

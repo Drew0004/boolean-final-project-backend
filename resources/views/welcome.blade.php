@@ -1,17 +1,22 @@
+@section('page-title', 'Benvenuto')
 @extends('layouts.guest')
 
 @section('main-content')
     <div class="row">
         <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <h1 class="text-center text-primary">
-                        Welcome!
-                    </h1>
-                    <br>
-                    La welcome page è una pagina pubblica (NON protetta)
-                </div>
-            </div>
+
+        <h1 class="text-center my-blue py-3">
+            Benvenuto!
+        </h1>
+        <div class="text-center py-3">
+            <button class="btn login-btn fw-semibold me-5">
+                <a class="text-decoration-none" href="{{ route('login') }}">Accedi</a>
+            </button>
+            <button class="btn register-btn">
+                <a class="text-decoration-none" href="{{ route('register') }}">Registrati</a>
+            </button>
+        </div>
+
         </div>
     </div>
 @endsection

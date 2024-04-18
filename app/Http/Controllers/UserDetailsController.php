@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\user_details;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreUserDetailsRequest;
+use App\Http\Requests\UpdateUserDetailsRequest;
+use App\Models\UserDetails;
 
 class UserDetailsController extends Controller
 {
@@ -26,7 +27,7 @@ class UserDetailsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreUserDetailsRequest $request)
     {
         //
     }
@@ -34,7 +35,7 @@ class UserDetailsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(user_details $user_details)
+    public function show(UserDetails $userDetails)
     {
         //
     }
@@ -42,7 +43,7 @@ class UserDetailsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(user_details $user_details)
+    public function edit(UserDetails $userDetails)
     {
         //
     }
@@ -50,7 +51,7 @@ class UserDetailsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, user_details $user_details)
+    public function update(UpdateUserDetailsRequest $request, UserDetails $userDetails)
     {
         //
     }
@@ -58,7 +59,7 @@ class UserDetailsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(user_details $user_details)
+    public function destroy(UserDetails $userDetails)
     {
         //
     }

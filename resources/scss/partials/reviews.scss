@@ -1,0 +1,163 @@
+#reviews{
+    h2{
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: #21252B;
+    }
+    .my-review-container{
+        height: 500px;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            width: 7px;
+            }
+            &::-webkit-scrollbar-thumb {
+            background: #21252B;
+            border-radius: 5px;
+            }
+    }
+    .my-review-card{
+        background-color: #21252B;
+        // background-color: rgb(100, 113, 132);
+        border-radius: 20px;
+        .review-upper-card{
+            h4{
+                font-size: 1rem;
+            }
+            h5{
+                font-size: 0.8rem;
+            }
+        }
+        .review-middle-card{
+            p{
+                font-weight: lighter;
+                line-height: 1.7rem;
+            }
+        }
+    }
+    .vote-card{
+        background-color: #21252B;
+        border-radius: 20px;
+        h4{
+            font-size: 1rem;
+        }
+        .vote-circle{
+            background-color: #BADFDA;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+        }
+    }
+    .img-not-found{
+        background-image: url('/storage/images/Not-Found.jpg');
+        min-height: 400px;
+        background-size: cover;
+        background-position: center; 
+    }
+
+    @keyframes bounceIn {
+        0% {
+            opacity: 0;
+            transform: translateY(150px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .bounce-in {
+      animation: bounceIn 0.9s ease-in-out;
+    }
+    @keyframes bounceInX {
+        0% {
+            opacity: 0;
+            transform: translateX(-80px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .bounce-in-x {
+        animation: bounceInX 0.9s ease-in-out;
+    }
+
+    @keyframes bounceInY {
+        0% {
+            opacity: 0;
+            transform: translateX(80px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .bounce-in-y {
+        animation: bounceInY 0.9s ease-in-out;
+    }
+
+}
+#reviews-show{
+    h2{
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: #21252B;
+    }
+    .my-review-card{
+        background-color: #21252B;
+        .review-upper-card{
+            i{
+                font-size: 2rem;
+            }
+            h4{
+                font-size: 2rem;
+            }
+            h5{
+                font-size: 1.2rem;
+            }
+        }
+        .review-middle-card{
+            p{
+                font-weight: lighter;
+            }
+        }
+    }
+    .img-not-found{
+        background-image: url('/storage/images/Not-Found.jpg');
+        min-height: 400px;
+        background-size: cover;
+        background-position: center; 
+    }
+
+    @keyframes bounceIn {
+        0% {
+            opacity: 0;
+            transform: translateY(150px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .bounce-in {
+      animation: bounceIn 0.9s ease-in-out;
+    }
+
+    @keyframes bounceInX {
+        0% {
+            opacity: 0;
+            transform: translateX(-80px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .bounce-in-x {
+        animation: bounceInX 0.9s ease-in-out;
+    }
+}

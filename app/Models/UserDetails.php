@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class user_details extends Model
+class UserDetails extends Model
 {
     use HasFactory;
 
@@ -20,6 +20,6 @@ class user_details extends Model
     //Relazioni fra le due tabelle One to one
     public function user()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
 }
